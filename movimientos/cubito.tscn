@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbyg8xh6elekg"]
+
+[ext_resource type="Script" path="res://Cubito.cs" id="1_0ggor"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iewpb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xns4e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2obq"]
+diffuse_mode = 1
+albedo_color = Color(0.47451, 0.780392, 0.792157, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j8mth"]
+sky_top_color = Color(0.54902, 0.780392, 0.996078, 1)
+sky_horizon_color = Color(0.592157, 0.760784, 0.913725, 1)
+ground_bottom_color = Color(0.254902, 0.380392, 0.396078, 1)
+ground_horizon_color = Color(0.592157, 0.760784, 0.913725, 1)
+
+[sub_resource type="Sky" id="Sky_8hdev"]
+sky_material = SubResource("ProceduralSkyMaterial_j8mth")
+
+[sub_resource type="Environment" id="Environment_ca42p"]
+background_mode = 2
+sky = SubResource("Sky_8hdev")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_byeng"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2q0h"]
+albedo_color = Color(1, 0.729412, 0.933333, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hflj6"]
+material = SubResource("StandardMaterial3D_p2q0h")
+size = Vector3(10, 0.2, 10)
+
+[node name="Level" type="Node3D"]
+
+[node name="Cubito" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.171449, 1.87898, -0.499316)
+script = ExtResource("1_0ggor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cubito"]
+transform = Transform3D(1.1652, 0, 0, 0, 0.797844, 0, 0, 0, 1.16432, -0.0477831, 0.264965, 0.203463)
+shape = SubResource("BoxShape3D_iewpb")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Cubito"]
+transform = Transform3D(1.1664, 0, 0, 0, 0.81, 0, 0, 0, 1.17, -0.0493948, 0.270339, 0.202762)
+mesh = SubResource("BoxMesh_xns4e")
+material = SubResource("StandardMaterial3D_q2obq")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.501844, 1.21876, 3.80385)
+environment = SubResource("Environment_ca42p")
+
+[node name="floor" type="StaticBody3D" parent="."]
+transform = Transform3D(0.982395, 0, 0, 0, 1.15635, 0, 0, 0, 0.982395, -0.00126982, -0.0085907, -0.008497)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+shape = SubResource("BoxShape3D_byeng")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
+mesh = SubResource("BoxMesh_hflj6")
