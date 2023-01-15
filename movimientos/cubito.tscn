@@ -16,24 +16,24 @@ sky_horizon_color = Color(0.592157, 0.760784, 0.913725, 1)
 ground_bottom_color = Color(0.254902, 0.380392, 0.396078, 1)
 ground_horizon_color = Color(0.592157, 0.760784, 0.913725, 1)
 
-[sub_resource type="Sky" id="Sky_8hdev"]
+[sub_resource type="Sky" id="Sky_ymova"]
 sky_material = SubResource("ProceduralSkyMaterial_j8mth")
 
 [sub_resource type="Environment" id="Environment_ca42p"]
 background_mode = 2
-sky = SubResource("Sky_8hdev")
+sky = SubResource("Sky_ymova")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_byeng"]
 size = Vector3(10, 0.2, 10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2q0h"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ion7t"]
 albedo_color = Color(1, 0.729412, 0.933333, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_hflj6"]
-material = SubResource("StandardMaterial3D_p2q0h")
+material = SubResource("StandardMaterial3D_ion7t")
 size = Vector3(10, 0.2, 10)
 
-[node name="Level" type="Node3D"]
+[node name="robotsito?" type="Node3D"]
 
 [node name="Cubito" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.171449, 1.87898, -0.499316)
