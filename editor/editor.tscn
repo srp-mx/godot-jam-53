@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://6hrngfah4ayc"]
+
+[ext_resource type="Script" path="res://Editor.cs" id="1_8jy12"]
+
+[node name="Editor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_8jy12")
+
+[node name="TextEditor" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.166667
+anchor_top = 0.0617284
+anchor_right = 0.472222
+anchor_bottom = 0.589506
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Save As" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.506944
+anchor_top = 0.148148
+anchor_right = 0.592882
+anchor_bottom = 0.195988
+text = "Save As File"
+metadata/_edit_use_anchors_ = true
+
+[node name="Save As File" type="FileDialog" parent="."]
+title = "Save As File"
+size = Vector2i(800, 500)
+unresizable = true
+
+[node name="Open" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.506944
+anchor_top = 0.0740741
+anchor_right = 0.592882
+anchor_bottom = 0.121914
+text = "Open File"
+metadata/_edit_use_anchors_ = true
+
+[node name="Open File" type="FileDialog" parent="."]
+title = "Save As File"
+size = Vector2i(800, 500)
+unresizable = true
+
+[node name="Menu File" type="MenuButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.166667
+anchor_top = 0.0123457
+anchor_right = 0.197049
+anchor_bottom = 0.0601852
+text = "File"
+metadata/_edit_use_anchors_ = true
