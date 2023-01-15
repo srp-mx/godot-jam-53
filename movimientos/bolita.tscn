@@ -79,10 +79,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16211, 0)
 script = ExtResource("2_ehmn8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cubito/Bolita"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("SphereShape3D_rgdxd")
 disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cubito/Bolita"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("SphereMesh_lutf8")

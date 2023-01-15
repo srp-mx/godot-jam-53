@@ -19,30 +19,10 @@ anchor_bottom = 0.589506
 grow_horizontal = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Save As" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.506944
-anchor_top = 0.148148
-anchor_right = 0.592882
-anchor_bottom = 0.195988
-text = "Save As File"
-metadata/_edit_use_anchors_ = true
-
 [node name="Save As File" type="FileDialog" parent="."]
 title = "Save As File"
 size = Vector2i(800, 500)
 unresizable = true
-
-[node name="Open" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.506944
-anchor_top = 0.0740741
-anchor_right = 0.592882
-anchor_bottom = 0.121914
-text = "Open File"
-metadata/_edit_use_anchors_ = true
 
 [node name="Open File" type="FileDialog" parent="."]
 title = "Save As File"
@@ -57,4 +37,5 @@ anchor_top = 0.0123457
 anchor_right = 0.197049
 anchor_bottom = 0.0601852
 text = "File"
+switch_on_hover = true
 metadata/_edit_use_anchors_ = true
