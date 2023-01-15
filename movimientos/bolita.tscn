@@ -3,35 +3,6 @@
 [ext_resource type="Script" path="res://Cubito.cs" id="1_43e7n"]
 [ext_resource type="Script" path="res://Bolita.cs" id="2_ehmn8"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1hkew"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_ybrgf"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1byf"]
-diffuse_mode = 1
-albedo_color = Color(0.47451, 0.780392, 0.792157, 1)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_rgdxd"]
-radius = 0.2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_at8fd"]
-albedo_color = Color(0.105882, 0.0588235, 1, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_lutf8"]
-material = SubResource("StandardMaterial3D_at8fd")
-radius = 0.2
-height = 0.4
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_bjaxr"]
-size = Vector3(10, 0.2, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2q0h"]
-albedo_color = Color(1, 0.729412, 0.933333, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_b4opw"]
-material = SubResource("StandardMaterial3D_p2q0h")
-size = Vector3(10, 0.2, 10)
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tinh5"]
 sky_top_color = Color(0.54902, 0.780392, 0.996078, 1)
 sky_horizon_color = Color(0.592157, 0.760784, 0.913725, 1)
@@ -45,7 +16,50 @@ sky_material = SubResource("ProceduralSkyMaterial_tinh5")
 background_mode = 2
 sky = SubResource("Sky_ndu0m")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bjaxr"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2q0h"]
+albedo_color = Color(1, 0.729412, 0.933333, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b4opw"]
+material = SubResource("StandardMaterial3D_p2q0h")
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1hkew"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ybrgf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1byf"]
+diffuse_mode = 1
+albedo_color = Color(0.47451, 0.780392, 0.792157, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rgdxd"]
+radius = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g11mo"]
+albedo_color = Color(0.105882, 0.0588235, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_lutf8"]
+material = SubResource("StandardMaterial3D_g11mo")
+radius = 0.2
+height = 0.4
+
 [node name="bolita" type="Node3D"]
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.875785, 0.714743, 2.38899)
+visible = false
+environment = SubResource("Environment_c1elr")
+
+[node name="floor" type="StaticBody3D" parent="."]
+transform = Transform3D(0.982395, 0, 0, 0, 1.15635, 0, 0, 0, 0.982395, -0.00126982, -0.0085907, -0.008497)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+shape = SubResource("BoxShape3D_bjaxr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
+mesh = SubResource("BoxMesh_b4opw")
 
 [node name="Cubito" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.256224, 0, 0, 0, 0.204003, 0, 0, 0, 0.218777, -0.687418, 0.087657, 0.938061)
@@ -67,21 +81,8 @@ script = ExtResource("2_ehmn8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cubito/Bolita"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("SphereShape3D_rgdxd")
+disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cubito/Bolita"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("SphereMesh_lutf8")
-
-[node name="floor" type="StaticBody3D" parent="."]
-transform = Transform3D(0.982395, 0, 0, 0, 1.15635, 0, 0, 0, 0.982395, -0.00126982, -0.0085907, -0.008497)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
-shape = SubResource("BoxShape3D_bjaxr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
-mesh = SubResource("BoxMesh_b4opw")
-
-[node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.875785, 0.714743, 2.38899)
-visible = false
-environment = SubResource("Environment_c1elr")
