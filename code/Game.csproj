@@ -8,7 +8,7 @@
 
   <ItemGroup>
       <ProjectReference include = "assembly\Assembly.csproj" />
-  </ItemsGroup>
+  </ItemGroup>
 
 </Project>
 

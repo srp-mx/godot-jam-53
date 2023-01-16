@@ -13,7 +13,7 @@
       <Folder include="lexer\" />
       <Folder include="parser\" />
       <Folder include="utils\" />
-  </ItemsGroup>
+  </ItemGroup>
 
 </Project>
 

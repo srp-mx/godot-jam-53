@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Game.Monads;
+using Game.Algorithm;
 namespace Game.Assembly;
 
 public class InstructionSets
@@ -40,26 +41,55 @@ public class InstructionSets
     public Errable<InstructionSpec> Get(string instructionName, IEnumerable<Available> setsAvailable)
     {
         instructionName = instructionName.ToUpper();
-        foreach (Available set in setsAvailable)
+        foreach (var set in GetSets(setsAvailable))
         {
-            switch (set)
+            if (!set.TryGetValue(instructionName, out InstructionSpec? instruction) || instruction is null)
             {
-				case Available.Basic:
-					if (!Basic.TryGetValue(instructionName, out InstructionSpec? instruction) || instruction is null)
-					{
-						continue;
-					}
-					return instruction;
-			}
+                continue;
+            }
+            return instruction;
         }
 
         return Errable<InstructionSpec>.Err($"[PROBLEM]: Instruction '{instructionName}' not found!");
     }
-
+   
     public string GetSuggestions(string mistyped, IEnumerable<Available> setsAvailable)
     {
-        // TODO(srp): Levenshtein.cs
-        return "hmm, I've got nothing sorry :(";
+        SortedList<int, string> candidates = new();
+        foreach (var set in GetSets(setsAvailable))
+        {
+            foreach (var instr in set.Keys)
+            {
+                int lev = Levenshtein.Get(mistyped.ToUpper(), instr.ToUpper());
+                if (lev > 3)
+                    continue;
+
+                candidates.Add(lev, instr);
+            }
+        }
+
+        if (candidates.Count == 0)
+            return "hmm, I've got nothing sorry :(";
+
+        string ans = "";
+        foreach (var pair in candidates)
+		{
+            ans += $" {pair.Value}";
+		}
+        return ans;
+    }
+
+    private IEnumerable<Dictionary<string, InstructionSpec>> GetSets(IEnumerable<Available> setsAvailable)
+    {
+        List<Dictionary<string, InstructionSpec>> sets = new();
+        foreach (Available set in setsAvailable)
+        {
+            switch (set)
+            {
+                case Available.Basic: sets.Add(Basic); continue;
+            }
+        }
+        return sets;
     }
 
 }
