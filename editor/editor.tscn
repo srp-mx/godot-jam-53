@@ -7,16 +7,20 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
 script = ExtResource("1_8jy12")
+metadata/_edit_lock_ = true
 
 [node name="TextEditor" type="TextEdit" parent="."]
-layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.166667
-anchor_top = 0.0617284
-anchor_right = 0.472222
-anchor_bottom = 0.589506
+anchor_left = 0.0746528
+anchor_top = 0.0864198
+anchor_right = 0.611111
+anchor_bottom = 0.691358
 grow_horizontal = 2
+highlight_current_line = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Save As File" type="FileDialog" parent="."]
@@ -30,12 +34,127 @@ size = Vector2i(800, 500)
 unresizable = true
 
 [node name="Menu File" type="MenuButton" parent="."]
-layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.166667
-anchor_top = 0.0123457
-anchor_right = 0.197049
-anchor_bottom = 0.0601852
+anchor_left = 0.0746531
+anchor_top = 0.037037
+anchor_right = 0.105035
+anchor_bottom = 0.0848766
 text = "File"
 switch_on_hover = true
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.670139
+anchor_top = 0.0478395
+anchor_right = 0.753472
+anchor_bottom = 0.087963
+text = "Instructions"
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.670139
+anchor_top = 0.111111
+anchor_right = 0.753472
+anchor_bottom = 0.651235
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+offset_right = 68.0
+offset_bottom = 451.0
+
+[node name="moveL" type="Button" parent="ScrollContainer/VBoxContainer"]
+offset_right = 68.0
+offset_bottom = 31.0
+text = "move_l
+"
+
+[node name="moveR" type="Button" parent="ScrollContainer/VBoxContainer"]
+offset_top = 35.0
+offset_right = 68.0
+offset_bottom = 66.0
+text = "move_r"
+
+[node name="moveU" type="Button" parent="ScrollContainer/VBoxContainer"]
+offset_top = 70.0
+offset_right = 68.0
+offset_bottom = 101.0
+text = "move_u
+"
+
+[node name="moveD" type="Button" parent="ScrollContainer/VBoxContainer"]
+offset_top = 105.0
+offset_right = 68.0
+offset_bottom = 136.0
+text = "move_d
+"
+
+[node name="x" type="Button" parent="ScrollContainer/VBoxContainer"]
+offset_top = 140.0
+offset_right = 68.0
+offset_bottom = 171.0
+text = "move
+"
+
+[node name="x2" type="Button" parent="ScrollContainer/VBoxContainer"]
+offset_top = 175.0
+offset_right = 68.0
+offset_bottom = 206.0
+text = "move"
+
+[node name="coso1" type="Button" parent="ScrollContainer/VBoxContainer"]
+offset_top = 210.0
+offset_right = 68.0
+offset_bottom = 241.0
+text = "coso"
+
+[node name="coso2" type="Button" parent="ScrollContainer/VBoxContainer"]
+offset_top = 245.0
+offset_right = 68.0
+offset_bottom = 276.0
+text = "coso"
+
+[node name="coso3" type="Button" parent="ScrollContainer/VBoxContainer"]
+offset_top = 280.0
+offset_right = 68.0
+offset_bottom = 311.0
+text = "coso"
+
+[node name="coso4" type="Button" parent="ScrollContainer/VBoxContainer"]
+offset_top = 315.0
+offset_right = 68.0
+offset_bottom = 346.0
+text = "coso"
+
+[node name="coso5" type="Button" parent="ScrollContainer/VBoxContainer"]
+offset_top = 350.0
+offset_right = 68.0
+offset_bottom = 381.0
+text = "coso"
+
+[node name="coso6" type="Button" parent="ScrollContainer/VBoxContainer"]
+offset_top = 385.0
+offset_right = 68.0
+offset_bottom = 416.0
+text = "coso"
+
+[node name="coso7" type="Button" parent="ScrollContainer/VBoxContainer"]
+offset_top = 420.0
+offset_right = 68.0
+offset_bottom = 451.0
+text = "coso"
+
+[node name="MenuBar" type="MenuBar" parent="."]
+offset_left = 1120.0
+offset_right = 1232.0
+offset_bottom = 456.0
+scale = Vector2(0.28, 0.56)
+
+[node name="Button" type="Button" parent="MenuBar"]
+offset_top = 185.714
+offset_right = 112.0
+offset_bottom = 216.714
+rotation = 4.71238
+scale = Vector2(1.65685, 3.50001)
+text = "terminal?"
