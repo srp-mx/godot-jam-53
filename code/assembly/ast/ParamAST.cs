@@ -47,7 +47,6 @@ public class ParamAST : ASTNode
     // TODO(srp): check thoroughly
     public override Errable<ASTNode> Codegen(CompiledCode target)
     {
-        Console.WriteLine($"Codegenning '{content}' (param)");
         myBlockIdx = target.codegenPtr;
 
         ref MethodBlock myBlock = ref target.MethodArea[target.codegenPtr++];

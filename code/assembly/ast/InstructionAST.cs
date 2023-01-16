@@ -24,8 +24,6 @@ public class InstructionAST : ASTNode
 
     public override Errable<ASTNode> Codegen(CompiledCode target)
     {
-        Console.WriteLine($"Codegenning '{spec.Name}' (instr)");
-
         if (target.codegenPtr < 0 || target.codegenPtr > 255)
         {
             string pos = LexStr.FormatPosition(srcColumn, srcLine);

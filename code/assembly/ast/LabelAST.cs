@@ -37,7 +37,6 @@ public class LabelAST : ASTNode
 
     public override Errable<ASTNode> Codegen(CompiledCode target)
     {
-        Console.WriteLine($"Codegenning '{identifier}' (label)");
         // NOTE(srp): Next can only realistically be an instruction,
         // we're adding the current instrptr because the next instruction
         // generated will have that address.
