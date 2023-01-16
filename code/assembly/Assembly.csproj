@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-      <Folder include "ast" />
-      <Folder include "codegen" />
-      <Folder include "instructions" />
-      <Folder include "lexer" />
-      <Folder include "parser" />
-      <Folder include "utils" />
+      <Folder include="ast\" />
+      <Folder include="codegen\" />
+      <Folder include="instructions\" />
+      <Folder include="lexer\" />
+      <Folder include="parser\" />
+      <Folder include="utils\" />
   </ItemsGroup>
 
 </Project>
