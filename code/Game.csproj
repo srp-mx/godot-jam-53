@@ -1,13 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Godot.NET.Sdk/4.0.0-beta.10">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>Game.Assembly</RootNamespace>
+    <DefaultItemExcludes>assembly\**;algorithm\**;monads\**</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
-      <ProjectReference include = "assembly\Assembly.csproj" />
+      <Compile Remove="assembly\**"/>
+      <Content Include="assembly\**"/>
+      <Compile Remove="algorithm\**"/>
+      <Content Include="algorithm\**"/>
+      <Compile Remove="monads\**"/>
+      <Content Include="monads\**"/>
+      <ProjectReference Include="assembly\Assembly.csproj" />
   </ItemGroup>
 
 </Project>
