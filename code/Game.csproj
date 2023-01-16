@@ -1,0 +1,14 @@
+<Project Sdk="Godot.NET.Sdk/4.0.0-beta.10">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>Game.Assembly</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <ProjectReference include = "assembly\Assembly.csproj" />
+  </ItemsGroup>
+
+</Project>
+
