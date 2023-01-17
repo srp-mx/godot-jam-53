@@ -30,10 +30,10 @@ shader_type canvas_item;
 
 // Default: 32.0, 28.0
 uniform vec2 size = vec2(16.0, 14.0);
-global uniform vec4 my_color1;
-global uniform vec4 my_color2;
-global uniform vec4 my_color3;
-global uniform vec4 my_color4;
+uniform vec4 my_color1 = vec4(1,1,1,1);
+uniform vec4 my_color2 = vec4(1,1,1,1);
+uniform vec4 my_color3 = vec4(1,1,1,1);
+uniform vec4 my_color4 = vec4(1,1,1,1);
 
 uniform float brightness = 1.0;
 uniform float contrast = 1.0;
