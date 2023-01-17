@@ -2,3 +2,4 @@
 .godot/
 srcgen/bin
 srcgen/obj
+.vs
