@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3t2m3jt1hk25"]
+[gd_scene load_steps=7 format=3 uid="uid://b3t2m3jt1hk25"]
 
 [ext_resource type="Material" uid="uid://cqjjvuoujlxsn" path="res://materials/test_material.tres" id="1_ppfqy"]
 [ext_resource type="Environment" uid="uid://beg8qhrkbmq7y" path="res://environment/test_environment.tres" id="2_rdwmb"]
 [ext_resource type="Material" uid="uid://cjlhv7drhkiow" path="res://materials/test_screen_shader_material.tres" id="3_bpo82"]
+[ext_resource type="Script" path="res://PostProcessColors.cs" id="4_ubypy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cg150"]
 
@@ -43,3 +44,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_ubypy")
+my_color1 = Color(0.894118, 0.627451, 0.396078, 1)
+my_color2 = Color(0.25098, 0.498039, 0.415686, 1)
+my_color3 = Color(0, 0.188235, 0.65098, 1)
+my_color4 = Color(0.772549, 0, 0, 1)

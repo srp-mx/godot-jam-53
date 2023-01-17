@@ -1,0 +1,15 @@
+<Project Sdk="Godot.NET.Sdk/4.0.0-beta.10">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>Godotjam53</RootNamespace>
+    <DefaultItemExcludes>srcgen\**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <Compile Remove="code\**"/>
+      <Content Include="code\**"/>
+      <Compile Remove="srcgen\**"/>
+      <ProjectReference Include="code\Game.csproj" />
+  </ItemGroup>
+</Project>
