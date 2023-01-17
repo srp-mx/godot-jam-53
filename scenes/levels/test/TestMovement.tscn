@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3t2m3jt1hk25"]
+
+[ext_resource type="Material" uid="uid://cqjjvuoujlxsn" path="res://materials/test_material.tres" id="1_ppfqy"]
+[ext_resource type="Environment" uid="uid://beg8qhrkbmq7y" path="res://environment/test_environment.tres" id="2_rdwmb"]
+[ext_resource type="Material" uid="uid://cjlhv7drhkiow" path="res://materials/test_screen_shader_material.tres" id="3_bpo82"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cg150"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nj0tc"]
+auto_exposure_enabled = true
+dof_blur_far_enabled = true
+dof_blur_near_enabled = true
+
+[node name="TestMovement" type="Node3D"]
+
+[node name="floor" type="CSGBox3D" parent="."]
+transform = Transform3D(13.4042, 0, 0, 0, 1, 0, 0, 0, 19.7289, 0, 0, 0)
+material = ExtResource("1_ppfqy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
+shape = SubResource("BoxShape3D_cg150")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.94959, 0.313495, 0, -0.313495, 0.94959, 0, 1.94794, 5.08045)
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.967815, 0.0805078, -0.238439, 0.2093, 0.268612, 0.940235, 0.139744, -0.959878, 0.243117, 0, 5.10251, 0)
+light_color = Color(1, 1, 0.85098, 1)
+light_energy = 0.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_rdwmb")
+camera_attributes = SubResource("CameraAttributesPractical_nj0tc")
+
+[node name="PostProcess" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="PostProcess"]
+material = ExtResource("3_bpo82")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

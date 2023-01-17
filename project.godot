@@ -21,3 +21,25 @@ project/assembly_name="Godot-jam-53"
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+global_illumination/sdfgi/probe_ray_count=2
+anti_aliasing/quality/msaa_3d=1
+anti_aliasing/quality/use_debanding=true
+
+[shader_globals]
+
+my_color1={
+"type": "color",
+"value": Color(1, 0, 0, 1)
+}
+my_color2={
+"type": "color",
+"value": Color(0, 1, 0, 1)
+}
+my_color3={
+"type": "color",
+"value": Color(0, 0, 1, 1)
+}
+my_color4={
+"type": "color",
+"value": Color(1, 0, 1, 1)
+}
