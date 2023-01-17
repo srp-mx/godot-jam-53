@@ -9,7 +9,7 @@ public class Parser
     private Token? lastToken = null;
     private Token? nextToken = null;
     private InstructionSets instructions;
-    private InstructionSets.Available[] availableInstructions;
+    private ICollection<InstructionSets.Available> availableInstructions;
     private LabelHandler lh;
 
     private LexStr NextPos = new("");
@@ -32,7 +32,7 @@ public class Parser
         CurrPos.Reset(program);
     }
 
-    public Errable<ASTNode> Parse(InstructionSets.Available[] availableInstructions)
+    public Errable<ASTNode> Parse(ICollection<InstructionSets.Available> availableInstructions)
     {
         this.availableInstructions = availableInstructions;
         return parsePrimary();

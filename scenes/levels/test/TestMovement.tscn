@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3t2m3jt1hk25"]
+[gd_scene load_steps=10 format=3 uid="uid://b3t2m3jt1hk25"]
 
 [ext_resource type="Material" uid="uid://cqjjvuoujlxsn" path="res://materials/test_material.tres" id="1_ppfqy"]
 [ext_resource type="Environment" uid="uid://beg8qhrkbmq7y" path="res://environment/test_environment.tres" id="2_rdwmb"]
 [ext_resource type="Material" uid="uid://cjlhv7drhkiow" path="res://materials/test_screen_shader_material.tres" id="3_bpo82"]
 [ext_resource type="Script" path="res://PostProcessColors.cs" id="4_ubypy"]
+[ext_resource type="Script" path="res://PlayerMovement.cs" id="5_bajyu"]
+[ext_resource type="Script" path="res://Machine.cs" id="5_pn7s0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cg150"]
 
@@ -11,6 +13,8 @@
 auto_exposure_enabled = true
 dof_blur_far_enabled = true
 dof_blur_near_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aehs0"]
 
 [node name="TestMovement" type="Node3D"]
 
@@ -49,3 +53,16 @@ my_color1 = Color(1, 0, 0, 1)
 my_color2 = Color(0.513726, 0, 1, 1)
 my_color3 = Color(0, 1, 0, 1)
 my_color4 = Color(1, 0, 1, 1)
+
+[node name="Machine" type="Node" parent="."]
+script = ExtResource("5_pn7s0")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Machine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05923, 0)
+script = ExtResource("5_bajyu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Machine/CharacterBody3D"]
+shape = SubResource("BoxShape3D_aehs0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Machine/CharacterBody3D"]
+material_override = ExtResource("1_ppfqy")
