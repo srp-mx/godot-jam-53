@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using FileAccess = Godot.FileAccess;
 
-public partial class Shell : Control
+public partial class Terminal : Control
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

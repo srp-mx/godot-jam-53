@@ -2,7 +2,7 @@ using Godot;
 public partial class Sections : Control
 {
     // Loaded scenes
-    PackedScene Shell = GD.Load<PackedScene>("res://shell.tscn");
+    PackedScene Shell = GD.Load<PackedScene>("res://terminal.tscn");
 	
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -35,7 +35,7 @@ public partial class Sections : Control
         }
         else
         {
-            Control shell = GetNode<Control>("Shell Node");
+            Control shell = GetNode<Control>("Terminal Node");
             shell.QueueFree();
         }
     }

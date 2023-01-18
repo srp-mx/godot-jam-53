@@ -1,22 +1,22 @@
 [gd_scene load_steps=2 format=3 uid="uid://c15amxo651fs8"]
 
-[ext_resource type="Script" path="res://Shell.cs" id="1_bvht3"]
+[ext_resource type="Script" path="res://Terminal.cs" id="1_dn24f"]
 
-[node name="Shell Node" type="Control"]
+[node name="Terminal Node" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bvht3")
+script = ExtResource("1_dn24f")
 metadata/_edit_lock_ = true
 
 [node name="Open File" type="FileDialog" parent="."]
 title = "Open a File"
 size = Vector2i(800, 500)
 unresizable = true
-ok_button_text = "Abrir"
+ok_button_text = "Open"
 file_mode = 0
 
 [node name="Save As File" type="FileDialog" parent="."]
