@@ -21,7 +21,9 @@ public partial class Machine : Node
 
         task = Task.Factory.StartNew<bool>(() => 
         {
+            debugLog("inside tsk");
             bool wouldContinue = currInstruction.MoveNext();
+            debugLog("would continue " + wouldContinue.ToString());
             instructionPtr = (int)currInstruction.Current;
             if (!wouldContinue)
             {
@@ -49,7 +51,7 @@ public partial class Machine : Node
                 return false;
 
             ended = !task.Result;
-            if (ended) debugLog("[ENDED PROGRAM]\n" + code.GetExitStatus().ToString());
+            //if (ended) debugLog("[ENDED PROGRAM]\n" + code.GetExitStatus().ToString());
             return false;
         }
 

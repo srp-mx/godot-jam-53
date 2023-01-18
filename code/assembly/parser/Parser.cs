@@ -217,7 +217,9 @@ public class Parser
         NextPos.CopyTo(CurrPos);
 
         nextToken = lexer.GetToken();
+        ExternDebug.DBPrint("Token: " + nextToken.Value.ToString());
         lexer.Text.CopyTo(NextPos);
+        ExternDebug.DBPrint("Txt: " +  NextPos.AsStr());
 
         if (lastToken == null) return advanceToken();
         return lastToken;

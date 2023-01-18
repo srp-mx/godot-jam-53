@@ -15,7 +15,10 @@
       <Content Include="algorithm\**"/>
       <Compile Remove="monads\**"/>
       <Content Include="monads\**"/>
+      <Compile Remove="utils\**"/>
+      <Content Include="utils\**"/>
       <ProjectReference Include="assembly\Assembly.csproj" />
+      <ProjectReference Include="utils\Utils.csproj" />
   </ItemGroup>
 
 </Project>

@@ -14,6 +14,7 @@
       <Folder Include=".\parser\" />
       <ProjectReference Include="..\algorithm\Algorithm.csproj"/>
       <ProjectReference Include="..\monads\Monads.csproj"/>
+      <ProjectReference Include="..\utils\Utils.csproj" />
   </ItemGroup>
 
 </Project>

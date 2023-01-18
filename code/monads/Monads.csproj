@@ -8,6 +8,7 @@
 
   <ItemGroup>
       <!--<Compile Include=".\*.cs"/>-->
+      <ProjectReference Include="..\utils\Utils.csproj" />
   </ItemGroup>
 
 </Project>

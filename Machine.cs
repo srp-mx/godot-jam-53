@@ -39,23 +39,45 @@ public partial class Machine : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+        Game.ExternDebug.printer = str => GD.Print(str);
         machineCtor();
         // TODO(srp): this has to get fed
         string testProgram = @"
 
 ; comment
 WAIT 20
+WAIT 0x14
 HLT
 
 ";
         compileProgram(testProgram);
+        debugLogCode();
 	}
-
-    private void debugLog(string s) => GD.Print(s);
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
         StepCode();
 	}
+
+    private void debugLog(string s) => GD.Print(s);
+
+    private void debugLogCode()
+    {
+        debugLog("");
+        debugLog("=== DEBUGGING COMPILED CODE ===");
+        debugLog("");
+        debugLog($"Is code null? {(code is null).ToString()}");
+        debugLog("");
+        debugLog("Display ints");
+        for (int y = 0; y < 16; y++)
+        {
+            string line = "";
+            for (int x = 0; x < 16; x++)
+            {
+                line +=  (code.MethodArea[16*y + x].DisplayInt).ToString("X2") + " ";
+            }
+            debugLog(line);
+        }
+    }
 }

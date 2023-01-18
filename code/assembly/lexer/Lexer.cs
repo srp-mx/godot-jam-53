@@ -77,7 +77,8 @@ number_prefix:
 
             while (Char.IsNumber(advanceChar()) || isHex)
             {
-                if (!isHex)
+                //if (!isHex)
+                if (Char.IsNumber(lastChar))
                 {
                     wordLength++;
                     continue;
@@ -91,6 +92,8 @@ number_prefix:
                     case 'B':
                     case 'c':
                     case 'C':
+                    case 'd':
+                    case 'D':
                     case 'e':
                     case 'E':
                     case 'f':
