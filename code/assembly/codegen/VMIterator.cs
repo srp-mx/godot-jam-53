@@ -56,7 +56,6 @@ public partial class CompiledCode
 
             if (target.MethodArea[instrPtr].GetParamInfo().GetParamType() != ParamInfo.ParamType.None)
             {
-                // TODO: address is assigned but it's parameter
                 var instrQuery = sets.Get(target.MethodArea[instrPtr].GetParamInfo().Get(), availSets);
                 var instr = instrQuery.Match(x=>x, ()=>null);
                 if (instr is null)

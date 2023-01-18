@@ -17,6 +17,14 @@ public partial class CompiledCode : IEnumerable
     private InstructionSets sets;
     private ICollection<InstructionSets.Available> availSets;
 
+    public CompiledCode()
+    {
+        for(int i = 0; i < MethodArea.Length; i++)
+        {
+            MethodArea[i] = new(MethodArea, i);
+        }
+    }
+
     public void Reset()
     {
         codegenPtr = 0;

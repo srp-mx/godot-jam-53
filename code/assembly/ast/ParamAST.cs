@@ -30,6 +30,8 @@ public class ParamAST : ASTNode
         if (myBlock.GetParamInfo().GetParamType() != ParamInfo.ParamType.Label)
             return 0; // Fine, just skip since it's not promised to be a label
 
+        ExternDebug.DBPrint("Label pass: " + content);
+
         var paramInfo = myBlock.GetParamInfo();
 
         // NOTE(srp): We already established that this label exists 
@@ -39,6 +41,7 @@ public class ParamAST : ASTNode
         mapping: labelDir =>
         {
             paramInfo.SetLabelAddr(labelDir);
+            ExternDebug.DBPrint("labelDir: " + labelDir);
             return labelDir;
         }, $"[ERROR][DEV]: The label '{content}' was accepted earlier, but it was invalid at LabelPass.\n"
         );
@@ -47,6 +50,7 @@ public class ParamAST : ASTNode
     // TODO(srp): check thoroughly
     public override Errable<ASTNode> Codegen(CompiledCode target)
     {
+        ExternDebug.DBPrint("Generating param " + content);
         myBlockIdx = target.codegenPtr;
 
         ref MethodBlock myBlock = ref target.MethodArea[target.codegenPtr++];
@@ -58,6 +62,8 @@ public class ParamAST : ASTNode
         {
             ReadOnlySpan<char> addressCandidate = content.AsSpan(2, content.Length - 2);
             Errable<int> addressQuery = parseNum(ref addressCandidate);
+            Errable<int> regAddressQuery = parseReg(ref addressCandidate);
+            // TODO(srp) if it fails, parse register as address dest
 
             string pos = LexStr.FormatPosition(srcColumn, srcLine);
             return addressQuery.ErrableMap<ASTNode>(
@@ -75,10 +81,29 @@ public class ParamAST : ASTNode
                     paramInfo.SetStackAddress(addr);
                     break;
                 default:
-                    return Errable<ASTNode>.Err($"[ERROR] {pos}: Parameter looks like a memory address (surrounded by square brackets) but it's not.\n\tMemory addresses look like this: [F14], [H62], [S7], where:\n\t\tF goes to the instruction memory,\n\t\tH goes to the heap memory, and\n\t\tS goes to the stack memory.");
+                    return regAddressQuery.ErrableMap<ASTNode>(
+                    mapping: regAddr =>
+                    {
+                        switch (content.ToUpper()[1]) // [x???]
+                        {
+                        case 'F':
+                            paramInfo.SetRegMethodAddress(regAddr);
+                            break;
+                        case 'H':
+                            paramInfo.SetRegHeapAddress(regAddr);
+                            break;
+                        case 'S':
+                            paramInfo.SetRegStackAddress(regAddr);
+                            break;
+                        default:        
+                            return Errable<ASTNode>.Err($"[ERROR] {pos}: Parameter looks like a memory address (surrounded by square brackets) but it's not.\n\tMemory addresses look like this: [F14], [H62], [S7], where:\n\t\tF goes to the instruction memory,\n\t\tH goes to the heap memory, and\n\t\tS goes to the stack memory.");
+                        }
+                        return next.Codegen(target);
+                    }
+                    );
                 }
                 return next.Codegen(target);
-            }, $"[ERROR] {pos}: Parameter looks like a memory address (surrounded by square brackets) but it's not.\n\tMemory addresses look like this: [F14], [H62], [S7], where:\n\t\tF goes to the instruction memory,\n\t\tH goes to the heap memory, and\n\t\tS goes to the stack memory.\n");
+            });//, $"[ERROR] {pos}: Parameter looks like a memory address (surrounded by square brackets) but it's not.\n\tMemory addresses look like this: [F14], [H62], [S7], where:\n\t\tF goes to the instruction memory,\n\t\tH goes to the heap memory, and\n\t\tS goes to the stack memory.\n");
         }
 
         // Check registers
@@ -146,5 +171,20 @@ public class ParamAST : ASTNode
             string pos = LexStr.FormatPosition(srcColumn, srcLine);
             return Errable<int>.Err($"[PROBLEM] {pos}: '{substring.ToString()}' is not a number.");
         }
+    }
+
+    private Errable<int> parseReg(ref ReadOnlySpan<char> substring)
+    {
+        string regCandidate = substring.ToString();
+        int regAddr;
+        for (int i = 0; i < (int)Register.None; i++)
+        {
+            if (((Register)i).ToString() == regCandidate)
+            {
+                return i;
+            }
+        }
+        string pos = LexStr.FormatPosition(srcColumn, srcLine);
+        return Errable<int>.Err($"[PROBLEM] {pos}: '{regCandidate}' is not a register.");
     }
 }

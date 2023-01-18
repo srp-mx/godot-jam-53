@@ -33,6 +33,7 @@ public class InstructionAST : ASTNode
         ref MethodBlock myBlock = ref target.MethodArea[target.codegenPtr++];
         myBlock.Clean();
         myBlock.SetInstruction(spec, srcLine, srcColumn);
+        ExternDebug.DBPrint("Generated instruction " + spec.Name);
         return next.Codegen(target);
     }
 }

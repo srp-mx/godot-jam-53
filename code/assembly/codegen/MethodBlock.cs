@@ -12,12 +12,17 @@ public struct MethodBlock
     private ExecuteInstruction instruction = VOID;
     private ParamInfo paramInfo;
 
-    public MethodBlock()
+    private MethodBlock[] table;
+    private int position;
+
+    public MethodBlock(MethodBlock[] table, int position)
     {
+        this.position = position;
+        this.table = table;
         sourceLine = -1;
         sourceColumn = -1;
         instruction = VOID;
-        paramInfo = new ParamInfo();
+        paramInfo = new ParamInfo(table, position);
         DisplayInt = 0;
     }
     
@@ -27,15 +32,12 @@ public struct MethodBlock
         sourceLine = 0;
         sourceColumn = 0;
         instruction = VOID;
-        paramInfo = paramInfo ?? new ParamInfo();
+        paramInfo = paramInfo ?? new ParamInfo(table, position);
         paramInfo.Clean();
     }
 
     public ParamInfo GetParamInfo()
     {
-        if (paramInfo.GetParamType() != ParamInfo.ParamType.None)
-            DisplayInt = paramInfo.Get(); // NOTE(srp): TODO(srp): Hacky and prone to fail
-
         return paramInfo;
     }
 
@@ -43,6 +45,8 @@ public struct MethodBlock
     {
         bool isNotParam = paramInfo is null || paramInfo.GetParamType() == ParamInfo.ParamType.None;
         bool isNotInstr = instruction is null || instruction == VOID;
+        ExternDebug.DBPrint("paramtype " + ((paramInfo is null) ? "null" : paramInfo.GetParamType().ToString()) );
+        ExternDebug.DBPrint("instr " + ((isNotInstr) ? "not" : "yes"));
         return isNotParam && isNotInstr;
     }
 

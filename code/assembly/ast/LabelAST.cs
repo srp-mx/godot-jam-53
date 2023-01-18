@@ -44,6 +44,7 @@ public class LabelAST : ASTNode
         // NOTE(srp): We can add without fear because when we built the
         // AST we made sure that there are no duplicates.
         lh.Add(identifier, target.codegenPtr);
+        ExternDebug.DBPrint("Mapping labels '" + identifier + "' to " + target.codegenPtr);
         return next.Codegen(target);
     }
 }

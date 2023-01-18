@@ -32,7 +32,7 @@ public partial class Machine : Node
     private void codeLog(string str)
     {
         // TODO(srp): show to player
-        GD.Print(str);
+        GD.Print("CODELOG: " + str.Replace("\n", "\n         "));
         //throw new NotImplementedException("TODO Machine.cs  codeLog method");
     }
 
@@ -45,22 +45,47 @@ public partial class Machine : Node
         string testProgram = @"
 
 ; comment
-WAIT 20
-WAIT 0x14
-HLT
+
+label1:
+    call label1
 
 ";
         compileProgram(testProgram);
         debugLogCode();
+        Timer timer = this.GetNode<Timer>("CpuClock");
+        timer.Connect("timeout", new Callable(this, "on_timeout"));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-        StepCode();
 	}
 
     private void debugLog(string s) => GD.Print(s);
+
+    private void stackPush(int x, out string err)
+    {
+        if (stackPtr == 255)
+        {
+            err = "[PROBLEM]: Stack overflow!";
+            return;
+        }
+
+        err = "";
+        stack[stackPtr++] = x;
+    }
+
+    private int stackPop(out string err)
+    {
+        if (stackPtr == 0)
+        {
+            err = "[PROBLEM]: Stack underflow!";
+            return -1;
+        }
+
+        err = "";
+        return stack[--stackPtr];
+    }
 
     private void debugLogCode()
     {
