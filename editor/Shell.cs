@@ -3,13 +3,14 @@ using System;
 using System.IO;
 using FileAccess = Godot.FileAccess;
 
-public partial class Editor : Control
+public partial class Shell : Control
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		//Menu button
 		MenuButton menuFile = GetNode<MenuButton>("Menu File");
+		menuFile.GetPopup().AddItem("New File");
 		menuFile.GetPopup().AddItem("Open File");
 		menuFile.GetPopup().AddItem("Save As File");
 		Callable self = new Callable(this, "_on_item_pressed");
@@ -34,9 +35,13 @@ public partial class Editor : Control
 			popupSave.PopupCentered(size);
 			popupSave.FileSelected += PopupSaveOnFileSelected;
 		}
+		else if (itemName == "New File")
+		{
+			TextEdit editor = GetNode<TextEdit>("TextEditor");
+			editor.Text = "";
+		}
 	}
 
-	
 	private void PopupOpenOnFileSelected(string path)
 	{
 		var file = FileAccess.Open(path, FileAccess.ModeFlags.Read);
@@ -49,6 +54,8 @@ public partial class Editor : Control
 		TextEdit editor = GetNode<TextEdit>("TextEditor");
 		string content = editor.Text;
 		file.StoreString(content);
+		file.Flush();
+		editor.Text = "";
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
