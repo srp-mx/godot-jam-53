@@ -15,9 +15,9 @@ public partial class PostProcessColors : ColorRect
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-        (this.GetMaterial() as ShaderMaterial).SetShaderParameter("my_color1", my_color1 );
-        (this.GetMaterial() as ShaderMaterial).SetShaderParameter("my_color2", my_color2 );
-        (this.GetMaterial() as ShaderMaterial).SetShaderParameter("my_color3", my_color3 );
-        (this.GetMaterial() as ShaderMaterial).SetShaderParameter("my_color4", my_color4 );
+        (Material as ShaderMaterial).SetShaderParameter("my_color1", my_color1 );
+        (Material as ShaderMaterial).SetShaderParameter("my_color2", my_color2 );
+        (Material as ShaderMaterial).SetShaderParameter("my_color3", my_color3 );
+        (Material as ShaderMaterial).SetShaderParameter("my_color4", my_color4 );
 	}
 }
