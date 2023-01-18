@@ -35,23 +35,28 @@ public partial class Machine : Node
 
     private bool CanRun()
     {
+        GD.Print("checking null instruction");
         // we have to compile and get it first
         if (currInstruction is null)
             return false;
 
+        GD.Print("checking rejected instruction");
         // if the code is valid
         if (codeRejected)
             return false;
 
+        GD.Print("checking null task");
         // if there's an instruction running, return
         // additionally if it's completed, set ended flag
         if (task is not null)
         {
+            GD.Print("checking task completed");
             if (!task.IsCompleted)
                 return false;
 
             ended = !task.Result;
-            //if (ended) debugLog("[ENDED PROGRAM]\n" + code.GetExitStatus().ToString());
+            if (ended) debugLog("[ENDED PROGRAM]\n" + code.GetExitStatus().ToString());
+            else task = null;
             return false;
         }
 
