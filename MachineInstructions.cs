@@ -53,11 +53,11 @@ public partial class Machine : Node
         {
             string pos = block.GetSourcePos();
             err = $"[ERROR] {pos}: {iOobError}";
-            return false;
+            return true;
         }
 
         err = "";
-        return true;
+        return false;
     }
 
     private bool moveOneExit(MethodBlock[] fmem, ref int iptr, out string err)
@@ -90,9 +90,11 @@ public partial class Machine : Node
     {
         int timeMultiplier = 100; // tenths of a second
 
+        GD.Print("A");
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
 
+        GD.Print("B");
         ParamInfo param1 = fmem[++iptr].GetParamInfo();
         if (param1.GetParamType() == ParamInfo.ParamType.Value)
         {
@@ -102,6 +104,7 @@ public partial class Machine : Node
             debugLog("EXEC WAIT, finished");
             return moveOneExit(fmem, ref iptr, out err);
         }
+        GD.Print("C");
 
         int addrval = getValueFromAddr(param1, out err);
         if (err != "")
@@ -109,6 +112,7 @@ public partial class Machine : Node
             err = $"[ERROR] {fmem[iptr].GetSourcePos()}: We can only wait a constant or a value in a memory address. \n{err}";
             return false;
         }
+        GD.Print("D");
 
         iptr++; // go to next instruction
         return true;

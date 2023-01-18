@@ -6,7 +6,7 @@ public delegate bool ExecuteInstruction(MethodBlock[] mem, ref int instructionPt
 
 public struct MethodBlock
 {
-    public int DisplayInt { get; private set; }
+    public int DisplayInt;
     private int sourceLine;
     private int sourceColumn;
     private ExecuteInstruction instruction = VOID;
@@ -14,11 +14,11 @@ public struct MethodBlock
 
     public MethodBlock()
     {
-        DisplayInt = 0;
         sourceLine = -1;
         sourceColumn = -1;
         instruction = VOID;
         paramInfo = new ParamInfo();
+        DisplayInt = 0;
     }
     
     public void Clean()
@@ -31,7 +31,14 @@ public struct MethodBlock
         paramInfo.Clean();
     }
 
-    public ParamInfo GetParamInfo() => paramInfo;
+    public ParamInfo GetParamInfo()
+    {
+        if (paramInfo.GetParamType() != ParamInfo.ParamType.None)
+            DisplayInt = paramInfo.Get(); // NOTE(srp): TODO(srp): Hacky and prone to fail
+
+        return paramInfo;
+    }
+
     public bool IsUnassigned()
     {
         bool isNotParam = paramInfo is null || paramInfo.GetParamType() == ParamInfo.ParamType.None;
