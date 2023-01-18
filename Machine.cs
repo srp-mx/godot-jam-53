@@ -46,8 +46,12 @@ public partial class Machine : Node
 
 ; comment
 
-label1:
-    call label1
+mov [h10], 0xCC
+mov [s10] [h10]
+mov A, 0x66
+mov B, [s10]
+mov [f255], A
+hlt
 
 ";
         compileProgram(testProgram);
@@ -104,5 +108,55 @@ label1:
             }
             debugLog(line);
         }
+    }
+
+    private void debugLogMem()
+    {
+        debugLog("");
+        debugLog("REGS");
+        string regstr = "";
+        for (int i = 0; i < (int)Register.None; i++)
+        {
+            regstr += $"[{((Register)i).ToString()}: {registers[i].ToString("X2")}] ";
+        }
+        debugLog(regstr);
+
+        debugLog("");
+        debugLog("INSTR");
+        debugLog("----");
+        for (int y = 0; y < 16; y++)
+        {
+            string line = "";
+            for (int x = 0; x < 16; x++)
+            {
+                line +=  (code.MethodArea[16*y + x].DisplayInt).ToString("X2") + " ";
+            }
+            debugLog(line);
+        }
+        debugLog("");
+        debugLog("STACK");
+        debugLog("----");
+        for (int y = 0; y < 16; y++)
+        {
+            string line = "";
+            for (int x = 0; x < 16; x++)
+            {
+                line +=  (stack[16*y + x]).ToString("X2") + " ";
+            }
+            debugLog(line);
+        }
+        debugLog("");
+        debugLog("HEAP");
+        debugLog("----");
+        for (int y = 0; y < 16; y++)
+        {
+            string line = "";
+            for (int x = 0; x < 16; x++)
+            {
+                line +=  (heap[16*y + x]).ToString("X2") + " ";
+            }
+            debugLog(line);
+        }
+        debugLog("");
     }
 }

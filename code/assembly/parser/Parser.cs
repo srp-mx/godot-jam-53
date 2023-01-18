@@ -104,7 +104,6 @@ public class Parser
             {
                 
                 return Errable<InstructionAST>.ErrableBiMap(
-                // TODO(srp): this method vvv
                 InstructionAST.Generate(spec, initCol, initLine, parameters.GetHead()
                     .ErrableMap<ASTNode>(paramAst => paramAst as ASTNode)), 
                 parsePrimary(),
@@ -129,11 +128,15 @@ public class Parser
         ErrableList<ParamAST> parameters = new();
         while (NextPos.Line == CurrPos.Line && nextToken.Value != TokenValue.EOF)
         {
-            parameters.Append(parseParam()); // NOTE(srp): Not recursive, handle with care
+            var param = parseParam();
+            ExternDebug.DBPrint("curpos " + CurrPos.AsStr());
+            ExternDebug.DBPrint("append param " + param.ToString());
+            parameters.Append(param); // NOTE(srp): Not recursive, handle with care
 
             // Eat optional ',' after parameters
             if (nextToken.Character == ',')
             {
+                ExternDebug.DBPrint("skip comma");
                 advanceToken();
             }
         }

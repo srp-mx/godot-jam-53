@@ -60,7 +60,8 @@ public class ParamAST : ASTNode
         // It is some kind of "pointer" (&value)
         if (BracketRegex.IsMatch(content))
         {
-            ReadOnlySpan<char> addressCandidate = content.AsSpan(2, content.Length - 2);
+            ReadOnlySpan<char> addressCandidate = content.AsSpan(2, content.Length - 3);
+            ExternDebug.DBPrint("addr candidate: " + addressCandidate.ToString());
             Errable<int> addressQuery = parseNum(ref addressCandidate);
             Errable<int> regAddressQuery = parseReg(ref addressCandidate);
             // TODO(srp) if it fails, parse register as address dest

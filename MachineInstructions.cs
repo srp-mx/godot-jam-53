@@ -43,6 +43,8 @@ public partial class Machine : Node
         instructions.Add(new("BIND_KEY", 24, 2, BIND_KEY), InstructionSets.Available.Basic);
         instructions.Add(new("SHOOT", 25, 0, SHOOT), InstructionSets.Available.Basic);
         instructions.Add(new("COOL", 26, 0, COOL), InstructionSets.Available.Basic);
+        instructions.Add(new("PUSH", 27, 1, PUSH), InstructionSets.Available.Basic);
+        instructions.Add(new("POP", 28, 1, POP), InstructionSets.Available.Basic);
     }
 
     private int getValueFromAddr(ParamInfo param, out string err)
@@ -334,6 +336,7 @@ public partial class Machine : Node
             return false;
 
         iptr++;
+        debugLogMem();
         return true;
     }
 
@@ -498,6 +501,22 @@ public partial class Machine : Node
     {
         throw new NotImplementedException();
         if (errorParamBounds(iptr, 0, ref fmem[iptr], out err))
+                return false;
+
+    }
+
+    private bool PUSH(MethodBlock[] fmem, ref int iptr, out string err)
+    {
+        throw new NotImplementedException();
+        if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
+                return false;
+
+    }
+
+    private bool POP(MethodBlock[] fmem, ref int iptr, out string err)
+    {
+        throw new NotImplementedException();
+        if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
 
     }

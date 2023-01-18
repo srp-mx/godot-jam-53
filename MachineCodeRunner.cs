@@ -55,7 +55,8 @@ public partial class Machine : Node
 
             ended = !task.Result;
             if (ended) codeLog("[ENDED PROGRAM]");
-            else task = null; // making this null allows continuous running
+            else task = null; // making this null allows continuous running, since the task's 
+                              // IsCompleted attribute gets wiped
             return false;
         }
 
