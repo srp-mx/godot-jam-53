@@ -41,9 +41,17 @@ public partial class Machine : Node
 	{
         machineCtor();
         // TODO(srp): this has to get fed
-        string testProgram = @"; comment\nWAIT 100\nHLT";
+        string testProgram = @"
+
+; comment
+WAIT 20
+HLT
+
+";
         compileProgram(testProgram);
 	}
+
+    private void debugLog(string s) => GD.Print(s);
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)

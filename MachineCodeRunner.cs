@@ -49,9 +49,11 @@ public partial class Machine : Node
                 return false;
 
             ended = !task.Result;
+            if (ended) debugLog("[ENDED PROGRAM]\n" + code.GetExitStatus().ToString());
             return false;
         }
 
+        debugLog("conditions are a-ok");
         return true;
     }
 

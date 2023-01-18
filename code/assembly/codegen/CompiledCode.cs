@@ -14,6 +14,9 @@ public partial class CompiledCode : IEnumerable
     private string runtimeError = "";
     private static readonly string success = "[SUCCESS]";
 
+    private InstructionSets sets;
+    private ICollection<InstructionSets.Available> availSets;
+
     public void Reset()
     {
         codegenPtr = 0;
@@ -22,6 +25,16 @@ public partial class CompiledCode : IEnumerable
         {
             block.Clean();
         }
+    }
+
+    public void SetInstructionSets(InstructionSets sets)
+    {
+        this.sets = sets;
+    }
+
+    public void SetAvailableSets(ICollection<InstructionSets.Available> availSets)
+    {
+        this.availSets = availSets;
     }
 
     public ReadOnlySpan<char> GetExitStatus()
@@ -40,6 +53,8 @@ public partial class CompiledCode : IEnumerable
     {
         var it = new VMIterator(this, that => { OnRecompile -= that.OnRecompile; });
         OnRecompile += it.OnRecompile;
+        it.SetInstructionSets(sets);
+        it.SetAvailableSets(availSets);
         return it;
     }
 }

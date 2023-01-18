@@ -12,6 +12,8 @@ public class InstructionSets
     }
 
     private Dictionary<string, InstructionSpec> Basic = new();
+    private InstructionSpec[] instructionsByIndex = new InstructionSpec[256];
+
     private Available[] allSets;
 
     public InstructionSets()
@@ -23,13 +25,14 @@ public class InstructionSets
 
     public void Add(InstructionSpec instruction, Available iSet)
     {
+        instructionsByIndex[instruction.DisplayInt] = instruction;
         switch (iSet)
         {
             case Available.Basic:
                 Basic.Add(instruction.Name.ToUpper(), instruction);
                 break;
             default:
-                throw new Exception("Instruction set missing, check InstructionSet.cs to check how to add it properly.");
+                throw new Exception("Instruction set missing, check InstructionSets.cs to check how to add it properly.");
         }
     }
 
@@ -51,6 +54,32 @@ public class InstructionSets
         }
 
         return Errable<InstructionSpec>.Err($"[PROBLEM]: Instruction '{instructionName}' not found!");
+    }
+
+    public Errable<InstructionSpec> Get(int instructionNum, IEnumerable<Available> setsAvailable)
+    {
+        if (instructionNum < 0 || instructionNum >= instructionsByIndex.Length)
+        {
+            return Errable<InstructionSpec>.Err($"[PROBLEM]: Instruction number'{instructionNum}' is out of bounds!");
+        }
+
+        if (instructionsByIndex[instructionNum] is null)
+        {
+            return Errable<InstructionSpec>.Err($"[PROBLEM]: Instruction number'{instructionNum}' not found!");
+        }
+
+        string instructionName = instructionsByIndex[instructionNum].Name.ToUpper();
+
+        foreach (var set in GetSets(setsAvailable))
+        {
+            if (!set.TryGetValue(instructionName, out InstructionSpec? instruction) || instruction is null)
+            {
+                continue;
+            }
+            return instruction;
+        }
+
+        return Errable<InstructionSpec>.Err($"[PROBLEM]: Instruction number'{instructionNum}' not found!");
     }
    
     public string GetSuggestions(string mistyped, IEnumerable<Available> setsAvailable)

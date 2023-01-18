@@ -1,3 +1,13 @@
+/*
+TODO(srp):
+For some reason we could compile HLT and WAIT before we
+ever added the permissions to the Basic instruction set,
+so check why that happened and if it was fixed accidentally
+or what, since that was no longer the case by the time CALL
+and RET were added. This all must have happened at compile time.
+ */
+
+
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -17,6 +27,8 @@ public partial class Machine : Node
     private void initParser()
     {
         parser = new(instructions);
+        code.SetInstructionSets(instructions);
+        code.SetAvailableSets(availableInstructionSets);
     }
 
     private void compileProgram(string program)
@@ -50,7 +62,9 @@ public partial class Machine : Node
             }
         }
 
-        codeLog("[SUCCESS]");
+        currInstruction = code.GetEnumerator();
+
+        codeLog("[COMPILE SUCCESSFUL]");
     }
 
     private T identity<T>(T x) => x;

@@ -59,7 +59,7 @@ public struct MethodBlock
 
     private static bool VOID(MethodBlock[] mem, ref int instructionPtr, out string exit)
     {
-        exit = "[ERROR]: Tried to execute unassigned instruction memory at runtime.";
+        exit = $"[ERROR] {mem[instructionPtr].GetSourcePos()}: Tried to execute unassigned instruction memory at runtime.";
         return false;
     }
 }
