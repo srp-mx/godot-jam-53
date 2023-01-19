@@ -65,10 +65,4 @@ public partial class Machine : Node
         return true;
     }
 
-    // controlled by CpuClock node
-    void on_timeout()
-    {
-        StepCode();
-    }
-
 }

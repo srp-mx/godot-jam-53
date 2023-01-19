@@ -5,12 +5,54 @@ using System.Collections.Generic;
 public partial class Machine : Node
 {
     bool[] keysDown = new bool[45];
-    public override void _Input(InputEvent @event)
+
+    private void checkKeys()
     {
-        if (@event is InputEventKey keyEvent)
-        {
-            keysDown[keyMapping(keyEvent.Keycode)] = keyEvent.Pressed;
-        }
+        keysDown[0] = Input.IsKeyPressed(Key.Kp0) || Input.IsKeyPressed(Key.Key0);
+        keysDown[1] = Input.IsKeyPressed(Key.Kp1) || Input.IsKeyPressed(Key.Key1);
+        keysDown[2] = Input.IsKeyPressed(Key.Kp2) || Input.IsKeyPressed(Key.Key2);
+        keysDown[3] = Input.IsKeyPressed(Key.Kp3) || Input.IsKeyPressed(Key.Key3);
+        keysDown[4] = Input.IsKeyPressed(Key.Kp4) || Input.IsKeyPressed(Key.Key4);
+        keysDown[5] = Input.IsKeyPressed(Key.Kp5) || Input.IsKeyPressed(Key.Key5);
+        keysDown[6] = Input.IsKeyPressed(Key.Kp6) || Input.IsKeyPressed(Key.Key6);
+        keysDown[7] = Input.IsKeyPressed(Key.Kp7) || Input.IsKeyPressed(Key.Key7);
+        keysDown[8] = Input.IsKeyPressed(Key.Kp8) || Input.IsKeyPressed(Key.Key8);
+        keysDown[9] = Input.IsKeyPressed(Key.Kp9) || Input.IsKeyPressed(Key.Key9);
+        keysDown[10] = Input.IsKeyPressed(Key.A);
+        keysDown[11] = Input.IsKeyPressed(Key.B);
+        keysDown[12] = Input.IsKeyPressed(Key.C);
+        keysDown[13] = Input.IsKeyPressed(Key.D);
+        keysDown[14] = Input.IsKeyPressed(Key.E);
+        keysDown[15] = Input.IsKeyPressed(Key.F); 
+        keysDown[16] = Input.IsKeyPressed(Key.G);
+        keysDown[17] = Input.IsKeyPressed(Key.H);
+        keysDown[18] = Input.IsKeyPressed(Key.I);
+        keysDown[19] = Input.IsKeyPressed(Key.J);
+        keysDown[20] = Input.IsKeyPressed(Key.K);
+        keysDown[21] = Input.IsKeyPressed(Key.L);
+        keysDown[22] = Input.IsKeyPressed(Key.M);
+        keysDown[23] = Input.IsKeyPressed(Key.N);
+        keysDown[24] = Input.IsKeyPressed(Key.O);
+        keysDown[25] = Input.IsKeyPressed(Key.P);
+        keysDown[26] = Input.IsKeyPressed(Key.Q);
+        keysDown[27] = Input.IsKeyPressed(Key.R);
+        keysDown[28] = Input.IsKeyPressed(Key.S);
+        keysDown[29] = Input.IsKeyPressed(Key.T);
+        keysDown[30] = Input.IsKeyPressed(Key.U);
+        keysDown[31] = Input.IsKeyPressed(Key.V);
+        keysDown[32] = Input.IsKeyPressed(Key.W);
+        keysDown[33] = Input.IsKeyPressed(Key.X);
+        keysDown[34] = Input.IsKeyPressed(Key.Y);
+        keysDown[35] = Input.IsKeyPressed(Key.Z);
+        keysDown[36] = Input.IsKeyPressed(Key.Space);
+        keysDown[37] = Input.IsKeyPressed(Key.Enter);
+        keysDown[38] = Input.IsKeyPressed(Key.Tab);
+        keysDown[39] = Input.IsKeyPressed(Key.Shift);
+        keysDown[40] = Input.IsKeyPressed(Key.Up);
+        keysDown[41] = Input.IsKeyPressed(Key.Down);
+        keysDown[42] = Input.IsKeyPressed(Key.Right);
+        keysDown[43] = Input.IsKeyPressed(Key.Left);
+        keysDown[44] = false;
     }
 
     private int keyMapping(Key k) => k switch

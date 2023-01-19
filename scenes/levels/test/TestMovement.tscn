@@ -66,7 +66,3 @@ shape = SubResource("BoxShape3D_aehs0")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Machine/CharacterBody3D"]
 material_override = ExtResource("1_ppfqy")
-
-[node name="CpuClock" type="Timer" parent="Machine"]
-wait_time = 0.001
-autostart = true

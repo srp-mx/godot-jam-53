@@ -5,6 +5,9 @@ using Game.Assembly;
 
 public partial class Machine : Node
 {
+    [Export]
+    public long clockPeriod = 1;
+    private long clockTime = 0;
     string program;
     int[] stack = new int[256];
     int stackPtr = 0;
@@ -58,13 +61,18 @@ press:
 ";
         compileProgram(testProgram);
         debugLogCode();
-        Timer timer = this.GetNode<Timer>("CpuClock");
-        timer.Connect("timeout", new Callable(this, "on_timeout"));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+        if (clockTime % clockPeriod == 0)
+        {
+            checkKeys();
+            StepCode();
+        }
+
+        clockTime++;
 	}
 
     private void debugLog(string s){} //=> GD.Print(s);

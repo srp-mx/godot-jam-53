@@ -36,15 +36,17 @@ public partial class Machine : Node
         instructions.Add(new("INTERACT", 17, 0, INTERACT), InstructionSets.Available.Basic);
         instructions.Add(new("MOV_R", 18, 1, MOV_R), InstructionSets.Available.Basic);
         instructions.Add(new("MOV_L", 19, 1, MOV_L), InstructionSets.Available.Basic);
-        instructions.Add(new("JUMP_UP", 20, 1, JUMP_UP), InstructionSets.Available.Basic);
-        instructions.Add(new("FLY_UP", 21, 1, FLY_UP), InstructionSets.Available.Basic);
-        instructions.Add(new("FLY_DOWN", 22, 1, FLY_DOWN), InstructionSets.Available.Basic);
-        instructions.Add(new("FALL", 23, 0, FALL), InstructionSets.Available.Basic);
-        instructions.Add(new("CMPKEY", 24, 1, CMPKEY), InstructionSets.Available.Basic);
-        instructions.Add(new("SHOOT", 25, 0, SHOOT), InstructionSets.Available.Basic);
-        instructions.Add(new("COOL", 26, 0, COOL), InstructionSets.Available.Basic);
-        instructions.Add(new("PUSH", 27, 1, PUSH), InstructionSets.Available.Basic);
-        instructions.Add(new("POP", 28, 1, POP), InstructionSets.Available.Basic);
+        instructions.Add(new("MOV_F", 20, 1, MOV_F), InstructionSets.Available.Basic);
+        instructions.Add(new("MOV_B", 21, 1, MOV_B), InstructionSets.Available.Basic);
+        instructions.Add(new("JUMP_UP", 22, 1, JUMP_UP), InstructionSets.Available.Basic);
+        instructions.Add(new("FLY_UP", 23, 1, FLY_UP), InstructionSets.Available.Basic);
+        instructions.Add(new("FLY_DOWN", 24, 1, FLY_DOWN), InstructionSets.Available.Basic);
+        instructions.Add(new("FALL", 25, 0, FALL), InstructionSets.Available.Basic);
+        instructions.Add(new("CMPKEY", 26, 1, CMPKEY), InstructionSets.Available.Basic);
+        instructions.Add(new("SHOOT", 27, 0, SHOOT), InstructionSets.Available.Basic);
+        instructions.Add(new("COOL", 28, 0, COOL), InstructionSets.Available.Basic);
+        instructions.Add(new("PUSH", 29, 1, PUSH), InstructionSets.Available.Basic);
+        instructions.Add(new("POP", 30, 1, POP), InstructionSets.Available.Basic);
     }
 
     private int getValueFromAddr(ParamInfo param, out string err)
@@ -630,6 +632,22 @@ public partial class Machine : Node
     }
 
     private bool MOV_L(MethodBlock[] fmem, ref int iptr, out string err)
+    {
+        throw new NotImplementedException();
+        if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
+                return false;
+
+    }
+
+    private bool MOV_F(MethodBlock[] fmem, ref int iptr, out string err)
+    {
+        throw new NotImplementedException();
+        if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
+                return false;
+
+    }
+
+    private bool MOV_B(MethodBlock[] fmem, ref int iptr, out string err)
     {
         throw new NotImplementedException();
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
