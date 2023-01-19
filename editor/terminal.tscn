@@ -4,13 +4,12 @@
 
 [node name="Terminal Node" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchor_right = 0.965278
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dn24f")
-metadata/_edit_lock_ = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Open File" type="FileDialog" parent="."]
 title = "Open a File"
@@ -26,12 +25,11 @@ unresizable = true
 
 [node name="Menu File" type="MenuButton" parent="."]
 anchors_preset = -1
-anchor_left = 0.0277778
-anchor_top = 0.0493827
-anchor_right = 0.0654514
-anchor_bottom = 0.0972222
-offset_left = 25.0
-offset_right = 16.6
+anchor_left = 0.0395221
+anchor_top = 0.0478395
+anchor_right = 0.0794118
+anchor_bottom = 0.095679
+offset_right = -8.40001
 scale = Vector2(1.24, 1)
 text = "File"
 metadata/_edit_use_anchors_ = true
@@ -39,12 +37,12 @@ metadata/_edit_use_anchors_ = true
 [node name="TextEditor" type="TextEdit" parent="."]
 editor_description = ">> TERMINAL"
 anchors_preset = -1
-anchor_left = 0.0494792
-anchor_top = 0.111111
-anchor_right = 0.48628
-anchor_bottom = 0.765636
+anchor_left = 0.0395221
+anchor_top = 0.0987654
+anchor_right = 0.504774
+anchor_bottom = 0.75329
 offset_right = 401.806
-offset_bottom = 24.8677
+offset_bottom = 24.8679
 scale = Vector2(0.556016, 0.944615)
 theme_override_font_sizes/font_size = 25
 placeholder_text = ">> Here u can write your code "
@@ -53,24 +51,32 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = -1
-anchor_left = 0.896701
-anchor_top = 0.0771605
-anchor_right = 0.977431
-anchor_bottom = 0.117284
+anchor_left = 0.833333
+anchor_top = 0.0478395
+anchor_right = 0.914063
+anchor_bottom = 0.087963
+offset_left = 68.3334
+offset_top = 1.0
+offset_right = 73.4991
+offset_bottom = 1.0
 text = "Instructions"
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = -1
-anchor_left = 0.896701
-anchor_top = 0.138889
-anchor_right = 0.97743
-anchor_bottom = 0.608025
+anchor_left = 0.833333
+anchor_top = 0.100309
+anchor_right = 0.921007
+anchor_bottom = 0.640432
+offset_left = 68.3334
+offset_top = 1.0
+offset_right = 68.3334
+offset_bottom = 1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer"]
-offset_right = 92.9999
-offset_bottom = 304.0
+offset_right = 97.4935
+offset_bottom = 350.0
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ScrollContainer"]
@@ -160,30 +166,30 @@ text = "coso"
 
 [node name="RAM" type="Label" parent="."]
 anchors_preset = -1
-anchor_left = 0.555556
-anchor_top = 0.0617284
-anchor_right = 0.590277
-anchor_bottom = 0.101852
+anchor_left = 0.536765
+anchor_top = 0.0478395
+anchor_right = 0.572355
+anchor_bottom = 0.087963
 text = "RAM"
 metadata/_edit_use_anchors_ = true
 
 [node name="Registers -Flags" type="Label" parent="."]
 anchors_preset = -1
-anchor_left = 0.555556
-anchor_top = 0.703704
-anchor_right = 0.664062
-anchor_bottom = 0.743827
+anchor_left = 0.536765
+anchor_top = 0.695988
+anchor_right = 0.651654
+anchor_bottom = 0.736111
 text = "Registers / Flags"
 metadata/_edit_use_anchors_ = true
 
 [node name="#Registers" type="GridContainer" parent="."]
 anchors_preset = -1
-anchor_left = 0.555556
-anchor_top = 0.765432
-anchor_right = 0.841529
-anchor_bottom = 0.851852
-offset_left = 6.10352e-05
-offset_right = -45.4401
+anchor_left = 0.536765
+anchor_top = 0.757716
+anchor_right = 0.839559
+anchor_bottom = 0.844136
+offset_top = -3.05176e-05
+offset_right = -45.44
 scale = Vector2(1.16, 1)
 columns = 9
 metadata/_edit_use_anchors_ = true
@@ -317,31 +323,30 @@ horizontal_alignment = 1
 
 [node name="Error Panel" type="Label" parent="."]
 anchors_preset = -1
-anchor_left = 0.0546875
-anchor_top = 0.790123
-anchor_right = 0.163194
-anchor_bottom = 0.830247
+anchor_left = 0.0367647
+anchor_top = 0.777778
+anchor_right = 0.145271
+anchor_bottom = 0.817902
 text = "Error Panel"
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchors_preset = -1
-anchor_left = 0.0546875
-anchor_top = 0.834877
-anchor_right = 0.552083
-anchor_bottom = 0.979938
+anchor_left = 0.0367647
+anchor_top = 0.817901
+anchor_right = 0.474265
+anchor_bottom = 0.962963
 text = "test"
 metadata/_edit_use_anchors_ = true
 
 [node name="Memory" type="TabContainer" parent="."]
 anchors_preset = -1
-anchor_left = 0.52691
-anchor_top = 0.106481
-anchor_right = 0.845229
-anchor_bottom = 0.664618
-offset_left = 25.0
-offset_right = 60.2958
-offset_bottom = 3.32764
+anchor_left = 0.537173
+anchor_top = 0.0987654
+anchor_right = 0.870914
+anchor_bottom = 0.653708
+offset_right = 17.5878
+offset_bottom = 5.39795
 scale = Vector2(0.953801, 0.985211)
 metadata/_edit_use_anchors_ = true
 
