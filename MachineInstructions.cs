@@ -172,6 +172,13 @@ public partial class Machine : Node
         return getValueFromAddr(param, out err);
     }
 
+    private int addWithFlags(int a, int b)
+    {
+        int result = (a+b)&0xff;
+        registers[(int)Register.CF] = (((a+b)&(~0xff))!=0) ? 1 : 0;
+        return result;
+    }
+
 
     // INSTRUCTION METHODS BELOW
 
@@ -336,16 +343,41 @@ public partial class Machine : Node
             return false;
 
         iptr++;
-        debugLogMem();
         return true;
     }
 
     private bool ADD(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 2, ref fmem[iptr], out err))
                 return false;
 
+        ParamInfo param1 = fmem[++iptr].GetParamInfo();
+        int param1val = getValueFromAddr(param1, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Couldn't perform ADD, check first parameter.\n{err}";
+            return false;
+        }
+
+        ParamInfo param2 = fmem[++iptr].GetParamInfo();
+        int param2val = getValue(param2, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Couldn't perform ADD, check second parameter.\n{err}";
+            return false;
+        }
+
+        userSetValueAtAddr(param1, addWithFlags(param1val, param2val), out err);  
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to perform addition.\n{err}";
+                return false;
+        }
+
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     // gets two's complement

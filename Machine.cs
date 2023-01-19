@@ -48,9 +48,12 @@ public partial class Machine : Node
 
 mov [h10], 0xCC
 mov [s10] [h10]
+add [h10] 1
 mov A, 0x66
 mov B, [s10]
 mov [f255], A
+mov [h255], 0xff
+add [h255], 2
 hlt
 
 ";

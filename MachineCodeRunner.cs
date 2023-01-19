@@ -26,6 +26,7 @@ public partial class Machine : Node
             GD.Print("Moved iptr to " + instructionPtr);
             if (!wouldContinue)
             {
+                debugLogMem();
                 codeLog(code.GetExitStatus().ToString());   
             }
             return wouldContinue;
