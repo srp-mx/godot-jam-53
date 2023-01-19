@@ -51,6 +51,7 @@ mov [h254] [h253]
 neg [h254]
 mov [h255] [h254]
 add [h255] [h253]
+cmp 0 [h255]
 hlt
 
 ";

@@ -10,7 +10,6 @@ public enum Register
     EF, // equal flag
     CF, // carry flag
     LEQF, // leq flag
-    EQF, // equal flag
     LEF, // less flag
     HTM, // heat measure
     AMM, // ammo measure

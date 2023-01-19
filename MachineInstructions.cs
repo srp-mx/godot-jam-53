@@ -187,6 +187,7 @@ public partial class Machine : Node
         b = b & 0xff;
         int result = (a+b)&0xff;
         registers[(int)Register.CF] = (((a+b)&(~0xff))!=0) ? 1 : 0;
+        registers[(int)Register.ZF] = result == 0 ? 1 : 0; 
         return result;
     }
 
@@ -422,10 +423,28 @@ public partial class Machine : Node
 
     private bool CMP(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 2, ref fmem[iptr], out err))
                 return false;
+        
+        int p1 = getValue(fmem[++iptr].GetParamInfo(), out err);
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Can't get value of first parameter of CMP.\n{err}";
+            return false;
+        }
 
+        int p2 = getValue(fmem[++iptr].GetParamInfo(), out err);
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Can't get value of second parameter of CMP.\n{err}";
+            return false;
+        }
+
+        registers[(int)Register.EF] = (p1 == p2) ? 1 : 0;
+        registers[(int)Register.LEQF] = (p1 <= p2) ? 1 : 0;
+        registers[(int)Register.LEF] = (p1 < p2) ? 1 : 0;
+        
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     // jump if flag
