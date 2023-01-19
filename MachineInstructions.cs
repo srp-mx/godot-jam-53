@@ -48,6 +48,8 @@ public partial class Machine : Node
         instructions.Add(new("COOL", 28, 0, COOL), InstructionSets.Available.Basic);
         instructions.Add(new("PUSH", 29, 1, PUSH), InstructionSets.Available.Basic);
         instructions.Add(new("POP", 30, 1, POP), InstructionSets.Available.Basic);
+        instructions.Add(new("CALLF", 31, 2, CALLF), InstructionSets.Available.Basic);
+        instructions.Add(new("CALLNF", 32, 2, CALLNF), InstructionSets.Available.Basic);
     }
 
     private int getValueFromAddr(ParamInfo param, out string err)
@@ -778,30 +780,72 @@ public partial class Machine : Node
     }
 
     // TODO
+    [Signal]
+    public delegate void doFLY_EventHandler(int amount);
     private bool FLY_UP(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 0, ref fmem[iptr], out err))
                 return false;
 
+        var param1 = fmem[++iptr].GetParamInfo();
+
+        int val = getValue(param1, out err);
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Could not get value for flying up.\n{err}";
+            return false;
+        }
+
+        bbox.Set(false);
+        EmitSignal("doFLY_", val);
+
+        while (bbox.val == false)
+        {
+            
+        }
+
+        bbox.Set(false);
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     // TODO
     private bool FLY_DOWN(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 0, ref fmem[iptr], out err))
                 return false;
 
+        var param1 = fmem[++iptr].GetParamInfo();
+
+        int val = getValue(param1, out err);
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Could not get value for flying down.\n{err}";
+            return false;
+        }
+
+        bbox.Set(false);
+        EmitSignal("doFLY_", -val);
+
+        while (bbox.val == false)
+        {
+            
+        }
+
+        bbox.Set(false);
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     // TODO
     // turn off fly
+    [Signal]
+    public delegate void doFALLEventHandler();
     private bool FALL(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 0, ref fmem[iptr], out err))
                 return false;
+
+        EmitSignal("doFALL");
+        return moveOneExit(fmem, ref iptr, out err);
 
     }
 
@@ -907,6 +951,98 @@ public partial class Machine : Node
         }
 
         return moveOneExit(fmem, ref iptr, out err);
+    }
+
+    // jump if flag
+    private bool CALLF(MethodBlock[] fmem, ref int iptr, out string err)
+    {
+        stackPush(iptr + 3, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to call (conditional) instruction.\n{err}";
+            return false;
+        }
+
+        if (errorParamBounds(iptr, 2, ref fmem[iptr], out err))
+                return false;
+
+        // the flag
+        ParamInfo param1 = fmem[++iptr].GetParamInfo();
+        if (param1.GetParamType() != ParamInfo.ParamType.Register)
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: JMPF instruction expected a register or flag as the first parameter.";
+            return false;
+        }
+        
+        ParamInfo param2 = fmem[++iptr].GetParamInfo();
+        if (param2.GetParamType() != ParamInfo.ParamType.Label)
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: CALLF instruction expected a label as the second parameter.";
+            return false;
+        }
+
+        if (registers[param1.Get()] == 0)
+        {
+            stackPop(out err);
+            return moveOneExit(fmem, ref iptr, out err);
+        }
+
+        iptr = param2.Get();
+
+        if (iptr > 255)
+        {
+            err = $"[ERROR] {fmem[255].GetSourcePos()}: The label pointed outside of the memory.";
+            return false;
+        }
+
+        return true;
+    }
+
+    // jump if not flag
+    private bool CALLNF(MethodBlock[] fmem, ref int iptr, out string err)
+    {
+        stackPush(iptr + 3, out err);
+
+        if (errorParamBounds(iptr, 2, ref fmem[iptr], out err))
+                return false;
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to call (negative conditional) instruction.\n{err}";
+            return false;
+        }
+
+        // the flag
+        ParamInfo param1 = fmem[++iptr].GetParamInfo();
+        if (param1.GetParamType() != ParamInfo.ParamType.Register)
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: JMPNF instruction expected a register or flag as the first parameter.";
+            return false;
+        }
+        
+        ParamInfo param2 = fmem[++iptr].GetParamInfo();
+        if (param2.GetParamType() != ParamInfo.ParamType.Label)
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: CALLNF instruction expected a label as the second parameter.";
+            return false;
+        }
+
+        if (registers[param1.Get()] != 0)
+        {
+            stackPop(out err);
+            return moveOneExit(fmem, ref iptr, out err);
+        }
+
+        iptr = param2.Get();
+
+        if (iptr > 255)
+        {
+            err = $"[ERROR] {fmem[255].GetSourcePos()}: The label pointed outside of the memory.";
+            return false;
+        }
+
+        return true;
     }
 
 }

@@ -31,6 +31,8 @@ public partial class PlayerMovement : CharacterBody3D
         machine.Connect("doINTERACT", new Callable(this, "doInteract"));
         machine.Connect("doMOV_", new Callable(this, "doMov_"));
         machine.Connect("doJUMP_UP", new Callable(this, "doJump_up"));
+        machine.Connect("doFLY_", new Callable(this, "doFly_"));
+        machine.Connect("doFALL", new Callable(this, "doFall"));
     }
 
     private void rot(double delta)
@@ -95,6 +97,32 @@ public partial class PlayerMovement : CharacterBody3D
         }
     }
 
+    private void fly(double delta)
+    {
+        if (ptimer >= Math.Abs((float)p1))
+        {
+            machine.bbox.Set(true);
+            movdir = Vector3.Zero;
+        }
+    }
+
+    // signal
+    public void doFly_(int amount)
+    {
+		movdir = (Transform.basis * new Vector3(0, (float)amount, 0)).Normalized();
+        p1 = ((double)amount) / 10.0;
+        currentPAct = fly;
+        currentAct = null;
+        ptimer = 0;
+        gravityEnabled = false;
+    }
+
+    // signal
+    public void doFall()
+    {
+        gravityEnabled = true;
+    }
+
     public override void _Process(double delta)
     {
         if (currentAct is not null)
@@ -132,11 +160,19 @@ public partial class PlayerMovement : CharacterBody3D
 		if (movdir != Vector3.Zero)
 		{
 			velocity.x = movdir.x * Speed;
+            if (!gravityEnabled)
+            {
+                velocity.y = movdir.y * Speed;
+            }
 			velocity.z = movdir.z * Speed;
 		}
 		else
 		{
 			velocity.x = Mathf.MoveToward(Velocity.x, 0, Speed);
+            if (!gravityEnabled)
+            {
+                velocity.y = Mathf.MoveToward(Velocity.y, 0, Speed);
+            }
 			velocity.z = Mathf.MoveToward(Velocity.z, 0, Speed);
 		}
 

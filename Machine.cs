@@ -51,48 +51,69 @@ public partial class Machine : Node
 
 loop:
     cmpkey 0
-    jmpf keyf press_0
+    callf keyf press_0
     cmpkey 40
-    jmpf keyf press_up
+    callf keyf press_up
     cmpkey 41
-    jmpf keyf press_down
+    callf keyf press_down
     cmpkey 43
-    jmpf keyf press_left
+    callf keyf press_left
     cmpkey 42
-    jmpf keyf press_right
+    callf keyf press_right
     cmpkey 36
-    jmpf keyf press_space
+    callf keyf press_space
+    cmpkey 0xC
+    callf keyf press_c
+    cmpkey 0xE
+    callf keyf press_e
+    cmpkey 0xF
+    callf keyf press_f
     jmp loop
 
 press_0:
     rot 138
     print 0
-    jmp loop
+    ret
 
 press_right:
     MOV_R 1
     print 1
-    jmp loop
+    ret
 
 press_left:
     MOV_L 1
     print 2
-    jmp loop
+    ret
 
 press_up:
     MOV_F 1
     print 3
-    jmp loop
+    ret
 
 press_down:
     MOV_B 1
     print 4
-    jmp loop
+    ret
 
 press_space:
     JUMP_UP 255
     print 5
-    jmp loop
+    ret
+
+press_c:
+    FLY_DOWN 1
+    print 6
+    ret
+
+press_e:
+    FLY_UP 1
+    print 7
+    ret
+
+press_f:
+    FALL
+    print 8
+    ret
 
 ";
         compileProgram(testProgram);
