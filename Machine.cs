@@ -55,7 +55,8 @@ loop:
     jmp loop
 
 press:
-    print 0xff
+    rot 0
+    print 0
     jmp loop
 
 ";

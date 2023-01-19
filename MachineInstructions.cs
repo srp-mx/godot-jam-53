@@ -11,6 +11,7 @@ public partial class Machine : Node
     private static readonly string iOobError = "The instruction pointer went out of bounds!\n\tToo many instructions?";
 
     InstructionSets instructions = new();
+    public BoolBox bbox = new();
     private void initInstructions()
     {
         availableInstructionSets.Add(InstructionSets.Available.Basic);
@@ -608,14 +609,35 @@ public partial class Machine : Node
         return true;
     }
 
+    // TODO
+    [Signal]
+    public delegate void doROTEventHandler(int amount);
     private bool ROT(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
 
+        var param1 = fmem[++iptr].GetParamInfo();
+
+        int val = getValue(param1, out err);
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to rotate.\n{err}";
+            return false;
+        }
+
+        bbox.Set(false);
+        EmitSignal("doROT", val);
+        while (bbox.val == false)
+        {
+            
+        }
+
+        bbox.Set(false);
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
+    // TODO
     private bool INTERACT(MethodBlock[] fmem, ref int iptr, out string err)
     {
         throw new NotImplementedException();
@@ -623,6 +645,7 @@ public partial class Machine : Node
                 return false;
     }
 
+    // TODO
     private bool MOV_R(MethodBlock[] fmem, ref int iptr, out string err)
     {
         throw new NotImplementedException();
@@ -631,6 +654,7 @@ public partial class Machine : Node
 
     }
 
+    // TODO
     private bool MOV_L(MethodBlock[] fmem, ref int iptr, out string err)
     {
         throw new NotImplementedException();
@@ -639,6 +663,7 @@ public partial class Machine : Node
 
     }
 
+    // TODO
     private bool MOV_F(MethodBlock[] fmem, ref int iptr, out string err)
     {
         throw new NotImplementedException();
@@ -647,6 +672,7 @@ public partial class Machine : Node
 
     }
 
+    // TODO
     private bool MOV_B(MethodBlock[] fmem, ref int iptr, out string err)
     {
         throw new NotImplementedException();
@@ -655,6 +681,7 @@ public partial class Machine : Node
 
     }
 
+    // TODO
     private bool JUMP_UP(MethodBlock[] fmem, ref int iptr, out string err)
     {
         throw new NotImplementedException();
@@ -663,6 +690,7 @@ public partial class Machine : Node
 
     }
 
+    // TODO
     private bool FLY_UP(MethodBlock[] fmem, ref int iptr, out string err)
     {
         throw new NotImplementedException();
@@ -671,6 +699,7 @@ public partial class Machine : Node
 
     }
 
+    // TODO
     private bool FLY_DOWN(MethodBlock[] fmem, ref int iptr, out string err)
     {
         throw new NotImplementedException();
@@ -679,6 +708,7 @@ public partial class Machine : Node
 
     }
 
+    // TODO
     // turn off fly
     private bool FALL(MethodBlock[] fmem, ref int iptr, out string err)
     {
@@ -714,6 +744,7 @@ public partial class Machine : Node
     }
 
 
+    // TODO
     private bool SHOOT(MethodBlock[] fmem, ref int iptr, out string err)
     {
         throw new NotImplementedException();
@@ -722,6 +753,7 @@ public partial class Machine : Node
 
     }
 
+    // TODO
     private bool RELOAD(MethodBlock[] fmem, ref int iptr, out string err)
     {
         throw new NotImplementedException();
@@ -730,6 +762,7 @@ public partial class Machine : Node
 
     }
 
+    // TODO
     private bool COOL(MethodBlock[] fmem, ref int iptr, out string err)
     {
         throw new NotImplementedException();
