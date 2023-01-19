@@ -23,7 +23,7 @@ public partial class Machine : Node
         {
             bool wouldContinue = currInstruction.MoveNext();
             instructionPtr = (int)currInstruction.Current;
-            GD.Print("Moved iptr to " + instructionPtr);
+            debugLog("Moved iptr to " + instructionPtr);
             if (!wouldContinue)
             {
                 debugLogMem();

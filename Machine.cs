@@ -39,7 +39,7 @@ public partial class Machine : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-        Game.ExternDebug.printer = str => GD.Print(str);
+        Game.ExternDebug.printer = str => debugLog(str);
         machineCtor();
         // TODO(srp): this has to get fed
         string testProgram = @"
@@ -49,12 +49,13 @@ public partial class Machine : Node
 mov a 1
 while_a_leq_10:
     print a
-    add a 1
-    cmp a 3
+    inc a
+    cmp a 10
     jmpf leqf while_a_leq_10
 
-print 69
-hlt
+nice:
+    print 69
+    jmp nice
 
 ";
         compileProgram(testProgram);
@@ -68,7 +69,7 @@ hlt
 	{
 	}
 
-    private void debugLog(string s) => GD.Print(s);
+    private void debugLog(string s) {}// GD.Print(s);
 
     private void stackPush(int x, out string err)
     {

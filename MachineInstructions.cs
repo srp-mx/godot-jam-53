@@ -253,7 +253,7 @@ public partial class Machine : Node
 
         iptr = param1.Get();
 
-        GD.Print("Called instruction at " + iptr);
+        debugLog("Called instruction at " + iptr);
 
         if (iptr > 255)
         {
@@ -273,7 +273,7 @@ public partial class Machine : Node
             return false;
         }
 
-        GD.Print("Popped " + retAddr + " from the stack");
+        debugLog("Popped " + retAddr + " from the stack");
 
         string retPos = fmem[iptr].GetSourcePos();
         iptr = retAddr;
@@ -531,26 +531,79 @@ public partial class Machine : Node
 
     private bool INC(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
 
+        var param1 = fmem[++iptr].GetParamInfo();
+        int param1val = getValueFromAddr(param1, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to get value from memory.\n{err}";
+            return false;
+        }
+
+        int result = addWithFlags(param1val, 1);
+
+        userSetValueAtAddr(param1, result, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to insert increment in memory.\n{err}";
+            return false;
+        }
+
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     private bool DEC(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
 
+        var param1 = fmem[++iptr].GetParamInfo();
+        int param1val = getValueFromAddr(param1, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to get value from memory.\n{err}";
+            return false;
+        }
+
+        int result = addWithFlags(param1val, 0xff);
+
+        userSetValueAtAddr(param1, result, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to insert increment in memory.\n{err}";
+            return false;
+        }
+
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     private bool JMP(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
+        
+        ParamInfo param1 = fmem[++iptr].GetParamInfo();
+        if (param1.GetParamType() != ParamInfo.ParamType.Label)
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: JMP instruction expected a label as the only parameter.";
+            return false;
+        }
 
+        iptr = param1.Get();
+
+        if (iptr > 255)
+        {
+            err = $"[ERROR] {fmem[255].GetSourcePos()}: The label pointed outside of the memory.";
+            return false;
+        }
+
+        return true;
     }
 
     private bool ROT(MethodBlock[] fmem, ref int iptr, out string err)
