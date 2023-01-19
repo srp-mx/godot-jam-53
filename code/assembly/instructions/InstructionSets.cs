@@ -84,7 +84,7 @@ public class InstructionSets
    
     public string GetSuggestions(string mistyped, IEnumerable<Available> setsAvailable)
     {
-        SortedList<int, string> candidates = new();
+        ReallySortedList<string> candidates = new();
         foreach (var set in GetSets(setsAvailable))
         {
             foreach (var instr in set.Keys)
@@ -101,9 +101,14 @@ public class InstructionSets
             return "hmm, I've got nothing sorry :(";
 
         string ans = "";
-        foreach (var pair in candidates)
+        bool isFirst = true;
+        foreach (var candidate in candidates)
 		{
-            ans += $" {pair.Value}";
+            if (!isFirst)
+                ans += ",";
+
+            ans += $" {candidate}";
+            isFirst = false;
 		}
         return ans;
     }

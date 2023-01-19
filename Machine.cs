@@ -55,6 +55,7 @@ while_a_leq_10:
 
 nice:
     print 69
+    push 0xCC
     jmp nice
 
 ";
@@ -69,18 +70,21 @@ nice:
 	{
 	}
 
-    private void debugLog(string s) {}// GD.Print(s);
+    private void debugLog(string s) => GD.Print(s);
 
     private void stackPush(int x, out string err)
     {
-        if (stackPtr == 255)
+        if (stackPtr == 256)
         {
             err = "[PROBLEM]: Stack overflow!";
             return;
         }
 
         err = "";
-        stack[stackPtr++] = x;
+        stack[stackPtr] = x;
+        registers[(int)Register.SP] = stackPtr;
+        debugLog("stackptr is " + stackPtr);
+        stackPtr++;
     }
 
     private int stackPop(out string err)
@@ -92,7 +96,9 @@ nice:
         }
 
         err = "";
-        return stack[--stackPtr];
+        registers[(int)Register.SP] = --stackPtr;
+        debugLog("stackptr is " + stackPtr);
+        return stack[stackPtr];
     }
 
     private void debugLogCode()

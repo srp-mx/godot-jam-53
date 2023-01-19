@@ -6,6 +6,8 @@ public enum Register
     B, 
     C, 
     D, 
+    IP, // instruction ptr
+    SP, // stack ptr
     ZF, // zero flag
     EF, // equal flag
     CF, // carry flag

@@ -705,18 +705,53 @@ public partial class Machine : Node
 
     private bool PUSH(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
 
+        var param1 = fmem[++iptr].GetParamInfo();
+
+        int p = getValue(param1, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to get value to push to the stack.\n{err}";
+            return false;
+        }
+
+        stackPush(p, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to push to the stack. \n{err}";
+            return false;
+        }
+
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     private bool POP(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
 
+        var param1 = fmem[++iptr].GetParamInfo();
+        int val = stackPop(out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed popping from the stack.\n{err}";
+            return false;
+        }   
+
+        userSetValueAtAddr(param1, val, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed setting the popped value from the stack into the destination address.\n{err}";
+            return false;
+        }
+
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
 }

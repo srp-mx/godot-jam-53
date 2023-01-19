@@ -68,5 +68,5 @@ shape = SubResource("BoxShape3D_aehs0")
 material_override = ExtResource("1_ppfqy")
 
 [node name="CpuClock" type="Timer" parent="Machine"]
-wait_time = 0.05
+wait_time = 0.001
 autostart = true
