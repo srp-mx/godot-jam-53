@@ -6,10 +6,15 @@ public partial class PlayerMovement : CharacterBody3D
 	public const float Speed = 5.0f;
 	public const float JumpVelocity = 4.5f;
     private double timer = 0;
+    private double ptimer = 0;
     private Machine machine;
 
     private Action<double> currentAct;
+    private Action<double> currentPAct;
     double p1, p2; // parameters
+
+    Vector3 velocity;
+    Vector3 movdir = Vector3.Zero;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
@@ -21,18 +26,19 @@ public partial class PlayerMovement : CharacterBody3D
     {
         machine = this.GetParent<Machine>();
         machine.Connect("doROT", new Callable(this, "doROT"));
+        machine.Connect("doINTERACT", new Callable(this, "doInteract"));
+        machine.Connect("doMOV_", new Callable(this, "doMov_"));
     }
 
     private void rot(double delta)
     {
-        double secondsToFinish = 1.0;
-        double wiggle = 0.2;
+        double secondsToFinish = 0.05;
         if (timer < secondsToFinish)
         {
             RotateY((float)(p1 * delta / secondsToFinish));
         }
 
-        if(timer >= secondsToFinish - wiggle)
+        if(timer >= secondsToFinish)
         {
             machine.bbox.Set(true);
         }
@@ -43,7 +49,33 @@ public partial class PlayerMovement : CharacterBody3D
         amount -= 127;
         timer = 0;
         currentAct = rot;
+        currentPAct = null;
         p1 = Mathf.DegToRad((float)amount);
+    }
+
+    // signal TODO
+    public void doInteract()
+    {
+        
+    }
+
+    private void mov(double delta)
+    {
+        if (ptimer >= p1)
+        {
+            machine.bbox.Set(true);
+            movdir = Vector3.Zero;
+        }
+    }
+
+    // signal
+    public void doMov_(int amount, Vector2 dir)
+    {
+		movdir = (Transform.basis * new Vector3(dir.x, 0, dir.y)).Normalized();
+        p1 = ((double)amount) / 10.0;
+        currentPAct = mov;
+        currentAct = null;
+        ptimer = 0;
     }
 
     public override void _Process(double delta)
@@ -58,7 +90,7 @@ public partial class PlayerMovement : CharacterBody3D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		Vector3 velocity = Velocity;
+        velocity = Velocity;
 
 		// Add the gravity.
 		if (!IsOnFloor())
@@ -68,14 +100,17 @@ public partial class PlayerMovement : CharacterBody3D
 		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
 			velocity.y = JumpVelocity;
 
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		Vector3 direction = (Transform.basis * new Vector3(inputDir.x, 0, inputDir.y)).Normalized();
-		if (direction != Vector3.Zero)
+
+        if (currentPAct is not null)
+        {
+            currentPAct(delta);
+        }
+        ptimer += delta;
+
+		if (movdir != Vector3.Zero)
 		{
-			velocity.x = direction.x * Speed;
-			velocity.z = direction.z * Speed;
+			velocity.x = movdir.x * Speed;
+			velocity.z = movdir.z * Speed;
 		}
 		else
 		{

@@ -638,46 +638,126 @@ public partial class Machine : Node
     }
 
     // TODO
+    [Signal]
+    public delegate void doINTERACTEventHandler();
     private bool INTERACT(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 0, ref fmem[iptr], out err))
                 return false;
+
+        EmitSignal("doINTERACT");
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     // TODO
+    [Signal]
+    public delegate void doMOV_EventHandler(int amount, Vector2 dir);
     private bool MOV_R(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
 
+        var param1 = fmem[++iptr].GetParamInfo();
+
+        int val = getValue(param1, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Could not get value to move to the right.\n{err}";
+            return false;
+        }
+
+        bbox.Set(false);
+        EmitSignal("doMOV_", val, new Vector2(1, 0));
+        while (bbox.val == false)
+        {
+            
+        }
+
+        bbox.Set(false);
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     // TODO
     private bool MOV_L(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
 
+        var param1 = fmem[++iptr].GetParamInfo();
+
+        int val = getValue(param1, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Could not get value to move to the left.\n{err}";
+            return false;
+        }
+
+        bbox.Set(false);
+        EmitSignal("doMOV_", val, new Vector2(-1, 0));
+        while (bbox.val == false)
+        {
+            
+        }
+
+        bbox.Set(false);
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     // TODO
     private bool MOV_F(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
+
+        var param1 = fmem[++iptr].GetParamInfo();
+
+        int val = getValue(param1, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Could not get value to move forward.\n{err}";
+            return false;
+        }
+
+        bbox.Set(false);
+        EmitSignal("doMOV_", val, new Vector2(0, 1));
+        while (bbox.val == false)
+        {
+            
+        }
+
+        bbox.Set(false);
+        return moveOneExit(fmem, ref iptr, out err);
 
     }
 
     // TODO
     private bool MOV_B(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
+
+        var param1 = fmem[++iptr].GetParamInfo();
+
+        int val = getValue(param1, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Could not get value to move backwards.\n{err}";
+            return false;
+        }
+
+        bbox.Set(false);
+        EmitSignal("doMOV_", val, new Vector2(0, -1));
+        while (bbox.val == false)
+        {
+            
+        }
+
+        bbox.Set(false);
+        return moveOneExit(fmem, ref iptr, out err);
 
     }
 

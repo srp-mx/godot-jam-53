@@ -6,7 +6,7 @@ using Game.Assembly;
 public partial class Machine : Node
 {
     [Export]
-    public long clockPeriod = 1;
+    public long clockPeriod = 0;
     private long clockTime = 0;
     string program;
     int[] stack = new int[256];
@@ -51,12 +51,40 @@ public partial class Machine : Node
 
 loop:
     cmpkey 0
-    jmpf keyf press
+    jmpf keyf press_0
+    cmpkey 1
+    jmpf keyf press_1
+    cmpkey 2
+    jmpf keyf press_2
+    cmpkey 3
+    jmpf keyf press_3
+    cmpkey 4
+    jmpf keyf press_4
     jmp loop
 
-press:
-    rot 0
+press_0:
+    rot 138
     print 0
+    jmp loop
+
+press_1:
+    MOV_R 1
+    print 1
+    jmp loop
+
+press_2:
+    MOV_L 1
+    print 2
+    jmp loop
+
+press_3:
+    MOV_F 1
+    print 3
+    jmp loop
+
+press_4:
+    MOV_B 1
+    print 4
     jmp loop
 
 ";
@@ -67,10 +95,15 @@ press:
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-        if (clockTime % clockPeriod == 0)
+        if (clockPeriod == 0 || clockTime % clockPeriod == 0)
         {
-            checkKeys();
-            StepCode();
+            // 1k instructions per frame
+            // since it's asynchronous this is totally fine lmao
+            for (int i = 0; i < 1000; i++)
+            {
+                checkKeys();
+                StepCode();
+            }
         }
 
         clockTime++;
