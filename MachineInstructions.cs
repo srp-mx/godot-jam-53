@@ -40,7 +40,7 @@ public partial class Machine : Node
         instructions.Add(new("FLY_UP", 21, 1, FLY_UP), InstructionSets.Available.Basic);
         instructions.Add(new("FLY_DOWN", 22, 1, FLY_DOWN), InstructionSets.Available.Basic);
         instructions.Add(new("FALL", 23, 0, FALL), InstructionSets.Available.Basic);
-        instructions.Add(new("BIND_KEY", 24, 2, BIND_KEY), InstructionSets.Available.Basic);
+        instructions.Add(new("CMPKEY", 24, 1, CMPKEY), InstructionSets.Available.Basic);
         instructions.Add(new("SHOOT", 25, 0, SHOOT), InstructionSets.Available.Basic);
         instructions.Add(new("COOL", 26, 0, COOL), InstructionSets.Available.Basic);
         instructions.Add(new("PUSH", 27, 1, PUSH), InstructionSets.Available.Basic);
@@ -670,12 +670,29 @@ public partial class Machine : Node
 
     }
 
-    private bool BIND_KEY(MethodBlock[] fmem, ref int iptr, out string err)
+    private bool CMPKEY(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
-        if (errorParamBounds(iptr, 2, ref fmem[iptr], out err))
+        if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
 
+        var param1 = fmem[++iptr].GetParamInfo();
+        int param1val = getValue(param1, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Could not compare key, check parameter.\n{err}";
+            return false;
+        }
+
+        if (param1val >= keysDown.Length)
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Key in KEYCMP does not exist, check parameter.\n{err}";
+            return false;
+        }
+
+        registers[(int)Register.KEYF] = keysDown[param1val] ? 1 : 0;
+
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
 

@@ -46,17 +46,14 @@ public partial class Machine : Node
 
 ; comment
 
-mov a 1
-while_a_leq_10:
-    print a
-    inc a
-    cmp a 10
-    jmpf leqf while_a_leq_10
+loop:
+    cmpkey 0
+    jmpf keyf press
+    jmp loop
 
-nice:
-    print 69
-    push 0xCC
-    jmp nice
+press:
+    print 0xff
+    jmp loop
 
 ";
         compileProgram(testProgram);
@@ -70,7 +67,7 @@ nice:
 	{
 	}
 
-    private void debugLog(string s) => GD.Print(s);
+    private void debugLog(string s){} //=> GD.Print(s);
 
     private void stackPush(int x, out string err)
     {

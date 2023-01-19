@@ -13,6 +13,7 @@ public enum Register
     CF, // carry flag
     LEQF, // leq flag
     LEF, // less flag
+    KEYF, // is key down
     HTM, // heat measure
     AMM, // ammo measure
 
