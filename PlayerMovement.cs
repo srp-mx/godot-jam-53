@@ -16,6 +16,8 @@ public partial class PlayerMovement : CharacterBody3D
     Vector3 velocity;
     Vector3 movdir = Vector3.Zero;
 
+    private bool gravityEnabled = true;
+
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
@@ -28,6 +30,7 @@ public partial class PlayerMovement : CharacterBody3D
         machine.Connect("doROT", new Callable(this, "doROT"));
         machine.Connect("doINTERACT", new Callable(this, "doInteract"));
         machine.Connect("doMOV_", new Callable(this, "doMov_"));
+        machine.Connect("doJUMP_UP", new Callable(this, "doJump_up"));
     }
 
     private void rot(double delta)
@@ -78,6 +81,20 @@ public partial class PlayerMovement : CharacterBody3D
         ptimer = 0;
     }
 
+    // signal
+    private bool willJump = false;
+    private double lastJump = 0.0f;
+    private double jumpStrength = 0;
+    public void doJump_up(int amount)
+    {
+        jumpStrength = JumpVelocity * ((double)amount) / 255.0;
+        if (lastJump > 0.3)
+        {
+            willJump = true;
+            lastJump = 0;
+        }
+    }
+
     public override void _Process(double delta)
     {
         if (currentAct is not null)
@@ -86,6 +103,7 @@ public partial class PlayerMovement : CharacterBody3D
         }
 
         timer += delta;
+        lastJump += delta;
     }
 
 	public override void _PhysicsProcess(double delta)
@@ -93,13 +111,17 @@ public partial class PlayerMovement : CharacterBody3D
         velocity = Velocity;
 
 		// Add the gravity.
-		if (!IsOnFloor())
-			velocity.y -= gravity * (float)delta;
+		if (!IsOnFloor() && gravityEnabled)
+        {
+            velocity.y -= gravity * (float)delta;
+        }
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+		if (willJump && IsOnFloor())
+        {
 			velocity.y = JumpVelocity;
-
+            willJump = false;
+        }
 
         if (currentPAct is not null)
         {

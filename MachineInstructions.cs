@@ -609,7 +609,6 @@ public partial class Machine : Node
         return true;
     }
 
-    // TODO
     [Signal]
     public delegate void doROTEventHandler(int amount);
     private bool ROT(MethodBlock[] fmem, ref int iptr, out string err)
@@ -649,7 +648,6 @@ public partial class Machine : Node
         return moveOneExit(fmem, ref iptr, out err);
     }
 
-    // TODO
     [Signal]
     public delegate void doMOV_EventHandler(int amount, Vector2 dir);
     private bool MOV_R(MethodBlock[] fmem, ref int iptr, out string err)
@@ -678,7 +676,6 @@ public partial class Machine : Node
         return moveOneExit(fmem, ref iptr, out err);
     }
 
-    // TODO
     private bool MOV_L(MethodBlock[] fmem, ref int iptr, out string err)
     {
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
@@ -705,7 +702,6 @@ public partial class Machine : Node
         return moveOneExit(fmem, ref iptr, out err);
     }
 
-    // TODO
     private bool MOV_F(MethodBlock[] fmem, ref int iptr, out string err)
     {
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
@@ -733,7 +729,6 @@ public partial class Machine : Node
 
     }
 
-    // TODO
     private bool MOV_B(MethodBlock[] fmem, ref int iptr, out string err)
     {
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
@@ -758,16 +753,28 @@ public partial class Machine : Node
 
         bbox.Set(false);
         return moveOneExit(fmem, ref iptr, out err);
-
     }
 
     // TODO
+    [Signal]
+    public delegate void doJUMP_UPEventHandler(int amount, Vector2 dir);
     private bool JUMP_UP(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
 
+        var param1 = fmem[++iptr].GetParamInfo();
+
+        int val = getValue(param1, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Could not get value for jumping up.\n{err}";
+            return false;
+        }
+
+        EmitSignal("doJUMP_UP", val);
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     // TODO

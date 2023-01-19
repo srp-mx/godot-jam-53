@@ -52,14 +52,16 @@ public partial class Machine : Node
 loop:
     cmpkey 0
     jmpf keyf press_0
-    cmpkey 1
-    jmpf keyf press_1
-    cmpkey 2
-    jmpf keyf press_2
-    cmpkey 3
-    jmpf keyf press_3
-    cmpkey 4
-    jmpf keyf press_4
+    cmpkey 40
+    jmpf keyf press_up
+    cmpkey 41
+    jmpf keyf press_down
+    cmpkey 43
+    jmpf keyf press_left
+    cmpkey 42
+    jmpf keyf press_right
+    cmpkey 36
+    jmpf keyf press_space
     jmp loop
 
 press_0:
@@ -67,24 +69,29 @@ press_0:
     print 0
     jmp loop
 
-press_1:
+press_right:
     MOV_R 1
     print 1
     jmp loop
 
-press_2:
+press_left:
     MOV_L 1
     print 2
     jmp loop
 
-press_3:
+press_up:
     MOV_F 1
     print 3
     jmp loop
 
-press_4:
+press_down:
     MOV_B 1
     print 4
+    jmp loop
+
+press_space:
+    JUMP_UP 255
+    print 5
     jmp loop
 
 ";
