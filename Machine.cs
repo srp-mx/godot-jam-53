@@ -46,12 +46,14 @@ public partial class Machine : Node
 
 ; comment
 
-mov [h253], 0x69
-mov [h254] [h253]
-neg [h254]
-mov [h255] [h254]
-add [h255] [h253]
-cmp 0 [h255]
+mov a 1
+while_a_leq_10:
+    print a
+    add a 1
+    cmp a 3
+    jmpf leqf while_a_leq_10
+
+print 69
 hlt
 
 ";

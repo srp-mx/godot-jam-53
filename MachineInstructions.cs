@@ -233,6 +233,7 @@ public partial class Machine : Node
     private bool CALL(MethodBlock[] fmem, ref int iptr, out string err)
     {
         stackPush(iptr + 2, out err);
+
         if (err != "")
         {
             err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to call instruction.\n{err}";
@@ -317,7 +318,14 @@ public partial class Machine : Node
             return false;
         }
 
-        int val = param1.Get();
+        int val = getValue(param1, out err);
+        
+        if (err != "")
+        {
+            val = param1.Get();
+            err = "";
+        }
+
         codeLog($"{val}");
         err = "";
         iptr++;
@@ -355,8 +363,7 @@ public partial class Machine : Node
         if (err != "")
             return false;
 
-        iptr++;
-        return true;
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     private bool ADD(MethodBlock[] fmem, ref int iptr, out string err)
@@ -450,19 +457,75 @@ public partial class Machine : Node
     // jump if flag
     private bool JMPF(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 2, ref fmem[iptr], out err))
                 return false;
 
+        // the flag
+        ParamInfo param1 = fmem[++iptr].GetParamInfo();
+        if (param1.GetParamType() != ParamInfo.ParamType.Register)
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: JMPF instruction expected a register or flag as the first parameter.";
+            return false;
+        }
+        
+        ParamInfo param2 = fmem[++iptr].GetParamInfo();
+        if (param2.GetParamType() != ParamInfo.ParamType.Label)
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: JMPF instruction expected a label as the second parameter.";
+            return false;
+        }
+
+        if (registers[param1.Get()] == 0)
+        {
+            return moveOneExit(fmem, ref iptr, out err);
+        }
+
+        iptr = param2.Get();
+
+        if (iptr > 255)
+        {
+            err = $"[ERROR] {fmem[255].GetSourcePos()}: The label pointed outside of the memory.";
+            return false;
+        }
+
+        return true;
     }
 
     // jump if not flag
     private bool JMPNF(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 2, ref fmem[iptr], out err))
                 return false;
 
+        // the flag
+        ParamInfo param1 = fmem[++iptr].GetParamInfo();
+        if (param1.GetParamType() != ParamInfo.ParamType.Register)
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: JMPNF instruction expected a register or flag as the first parameter.";
+            return false;
+        }
+        
+        ParamInfo param2 = fmem[++iptr].GetParamInfo();
+        if (param2.GetParamType() != ParamInfo.ParamType.Label)
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: JMPNF instruction expected a label as the second parameter.";
+            return false;
+        }
+
+        if (registers[param1.Get()] != 0)
+        {
+            return moveOneExit(fmem, ref iptr, out err);
+        }
+
+        iptr = param2.Get();
+
+        if (iptr > 255)
+        {
+            err = $"[ERROR] {fmem[255].GetSourcePos()}: The label pointed outside of the memory.";
+            return false;
+        }
+
+        return true;
     }
 
 

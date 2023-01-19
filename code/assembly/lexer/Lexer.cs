@@ -28,7 +28,7 @@ public class Lexer
         {
             int startIndex = Text.Index - 1;
             int wordLength = 1;
-            while (Char.IsLetterOrDigit(advanceChar()))
+            while (Char.IsLetterOrDigit(advanceChar()) || lastChar == '_')
             {
                 wordLength++;
             }

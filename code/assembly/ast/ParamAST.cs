@@ -111,7 +111,7 @@ public class ParamAST : ASTNode
         for (int i = 0; i < (int)Register.None; i++)
         {
             Register r = (Register)i;
-            if (content == r.ToString())
+            if (content.ToUpper() == r.ToString().ToUpper())
             {
                 paramInfo.SetReg(r);
                 return next.Codegen(target);
