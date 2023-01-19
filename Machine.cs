@@ -46,14 +46,11 @@ public partial class Machine : Node
 
 ; comment
 
-mov [h10], 0xCC
-mov [s10] [h10]
-add [h10] 1
-mov A, 0x66
-mov B, [s10]
-mov [f255], A
-mov [h255], 0xff
-add [h255], 2
+mov [h253], 0x69
+mov [h254] [h253]
+neg [h254]
+mov [h255] [h254]
+add [h255] [h253]
 hlt
 
 ";

@@ -163,17 +163,28 @@ public partial class Machine : Node
 
     private int getValue(ParamInfo param, out string err)
     {
+        debugLog("getvalue internal " + param.Get());
         if (param.GetParamType() == ParamInfo.ParamType.Value)
         {
             err = "";
             return param.Get();
         }
 
-        return getValueFromAddr(param, out err);
+        int result = getValueFromAddr(param, out err);
+
+        if (err != "")
+        {
+            err = $"[PROBLEM] : Expected a value or an address to get values from.\n{err}";
+            return -1;
+        }
+
+        return result;
     }
 
     private int addWithFlags(int a, int b)
     {
+        a = a & 0xff;
+        b = b & 0xff;
         int result = (a+b)&0xff;
         registers[(int)Register.CF] = (((a+b)&(~0xff))!=0) ? 1 : 0;
         return result;
@@ -337,6 +348,7 @@ public partial class Machine : Node
             return false;
         }
 
+        debugLog($"moving {assignValue} into {memVal.Get()}");
         userSetValueAtAddr(memVal, assignValue, out err);
 
         if (err != "")
@@ -383,10 +395,29 @@ public partial class Machine : Node
     // gets two's complement
     private bool NEG(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;
 
+        ParamInfo param1 = fmem[++iptr].GetParamInfo();
+        int x = getValueFromAddr(param1, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to negate number at address.\n{err}";
+            return false;
+        }
+
+        int negate = 0x100-x;
+
+        userSetValueAtAddr(param1, negate, out err);
+
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to set number to negated value.\n{err}";
+            return false;
+        }
+
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     private bool CMP(MethodBlock[] fmem, ref int iptr, out string err)
