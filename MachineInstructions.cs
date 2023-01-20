@@ -694,7 +694,7 @@ public partial class Machine : Node
         }
 
         bbox.Set(false);
-        EmitSignal("doMOV_", val, new Vector2(1, 0));
+        EmitSignal("doMOV_", val, new Vector2(-1, 0));
         while (bbox.val == false)
         {
             
@@ -720,7 +720,7 @@ public partial class Machine : Node
         }
 
         bbox.Set(false);
-        EmitSignal("doMOV_", val, new Vector2(-1, 0));
+        EmitSignal("doMOV_", val, new Vector2(1, 0));
         while (bbox.val == false)
         {
             

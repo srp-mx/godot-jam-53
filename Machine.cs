@@ -90,62 +90,50 @@ loop:
 
 press_0:
     rot_clock 10
-    print 0
     ret
 
 press_9:
     rot_anti 10 
-    print 0
     ret
 
 press_right:
     MOV_R 1
-    print 1
     ret
 
 press_left:
     MOV_L 1
-    print 2
     ret
 
 press_up:
     MOV_F 1
-    print 3
     ret
 
 press_down:
     MOV_B 1
-    print 4
     ret
 
 press_space:
     JUMP_UP 255
-    print 5
     ret
 
 press_c:
     FLY_DOWN 1
-    print 6
     ret
 
 press_e:
     FLY_UP 1
-    print 7
     ret
 
 press_f:
     FALL
-    print 8
     ret
 
 press_enter:
     SHOOT
-    print 9
     ret
 
 press_r:
     RELOAD
-    print 10
     ret
 
 ";

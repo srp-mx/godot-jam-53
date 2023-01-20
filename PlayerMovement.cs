@@ -78,6 +78,10 @@ public partial class PlayerMovement : CharacterBody3D
     public void doMov_(int amount, Vector2 dir)
     {
 		movdir = (Transform.basis * new Vector3(dir.x, 0, dir.y)).Normalized();
+        movdir.x = -movdir.x;
+        if (amount == 0)
+            return;
+        
         p1 = ((double)amount) / 10.0;
         currentPAct = mov;
         currentAct = null;
@@ -116,12 +120,14 @@ public partial class PlayerMovement : CharacterBody3D
         currentAct = null;
         ptimer = 0;
         gravityEnabled = false;
+        MotionMode = MotionModeEnum.Floating;
     }
 
     // signal
     public void doFall()
     {
         gravityEnabled = true;
+        MotionMode = MotionModeEnum.Grounded;
     }
 
     public override void _Process(double delta)
@@ -137,7 +143,7 @@ public partial class PlayerMovement : CharacterBody3D
 
 	public override void _PhysicsProcess(double delta)
 	{
-        velocity = Velocity;
+        velocity = this.GetVelocity();
 
 		// Add the gravity.
 		if (!IsOnFloor() && gravityEnabled)
@@ -177,7 +183,7 @@ public partial class PlayerMovement : CharacterBody3D
 			velocity.z = Mathf.MoveToward(Velocity.z, 0, Speed);
 		}
 
-		Velocity = velocity;
+        this.SetVelocity(velocity);
 		MoveAndSlide();
 	}
 }
