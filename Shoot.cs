@@ -4,13 +4,18 @@ using System.Collections.Generic;
 
 public partial class Shoot : Node3D
 {
+    [Export]
+    float shotTime = 0.5f;
     PackedScene bulletResource;
     List<Node3D> bulletPool = new();
+    Machine machine;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
         bulletResource = GD.Load<PackedScene>("res://scenes/prefabs/bullet.tscn");
+        machine = (Machine) this.FindParent("Machine");
+        machine.Connect("doSHOOT", new(this, "ShootBullet"));
         for(int i = 0; i < 16; i++)
         {
             var bullet = (Node3D)bulletResource.Instantiate();
@@ -20,15 +25,9 @@ public partial class Shoot : Node3D
         }
 	}
 
-    float lastPress = 0.0f;
     public override void _Process(double delta)
     {
-        if (Input.IsKeyPressed(Key.Enter) && lastPress > 0.5f)
-        {
-            ShootBullet();
-            lastPress = 0;
-        }
-        lastPress += (float)delta;
+        lastShot += (float)delta;
     }
 
     private Node3D getBullet()
@@ -47,12 +46,17 @@ public partial class Shoot : Node3D
         return newBullet;
     }
 
+    float lastShot = 0.0f;
     public void ShootBullet()
     {
+        if (lastShot < shotTime)
+            return;
+
         Node3D bullet = getBullet();
         bullet.Position = GlobalPosition;
         bullet.Rotation = GlobalRotation;
         bullet.Visible = true;
+        lastShot = 0;
     }
 
 }

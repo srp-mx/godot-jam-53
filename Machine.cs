@@ -80,6 +80,9 @@ loop:
     cmpkey 0xF
     callf keyf press_f
 
+    cmpkey 37
+    callf keyf press_enter
+
     jmp loop
 
 press_0:
@@ -130,6 +133,11 @@ press_e:
 press_f:
     FALL
     print 8
+    ret
+
+press_enter:
+    SHOOT
+    print 9
     ret
 
 ";

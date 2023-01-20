@@ -31,7 +31,7 @@ public partial class Machine : Node
         code.SetAvailableSets(availableInstructionSets);
     }
 
-    public void AddInstructionSet(InstructionSets set)
+    public void AddInstructionSet(InstructionSets.Available set)
     {
         availableInstructionSets.Add(set);
     }

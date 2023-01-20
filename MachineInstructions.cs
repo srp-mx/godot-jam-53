@@ -896,13 +896,16 @@ public partial class Machine : Node
     }
 
 
-    // TODO
+    [Signal]
+    public delegate void doSHOOTEventHandler();
     private bool SHOOT(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 0, ref fmem[iptr], out err))
                 return false;
 
+        EmitSignal("doSHOOT");
+
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     // TODO
