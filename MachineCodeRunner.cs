@@ -44,6 +44,10 @@ public partial class Machine : Node
         if (codeRejected)
             return false;
 
+        // can't be overheated D:
+        if (OnCooldown)
+            return false;
+
         // if the program ended
         if (ended)
             return false;

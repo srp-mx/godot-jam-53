@@ -58,7 +58,7 @@ public partial class Shoot : Node3D
     float lastShot = 0.0f;
     public void ShootBullet()
     {
-        if (lastShot < shotTime || currAmmo <= 0)
+        if (lastShot < shotTime ||  <= 0)
             return;
 
         Node3D bullet = getBullet();
@@ -67,6 +67,7 @@ public partial class Shoot : Node3D
         bullet.Visible = true;
         lastShot = 0;
         currAmmo--;
+        machine.SetAmmoReg(currAmmo);
     }
 
     public void Reload()
@@ -77,6 +78,7 @@ public partial class Shoot : Node3D
         {
 
         }
+        machine.SetAmmoReg(currAmmo);
         machine.bbox.Set(true);
         return;
     }

@@ -198,6 +198,11 @@ public partial class Machine : Node
         return result;
     }
 
+    public void SetAmmoReg(int value)
+    {
+        registers[(int)Register.AMM] = value;
+    }
+
 
     // INSTRUCTION METHODS BELOW
 
@@ -896,7 +901,6 @@ public partial class Machine : Node
         return moveOneExit(fmem, ref iptr, out err);
     }
 
-
     [Signal]
     public delegate void doSHOOTEventHandler();
     private bool SHOOT(MethodBlock[] fmem, ref int iptr, out string err)
@@ -931,10 +935,16 @@ public partial class Machine : Node
     // TODO
     private bool COOL(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 0, ref fmem[iptr], out err))
                 return false;
 
+        while (OnCooldown)
+        {
+            lowerHeat(85);
+            System.Threading.Thread.Sleep(1000);
+        }
+
+        return moveOne(fmem, ref iptr, out err);
     }
 
     private bool PUSH(MethodBlock[] fmem, ref int iptr, out string err)
@@ -1079,5 +1089,3 @@ public partial class Machine : Node
 
         return true;
     }
-
-}
