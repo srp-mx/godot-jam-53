@@ -11,6 +11,10 @@ grow_vertical = 2
 script = ExtResource("1_dn24f")
 metadata/_edit_use_anchors_ = true
 
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+offset_right = 1096.0
+offset_bottom = 648.0
+
 [node name="Open File" type="FileDialog" parent="."]
 title = "Open a File"
 size = Vector2i(800, 500)
@@ -355,8 +359,6 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 31.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="#RAM" type="GridContainer" parent="Memory/Stack"]
 anchors_preset = -1
