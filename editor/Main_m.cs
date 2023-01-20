@@ -4,14 +4,17 @@ using GodotPlugins.Game;
 
 public partial class Main_m : Control
 {
-	// Loaded buttons?
-	private Button Play;
+	// Loaded scenes
 	private PackedScene Game;
 	
+	// Loaded buttons?
+	private Button Play;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		Game = GD.Load<PackedScene>("res://sections.tscn");
+		
 		Play = GetNode<Button>("Container/Play");
 		Play.Pressed += PlayOnPressed;
 	}

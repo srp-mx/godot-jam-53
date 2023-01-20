@@ -5,17 +5,25 @@ public partial class Sections : Control
     PackedScene Terminal;
     PackedScene Menu;
     
+    // Escenas instanciadas
+    private Control menu_ins;
+    private Control terminal_ins;
+    
     // Loaded buttons?
     private Button terminal;
     private Button menu;
 	
+    private Vector2i position;
+    
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         Terminal = GD.Load<PackedScene>("res://terminal.tscn");
         Menu = GD.Load<PackedScene>("res://menu.tscn");
-        
-        //Shell button
+
+        position = new Vector2i(0, 0);
+
+        //Terminal button
         terminal = GetNode<Button>("Terminal");
         Callable self = new Callable(this, "Show_Terminal");
         terminal.Connect("toggled", self, 0);
@@ -24,6 +32,14 @@ public partial class Sections : Control
         menu = GetNode<Button>("Menu");
         Callable self2 = new Callable(this, "Show_Menu");
         menu.Connect("toggled", self2, 0);
+        
+        // Scenes instances
+        terminal_ins = (Control) Terminal.Instantiate();
+        menu_ins = (Control) Menu.Instantiate();
+        terminal_ins.Visible = false;
+        menu_ins.Visible = false;
+        this.AddChild(terminal_ins);
+        this.AddChild(menu_ins);
 
     }
 
@@ -35,17 +51,14 @@ public partial class Sections : Control
     // Shows the Terminal
     public void Show_Terminal(bool condition)
     {
-        if (condition == true)
+        if (condition)
         {
-            Control terminal_ins = (Control) Terminal.Instantiate();
-            Vector2i position = new Vector2i(0, 0);
             terminal_ins.Position = position;
-            this.AddChild(terminal_ins);
+            terminal_ins.Visible = true;
         }
         else
         {
-            Control terminal_ins = GetNode<Control>("Terminal Node");
-            terminal_ins.QueueFree();
+            terminal_ins.Visible = false;
         }
     }
 
@@ -55,20 +68,14 @@ public partial class Sections : Control
         if (condition == true)
         {
             GetTree().Paused = true;
-            Control menu_ins = (Control) Menu.Instantiate();
-            Vector2i position = new Vector2i(0, 0);
             menu_ins.Position = position;
-            this.AddChild(menu_ins);
+            menu_ins.Visible = true;
             terminal.Disabled = true;
         }
         else
         {
             GetTree().Paused = false;
-            Control menu_ins = GetNode<Control>("Menu Node");
-            if (menu_ins != null)
-            {
-                menu_ins.QueueFree();
-            }
+            menu_ins.Visible = false;
             terminal.Disabled = false;
         }
     }

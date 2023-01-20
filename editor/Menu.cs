@@ -3,19 +3,24 @@ using System;
 
 public partial class Menu : Control
 {
+	// Loaded scenes
+	private PackedScene Main_menu;
+	private PackedScene Game;
+	
 	// Loaded buttons?
 	private Button Resume;
 	private Button Retry;
 	private Button Main_m;
+	private Button terminal_button;
 
-	//Loaded scenes
-	private PackedScene Main_menu;
-	private PackedScene Game;
-	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		Main_menu = GD.Load<PackedScene>("res://main_m.tscn");
 		Game = GD.Load<PackedScene>("res://sections.tscn");
+		
+		terminal_button = GetNode<Button>("/root/Sections Node/Terminal");
+		
 		//Resume button
 		Resume = GetNode<Button>("VBoxContainer/Resume");
 		Resume.Pressed += ResumeOnPressed;
@@ -25,9 +30,15 @@ public partial class Menu : Control
 		Retry.Pressed += RetryOnPressed;
 		
 		//Main menu button
-		Main_menu = GD.Load<PackedScene>("res://main_m.tscn");
 		Main_m = GetNode<Button>("VBoxContainer/Main_Menu");
 		Main_m.Pressed += Main_mOnPressed;
+	}
+
+	private void ResumeOnPressed()
+	{
+		terminal_button.Disabled = false;
+		GetTree().Paused = false;
+		this.Visible = false;
 	}
 
 	private void RetryOnPressed()
@@ -35,17 +46,7 @@ public partial class Menu : Control
 		GetTree().ChangeSceneToPacked(Game);
 		GetTree().Paused = false;
 	}
-
-	private void ResumeOnPressed()
-	{
-		Button terminal_button = GetNode<Button>("/root/Sections Node/Terminal");
-		terminal_button.Disabled = false;
-		GetTree().Paused = false;
-		Button menu_button = GetNode<Button>("/root/Sections Node/Menu");
-		// Falta hacer que menu_button se presione para que cuando se vuelva a presionar salga de nuevo el menu
-		this.QueueFree();
-	}
-
+	
 	private void Main_mOnPressed()
 	{
 		GetTree().ChangeSceneToPacked(Main_menu);

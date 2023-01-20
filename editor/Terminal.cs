@@ -5,11 +5,28 @@ using FileAccess = Godot.FileAccess;
 
 public partial class Terminal : Control
 {
+	// Loaded buttons?
+	private MenuButton menuFile;
+	
+	// Loaded nodes?
+	private FileDialog popupOpen;
+	private FileDialog popupSave;
+	private TextEdit editor;
+
+	private Vector2i size;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		//Pop-ups?
+		popupOpen = GetNode<FileDialog>("Open File");
+		popupSave = GetNode<FileDialog>("Save As File");
+		size = new Vector2i(800, 500);
+		
+		editor = GetNode<TextEdit>("TextEditor");
+
 		//Menu button
-		MenuButton menuFile = GetNode<MenuButton>("Menu File");
+		menuFile = GetNode<MenuButton>("Menu File");
 		menuFile.GetPopup().AddItem("New File");
 		menuFile.GetPopup().AddItem("Open File");
 		menuFile.GetPopup().AddItem("Save As File");
@@ -19,25 +36,19 @@ public partial class Terminal : Control
 
 	private void _on_item_pressed(int id)
 	{
-		MenuButton menuFile = GetNode<MenuButton>("Menu File");
 		var itemName = menuFile.GetPopup().GetItemText(id);
 		if (itemName == "Open File")
 		{
-			FileDialog popupOpen = GetNode<FileDialog>("Open File");
-			Vector2i size = new Vector2i(800, 500);
 			popupOpen.PopupCentered(size);
 			popupOpen.FileSelected += PopupOpenOnFileSelected;
 		}
 		else if(itemName == "Save As File")
 		{
-			FileDialog popupSave = GetNode<FileDialog>("Save As File");
-			Vector2i size = new Vector2i(800, 500);
 			popupSave.PopupCentered(size);
 			popupSave.FileSelected += PopupSaveOnFileSelected;
 		}
 		else if (itemName == "New File")
 		{
-			TextEdit editor = GetNode<TextEdit>("TextEditor");
 			editor.Text = "";
 		}
 	}
@@ -45,13 +56,11 @@ public partial class Terminal : Control
 	private void PopupOpenOnFileSelected(string path)
 	{
 		var file = FileAccess.Open(path, FileAccess.ModeFlags.Read);
-		TextEdit editor = GetNode<TextEdit>("TextEditor");
 		editor.Text = file.GetAsText();
 	}
 	private void PopupSaveOnFileSelected(string path)
 	{
 		var file = FileAccess.Open(path, FileAccess.ModeFlags.Write);
-		TextEdit editor = GetNode<TextEdit>("TextEditor");
 		string content = editor.Text;
 		file.StoreString(content);
 		file.Flush();
