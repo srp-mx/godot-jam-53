@@ -31,7 +31,12 @@ public partial class Machine : Node
         code.SetAvailableSets(availableInstructionSets);
     }
 
-    private void compileProgram(string program)
+    public void AddInstructionSet(InstructionSets set)
+    {
+        availableInstructionSets.Add(set);
+    }
+
+    public void compileProgram(string program)
     {
         if (program == lastReadProgram)
             return;
