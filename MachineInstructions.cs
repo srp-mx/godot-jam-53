@@ -46,11 +46,12 @@ public partial class Machine : Node
         instructions.Add(new("FALL", 26, 0, FALL), InstructionSets.Available.Basic);
         instructions.Add(new("CMPKEY", 27, 1, CMPKEY), InstructionSets.Available.Basic);
         instructions.Add(new("SHOOT", 28, 0, SHOOT), InstructionSets.Available.Basic);
-        instructions.Add(new("COOL", 29, 0, COOL), InstructionSets.Available.Basic);
-        instructions.Add(new("PUSH", 30, 1, PUSH), InstructionSets.Available.Basic);
-        instructions.Add(new("POP", 31, 1, POP), InstructionSets.Available.Basic);
-        instructions.Add(new("CALLF", 32, 2, CALLF), InstructionSets.Available.Basic);
-        instructions.Add(new("CALLNF", 33, 2, CALLNF), InstructionSets.Available.Basic);
+        instructions.Add(new("RELOAD", 29, 0, RELOAD), InstructionSets.Available.Basic);
+        instructions.Add(new("COOL", 30, 0, COOL), InstructionSets.Available.Basic);
+        instructions.Add(new("PUSH", 31, 1, PUSH), InstructionSets.Available.Basic);
+        instructions.Add(new("POP", 32, 1, POP), InstructionSets.Available.Basic);
+        instructions.Add(new("CALLF", 33, 2, CALLF), InstructionSets.Available.Basic);
+        instructions.Add(new("CALLNF", 34, 2, CALLNF), InstructionSets.Available.Basic);
     }
 
     private int getValueFromAddr(ParamInfo param, out string err)
@@ -909,12 +910,22 @@ public partial class Machine : Node
     }
 
     // TODO
+    [Signal]
+    public delegate void doRELOADEventHandler();
     private bool RELOAD(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        throw new NotImplementedException();
         if (errorParamBounds(iptr, 0, ref fmem[iptr], out err))
                 return false;
 
+        EmitSignal("doRELOAD");
+        bbox.Set(false);
+        while (bbox.val == false)
+        {
+
+        }
+
+        bbox.Set(false);
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     // TODO

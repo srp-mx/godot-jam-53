@@ -40,7 +40,6 @@ public partial class Bullet : Area3D
 
     public void body_entered(Node3D body)
     {
-        GD.Print("entered");
         Visible = false;
     }
 }

@@ -83,6 +83,9 @@ loop:
     cmpkey 37
     callf keyf press_enter
 
+    cmpkey 27
+    callf keyf press_r
+
     jmp loop
 
 press_0:
@@ -138,6 +141,11 @@ press_f:
 press_enter:
     SHOOT
     print 9
+    ret
+
+press_r:
+    RELOAD
+    print 10
     ret
 
 ";

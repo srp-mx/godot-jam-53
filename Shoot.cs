@@ -6,6 +6,13 @@ public partial class Shoot : Node3D
 {
     [Export]
     float shotTime = 0.5f;
+    [Export]
+    int maxAmmo = 7;
+    int currAmmo = 0;
+    [Export]
+    float reloadTime = 2.5f;
+    float reloadTimer = 0;
+
     PackedScene bulletResource;
     List<Node3D> bulletPool = new();
     Machine machine;
@@ -16,6 +23,7 @@ public partial class Shoot : Node3D
         bulletResource = GD.Load<PackedScene>("res://scenes/prefabs/bullet.tscn");
         machine = (Machine) this.FindParent("Machine");
         machine.Connect("doSHOOT", new(this, "ShootBullet"));
+        machine.Connect("doRELOAD", new(this, "Reload"));
         for(int i = 0; i < 16; i++)
         {
             var bullet = (Node3D)bulletResource.Instantiate();
@@ -28,6 +36,7 @@ public partial class Shoot : Node3D
     public override void _Process(double delta)
     {
         lastShot += (float)delta;
+        reloadTimer += (float)delta;
     }
 
     private Node3D getBullet()
@@ -49,7 +58,7 @@ public partial class Shoot : Node3D
     float lastShot = 0.0f;
     public void ShootBullet()
     {
-        if (lastShot < shotTime)
+        if (lastShot < shotTime || currAmmo <= 0)
             return;
 
         Node3D bullet = getBullet();
@@ -57,6 +66,19 @@ public partial class Shoot : Node3D
         bullet.Rotation = GlobalRotation;
         bullet.Visible = true;
         lastShot = 0;
+        currAmmo--;
+    }
+
+    public void Reload()
+    {
+        currAmmo = maxAmmo;
+        reloadTimer = 0;
+        while (reloadTimer < reloadTime)
+        {
+
+        }
+        machine.bbox.Set(true);
+        return;
     }
 
 }
