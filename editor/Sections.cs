@@ -4,6 +4,9 @@ public partial class Sections : Control
     // Loaded scenes
     PackedScene Terminal;
     PackedScene Menu;
+
+    Control terminal_ins;
+    Control menu_ins;
     
     // Loaded buttons?
     private Button terminal;
@@ -25,6 +28,15 @@ public partial class Sections : Control
         Callable self2 = new Callable(this, "Show_Menu");
         menu.Connect("toggled", self2, 0);
 
+        terminal_ins = (Control) Terminal.Instantiate();
+        menu_ins = (Control) Menu.Instantiate();
+
+        terminal_ins.Visible = false;
+        menu_ins.Visible = false;
+
+        AddChild(terminal_ins);
+        AddChild(menu_ins);
+        
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,41 +47,41 @@ public partial class Sections : Control
     // Shows the Terminal
     public void Show_Terminal(bool condition)
     {
-        if (condition == true)
+        if (condition)
         {
-            Control terminal_ins = (Control) Terminal.Instantiate();
             Vector2i position = new Vector2i(0, 0);
             terminal_ins.Position = position;
-            this.AddChild(terminal_ins);
+            terminal_ins.Visible = true;
         }
         else
         {
-            Control terminal_ins = GetNode<Control>("Terminal Node");
-            terminal_ins.QueueFree();
+            //Control terminal_ins = GetNode<Control>("Terminal Node");
+            //terminal_ins.QueueFree();
+            terminal_ins.Visible = false;
         }
     }
 
     // Shows the pause menu?
     public void Show_Menu(bool condition)
     {
-        if (condition == true)
+        if (condition)
         {
+            menu_ins.Visible = true;
             GetTree().Paused = true;
-            Control menu_ins = (Control) Menu.Instantiate();
             Vector2i position = new Vector2i(0, 0);
             menu_ins.Position = position;
-            this.AddChild(menu_ins);
             terminal.Disabled = true;
         }
         else
         {
             GetTree().Paused = false;
-            Control menu_ins = GetNode<Control>("Menu Node");
-            if (menu_ins != null)
-            {
-                menu_ins.QueueFree();
-            }
+            //Control menu_ins = GetNode<Control>("Menu Node");
+            //if (menu_ins != null)
+            //{
+                //menu_ins.QueueFree();
+            //}
             terminal.Disabled = false;
+            menu_ins.Visible = false;
         }
     }
 }
