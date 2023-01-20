@@ -638,7 +638,6 @@ public partial class Machine : Node
         return moveOneExit(fmem, ref iptr, out err);
     }
 
-    // TODO
     [Signal]
     public delegate void doINTERACTEventHandler();
     private bool INTERACT(MethodBlock[] fmem, ref int iptr, out string err)
@@ -757,7 +756,6 @@ public partial class Machine : Node
         return moveOneExit(fmem, ref iptr, out err);
     }
 
-    // TODO
     [Signal]
     public delegate void doJUMP_UPEventHandler(int amount, Vector2 dir);
     private bool JUMP_UP(MethodBlock[] fmem, ref int iptr, out string err)
@@ -779,7 +777,6 @@ public partial class Machine : Node
         return moveOneExit(fmem, ref iptr, out err);
     }
 
-    // TODO
     [Signal]
     public delegate void doFLY_EventHandler(int amount);
     private bool FLY_UP(MethodBlock[] fmem, ref int iptr, out string err)
@@ -808,7 +805,6 @@ public partial class Machine : Node
         return moveOneExit(fmem, ref iptr, out err);
     }
 
-    // TODO
     private bool FLY_DOWN(MethodBlock[] fmem, ref int iptr, out string err)
     {
         if (errorParamBounds(iptr, 0, ref fmem[iptr], out err))
@@ -835,7 +831,6 @@ public partial class Machine : Node
         return moveOneExit(fmem, ref iptr, out err);
     }
 
-    // TODO
     // turn off fly
     [Signal]
     public delegate void doFALLEventHandler();

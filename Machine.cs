@@ -52,26 +52,35 @@ public partial class Machine : Node
 loop:
     cmpkey 0
     callf keyf press_0
+
     cmpkey 40
     callf keyf press_up
+
     cmpkey 41
     callf keyf press_down
+
     cmpkey 43
     callf keyf press_left
+
     cmpkey 42
     callf keyf press_right
+
     cmpkey 36
     callf keyf press_space
+
     cmpkey 0xC
     callf keyf press_c
+
     cmpkey 0xE
     callf keyf press_e
+
     cmpkey 0xF
     callf keyf press_f
+
     jmp loop
 
 press_0:
-    rot 138
+    rot 138 ; 127 
     print 0
     ret
 

@@ -59,9 +59,11 @@ public partial class PlayerMovement : CharacterBody3D
     }
 
     // signal TODO
+    [Signal]
+    public delegate void Interact_EventHandler();
     public void doInteract()
     {
-        
+        EmitSignal("interact");
     }
 
     private void mov(double delta)
@@ -164,7 +166,7 @@ public partial class PlayerMovement : CharacterBody3D
             {
                 velocity.y = movdir.y * Speed;
             }
-			velocity.z = movdir.z * Speed;
+			velocity.z = -movdir.z * Speed;
 		}
 		else
 		{
