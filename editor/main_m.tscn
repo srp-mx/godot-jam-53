@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvn3mjjd3i8mg"]
+
+[ext_resource type="Script" path="res://Main_m.cs" id="1_c46ry"]
+
+[node name="Main_M Node" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c46ry")
+
+[node name="Container" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -21.0
+offset_right = 29.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.92, 2.76)
+pivot_offset = Vector2(27.9337, 20.6522)
+
+[node name="Play" type="Button" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Play"

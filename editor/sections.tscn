@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm4t5tumle40u"]
+
+[ext_resource type="Script" path="res://Sections.cs" id="1_usyrw"]
+
+[node name="Sections Node" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_usyrw")
+
+[node name="Terminal" type="Button" parent="."]
+process_mode = 3
+anchors_preset = -1
+anchor_left = 0.965278
+anchor_top = 0.0030868
+anchor_right = 0.999133
+anchor_bottom = 0.0030868
+offset_top = 126.0
+offset_right = 86.9993
+offset_bottom = 165.0
+grow_horizontal = 0
+rotation = -1.57079
+theme_override_font_sizes/font_size = 21
+toggle_mode = true
+action_mode = 0
+keep_pressed_outside = true
+text = "Terminal"
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Button" parent="."]
+process_mode = 3
+anchors_preset = -1
+anchor_left = 0.965278
+anchor_top = 0.225309
+anchor_right = 0.999133
+anchor_bottom = 0.225309
+offset_top = 126.0
+offset_right = 86.9993
+offset_bottom = 165.0
+rotation = -1.57079
+theme_override_font_sizes/font_size = 21
+toggle_mode = true
+action_mode = 0
+keep_pressed_outside = true
+text = "Menu"
+metadata/_edit_use_anchors_ = true
