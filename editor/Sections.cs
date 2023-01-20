@@ -41,6 +41,15 @@ public partial class Sections : Control
         this.AddChild(terminal_ins);
         this.AddChild(menu_ins);
 
+        terminal_ins = (Control) Terminal.Instantiate();
+        menu_ins = (Control) Menu.Instantiate();
+
+        terminal_ins.Visible = false;
+        menu_ins.Visible = false;
+
+        AddChild(terminal_ins);
+        AddChild(menu_ins);
+        
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -65,18 +74,18 @@ public partial class Sections : Control
     // Shows the pause menu?
     public void Show_Menu(bool condition)
     {
-        if (condition == true)
+        if (condition)
         {
+            menu_ins.Visible = true;
             GetTree().Paused = true;
             menu_ins.Position = position;
-            menu_ins.Visible = true;
             terminal.Disabled = true;
         }
         else
         {
             GetTree().Paused = false;
-            menu_ins.Visible = false;
             terminal.Disabled = false;
+            menu_ins.Visible = false;
         }
     }
 }

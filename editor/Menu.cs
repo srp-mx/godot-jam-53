@@ -12,7 +12,8 @@ public partial class Menu : Control
 	private Button Retry;
 	private Button Main_m;
 	private Button terminal_button;
-
+	Button menu_button;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -32,6 +33,9 @@ public partial class Menu : Control
 		//Main menu button
 		Main_m = GetNode<Button>("VBoxContainer/Main_Menu");
 		Main_m.Pressed += Main_mOnPressed;
+
+		terminal_button = GetNode<Button>("/root/Sections Node/Terminal");
+		menu_button = GetNode<Button>("/root/Sections Node/Menu");
 	}
 
 	private void ResumeOnPressed()
@@ -46,7 +50,7 @@ public partial class Menu : Control
 		GetTree().ChangeSceneToPacked(Game);
 		GetTree().Paused = false;
 	}
-	
+
 	private void Main_mOnPressed()
 	{
 		GetTree().ChangeSceneToPacked(Main_menu);
