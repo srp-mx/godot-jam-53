@@ -33,23 +33,24 @@ public partial class Machine : Node
         instructions.Add(new("INC", 13, 1, INC), InstructionSets.Available.Basic);
         instructions.Add(new("DEC", 14, 1, DEC), InstructionSets.Available.Basic);
         instructions.Add(new("JMP", 15, 1, JMP), InstructionSets.Available.Basic);
-        instructions.Add(new("ROT", 16, 1, ROT), InstructionSets.Available.Basic);
-        instructions.Add(new("INTERACT", 17, 0, INTERACT), InstructionSets.Available.Basic);
-        instructions.Add(new("MOV_R", 18, 1, MOV_R), InstructionSets.Available.Basic);
-        instructions.Add(new("MOV_L", 19, 1, MOV_L), InstructionSets.Available.Basic);
-        instructions.Add(new("MOV_F", 20, 1, MOV_F), InstructionSets.Available.Basic);
-        instructions.Add(new("MOV_B", 21, 1, MOV_B), InstructionSets.Available.Basic);
-        instructions.Add(new("JUMP_UP", 22, 1, JUMP_UP), InstructionSets.Available.Basic);
-        instructions.Add(new("FLY_UP", 23, 1, FLY_UP), InstructionSets.Available.Basic);
-        instructions.Add(new("FLY_DOWN", 24, 1, FLY_DOWN), InstructionSets.Available.Basic);
-        instructions.Add(new("FALL", 25, 0, FALL), InstructionSets.Available.Basic);
-        instructions.Add(new("CMPKEY", 26, 1, CMPKEY), InstructionSets.Available.Basic);
-        instructions.Add(new("SHOOT", 27, 0, SHOOT), InstructionSets.Available.Basic);
-        instructions.Add(new("COOL", 28, 0, COOL), InstructionSets.Available.Basic);
-        instructions.Add(new("PUSH", 29, 1, PUSH), InstructionSets.Available.Basic);
-        instructions.Add(new("POP", 30, 1, POP), InstructionSets.Available.Basic);
-        instructions.Add(new("CALLF", 31, 2, CALLF), InstructionSets.Available.Basic);
-        instructions.Add(new("CALLNF", 32, 2, CALLNF), InstructionSets.Available.Basic);
+        instructions.Add(new("ROT_CLOCK", 16, 1, ROT_CLOCK), InstructionSets.Available.Basic);
+        instructions.Add(new("ROT_ANTI", 17, 1, ROT_ANTI), InstructionSets.Available.Basic);
+        instructions.Add(new("INTERACT", 18, 0, INTERACT), InstructionSets.Available.Basic);
+        instructions.Add(new("MOV_R", 19, 1, MOV_R), InstructionSets.Available.Basic);
+        instructions.Add(new("MOV_L", 20, 1, MOV_L), InstructionSets.Available.Basic);
+        instructions.Add(new("MOV_F", 21, 1, MOV_F), InstructionSets.Available.Basic);
+        instructions.Add(new("MOV_B", 22, 1, MOV_B), InstructionSets.Available.Basic);
+        instructions.Add(new("JUMP_UP", 23, 1, JUMP_UP), InstructionSets.Available.Basic);
+        instructions.Add(new("FLY_UP", 24, 1, FLY_UP), InstructionSets.Available.Basic);
+        instructions.Add(new("FLY_DOWN", 25, 1, FLY_DOWN), InstructionSets.Available.Basic);
+        instructions.Add(new("FALL", 26, 0, FALL), InstructionSets.Available.Basic);
+        instructions.Add(new("CMPKEY", 27, 1, CMPKEY), InstructionSets.Available.Basic);
+        instructions.Add(new("SHOOT", 28, 0, SHOOT), InstructionSets.Available.Basic);
+        instructions.Add(new("COOL", 29, 0, COOL), InstructionSets.Available.Basic);
+        instructions.Add(new("PUSH", 30, 1, PUSH), InstructionSets.Available.Basic);
+        instructions.Add(new("POP", 31, 1, POP), InstructionSets.Available.Basic);
+        instructions.Add(new("CALLF", 32, 2, CALLF), InstructionSets.Available.Basic);
+        instructions.Add(new("CALLNF", 33, 2, CALLNF), InstructionSets.Available.Basic);
     }
 
     private int getValueFromAddr(ParamInfo param, out string err)
@@ -613,7 +614,32 @@ public partial class Machine : Node
 
     [Signal]
     public delegate void doROTEventHandler(int amount);
-    private bool ROT(MethodBlock[] fmem, ref int iptr, out string err)
+    private bool ROT_CLOCK(MethodBlock[] fmem, ref int iptr, out string err)
+    {
+        if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
+                return false;
+
+        var param1 = fmem[++iptr].GetParamInfo();
+
+        int val = getValue(param1, out err);
+        if (err != "")
+        {
+            err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Failed to rotate.\n{err}";
+            return false;
+        }
+
+        bbox.Set(false);
+        EmitSignal("doROT", -val);
+        while (bbox.val == false)
+        {
+            
+        }
+
+        bbox.Set(false);
+        return moveOneExit(fmem, ref iptr, out err);
+    }
+
+    private bool ROT_ANTI(MethodBlock[] fmem, ref int iptr, out string err)
     {
         if (errorParamBounds(iptr, 1, ref fmem[iptr], out err))
                 return false;

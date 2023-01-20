@@ -51,7 +51,6 @@ public partial class PlayerMovement : CharacterBody3D
     // signal
     public void doROT(int amount)
     {
-        amount -= 127;
         timer = 0;
         currentAct = rot;
         currentPAct = null;

@@ -53,6 +53,9 @@ loop:
     cmpkey 0
     callf keyf press_0
 
+    cmpkey 9
+    callf keyf press_9
+
     cmpkey 40
     callf keyf press_up
 
@@ -80,7 +83,12 @@ loop:
     jmp loop
 
 press_0:
-    rot 138 ; 127 
+    rot_clock 10
+    print 0
+    ret
+
+press_9:
+    rot_anti 10 
     print 0
     ret
 
