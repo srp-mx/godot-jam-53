@@ -10,13 +10,13 @@ config_version=5
 
 [application]
 
-config/name="Editor"
+config/name="Godot-jam-53"
 config/features=PackedStringArray("4.0", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="Editor"
+project/assembly_name="Godot-jam-53"
 
 [rendering]
 
