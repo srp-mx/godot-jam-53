@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpt7lvc1hobr8"]
 
-[ext_resource type="Script" path="res://Menu.cs" id="1_iyubi"]
+[ext_resource type="Script" path="res://Menu.cs" id="1_ppnqr"]
 
 [node name="Menu Node" type="Control"]
 layout_mode = 3
@@ -8,7 +8,7 @@ anchor_right = 0.972222
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_iyubi")
+script = ExtResource("1_ppnqr")
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -40,7 +40,6 @@ alignment = 1
 offset_top = 1.0
 offset_right = 113.0
 offset_bottom = 32.0
-pivot_offset = Vector2(88, 128.5)
 text = "Resume"
 
 [node name="Retry" type="Button" parent="VBoxContainer"]
