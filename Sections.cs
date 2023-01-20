@@ -18,8 +18,8 @@ public partial class Sections : Control
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        Terminal = GD.Load<PackedScene>("res://terminal.tscn");
-        Menu = GD.Load<PackedScene>("res://menu.tscn");
+        Terminal = GD.Load<PackedScene>("res://scenes/prefabs/terminal.tscn");
+        Menu = GD.Load<PackedScene>("res://scenes/prefabs/menu.tscn");
 
         position = new Vector2i(0, 0);
 

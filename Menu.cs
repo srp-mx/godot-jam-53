@@ -17,8 +17,8 @@ public partial class Menu : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Main_menu = GD.Load<PackedScene>("res://main_m.tscn");
-		Game = GD.Load<PackedScene>("res://sections.tscn");
+		Main_menu = GD.Load<PackedScene>("res://scenes/prefabs/main_m.tscn");
+		Game = GD.Load<PackedScene>("res://scenes/prefabs/sections.tscn");
 		
 		terminal_button = GetNode<Button>("/root/Sections Node/Terminal");
 		
@@ -43,6 +43,7 @@ public partial class Menu : Control
 		terminal_button.Disabled = false;
 		GetTree().Paused = false;
 		this.Visible = false;
+        menu_button.SetPressed(false);
 	}
 
 	private void RetryOnPressed()
