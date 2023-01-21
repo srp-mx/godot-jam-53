@@ -141,9 +141,13 @@ press_r:
         debugLogCode();
 	}
 
+    public bool paused = false;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+        if (paused)
+            return;
+
         if (clockPeriod == 0 || clockTime % clockPeriod == 0)
         {
             // 1k instructions per frame

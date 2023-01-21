@@ -32,6 +32,7 @@ public partial class CameraMovement : Camera3D
     [Export]
     public float shakeStability = 5.0f;
 
+    private bool mouseCapture = true;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -47,6 +48,16 @@ public partial class CameraMovement : Camera3D
 
     public override void _Process(double delta)
     {
+
+        if (mouseCapture)
+        {
+            Input.SetMouseMode(Input.MouseModeEnum.Captured);
+        }
+        else
+        {
+            Input.SetMouseMode(Input.MouseModeEnum.Confined);
+        }
+
         float shake = trauma * trauma * trauma;
         rot.y += sensitivity.x * mouseacc.x * (float)delta;
         rot.x += sensitivity.y * mouseacc.y * (float)delta * (invertY ? -1 : 1); 
@@ -77,7 +88,7 @@ public partial class CameraMovement : Camera3D
 
     public override void _PhysicsProcess(double delta)
     {
-        ray.SetTargetPosition(new (0, 0, -orbitRadius));
+        ray.SetTargetPosition(new (0, 0, -orbitRadius + 2.0f));
         if (ray.IsColliding())
         {
             var cp = ray.GetCollisionPoint();
@@ -97,18 +108,30 @@ public partial class CameraMovement : Camera3D
     public override void _Input(InputEvent @event)
     {
         if (@event is InputEventMouseMotion motion)
-            mouseacc += motion.Relative;
+        {
+            if (mouseCapture)
+                mouseacc += motion.Relative;
+        }
 
         if (@event is not InputEventMouseButton button)
             return;
 
-        if (!button.IsPressed())
-            return;
-
-        if (button.ButtonIndex == MouseButton.WheelDown)
-            playerZoom(1);
-        else if (button.ButtonIndex == MouseButton.WheelUp)
-            playerZoom(-1);
+        switch (button.ButtonIndex)
+        {
+            case MouseButton.WheelDown:
+                if (mouseCapture && button.Pressed)
+                    playerZoom(1);
+                break;
+            case MouseButton.WheelUp:
+                if (mouseCapture && button.Pressed)
+                    playerZoom(-1);
+                break;
+            case MouseButton.Right:
+            case MouseButton.Middle:
+                if (button.Pressed)
+                    mouseCapture = !mouseCapture;
+                break;
+        }
     }
 
     private Vector3 deltaPosCam(float radius)

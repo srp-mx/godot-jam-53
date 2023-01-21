@@ -55,14 +55,14 @@ public partial class Sections : Control
 		if (condition)
 		{
 			menu_layer.Visible = true;
-			GetTree().Paused = true;
-			terminal.Disabled = true;
+			//GetTree().Paused = true;
+			//terminal.Disabled = true;
 		}
 		else
 		{
-			GetTree().Paused = false;
-			terminal.Disabled = false;
-			menu_layer.Visible = false;
+			//GetTree().Paused = false;
+			//terminal.Disabled = false;
+            menu_layer.Visible = false;
 		}
 	}
 	

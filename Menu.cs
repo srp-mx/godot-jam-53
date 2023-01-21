@@ -32,7 +32,7 @@ public partial class Menu : Control
 		//PackedScene para el main menu
 		Main_menu = GD.Load<PackedScene>("res://scenes/prefabs/main_m.tscn");
 		//PackedScene para el retry
-		Game = GD.Load<PackedScene>("res://scenes/levels/test/TestMovement2.tscn");
+		Game = GD.Load<PackedScene>("res://scenes/levels/test/TestMovement.tscn");
 		
 		//las caspas para hacer visibles o invisibles 
 		terminal_layer = GetNode<CanvasLayer>("/root/Main_M Node/TestMovement/TerminalLayer");
@@ -55,6 +55,7 @@ public partial class Menu : Control
 		Main_m = GetNode<Button>("/root/Main_M Node/TestMovement/MenuLayer/Control/VBoxContainer/Main_Menu");
 		Main_m.Pressed += Main_mOnPressed;
 
+        sections_layer.Visible = true;
 	}
 
 	private void ResumeOnPressed()
