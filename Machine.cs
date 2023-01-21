@@ -5,14 +5,13 @@ using Game.Assembly;
 
 public partial class Machine : Node
 {
-    [Export]
     public long clockPeriod = 0;
     private long clockTime = 0;
     string program;
-    int[] stack = new int[256];
+    public int[] stack = new int[256];
     int stackPtr = 0;
-    int[] heap = new int[256];
-    int[] registers;
+    public int[] heap = new int[256];
+    public int[] registers;
 
     private void initMem()
     {
@@ -32,11 +31,11 @@ public partial class Machine : Node
         initParser(); // Must happen after initInstruction()
     }
 
+    [Signal]
+    public delegate void CodeLogEventHandler(string txt);
     private void codeLog(string str)
     {
-        // TODO(srp): show to player
-        GD.Print("CODELOG: " + str.Replace("\n", "\n         "));
-        //throw new NotImplementedException("TODO Machine.cs  codeLog method");
+        EmitSignal("CodeLog", str);
     }
 
 	// Called when the node enters the scene tree for the first time.
@@ -45,114 +44,22 @@ public partial class Machine : Node
         Game.ExternDebug.printer = str => debugLog(str);
         machineCtor();
         // TODO(srp): this has to get fed
-        string testProgram = @"
-
-; comment
-
-loop:
-    cmpkey 0
-    callf keyf press_0
-
-    cmpkey 9
-    callf keyf press_9
-
-    cmpkey 40
-    callf keyf press_up
-
-    cmpkey 41
-    callf keyf press_down
-
-    cmpkey 43
-    callf keyf press_left
-
-    cmpkey 42
-    callf keyf press_right
-
-    cmpkey 36
-    callf keyf press_space
-
-    cmpkey 0xC
-    callf keyf press_c
-
-    cmpkey 0xE
-    callf keyf press_e
-
-    cmpkey 0xF
-    callf keyf press_f
-
-    cmpkey 37
-    callf keyf press_enter
-
-    cmpkey 27
-    callf keyf press_r
-
-    jmp loop
-
-press_0:
-    rot_clock 10
-    ret
-
-press_9:
-    rot_anti 10 
-    ret
-
-press_right:
-    MOV_R 1
-    ret
-
-press_left:
-    MOV_L 1
-    ret
-
-press_up:
-    MOV_F 1
-    ret
-
-press_down:
-    MOV_B 1
-    ret
-
-press_space:
-    JUMP_UP 255
-    ret
-
-press_c:
-    FLY_DOWN 1
-    ret
-
-press_e:
-    FLY_UP 1
-    ret
-
-press_f:
-    FALL
-    ret
-
-press_enter:
-    SHOOT
-    ret
-
-press_r:
-    RELOAD
-    ret
-
-";
-        compileProgram(testProgram);
         debugLogCode();
 	}
 
     public bool paused = false;
+    public bool runnable = false;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-        if (paused)
+        if (!runnable)
             return;
 
         if (clockPeriod == 0 || clockTime % clockPeriod == 0)
         {
             // 1k instructions per frame
             // since it's asynchronous this is totally fine lmao
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < (clockPeriod == 0 ? 1000 : 1); i++)
             {
                 checkKeys();
                 StepCode();

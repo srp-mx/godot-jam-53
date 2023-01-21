@@ -18,7 +18,7 @@ using Game.Monads;
 public partial class Machine : Node
 {
     Parser parser;
-    CompiledCode code = new();
+    public CompiledCode code = new();
     private bool codeRejected = true;
 
     string lastReadProgram = "";
