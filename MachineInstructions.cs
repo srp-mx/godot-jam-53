@@ -921,8 +921,8 @@ public partial class Machine : Node
         if (errorParamBounds(iptr, 0, ref fmem[iptr], out err))
                 return false;
 
-        EmitSignal("doRELOAD");
         bbox.Set(false);
+        EmitSignal("doRELOAD");
         while (bbox.val == false)
         {
 
