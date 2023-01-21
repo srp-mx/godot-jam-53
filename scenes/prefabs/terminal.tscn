@@ -10,10 +10,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mhp7m")
 metadata/_edit_use_anchors_ = true
-
-[node name="PanelContainer2" type="PanelContainer" parent="."]
-offset_right = 1112.0
-offset_bottom = 648.0
+metadata/_edit_lock_ = true
 
 [node name="Open File" type="FileDialog" parent="."]
 title = "Open a File"
@@ -30,16 +27,15 @@ unresizable = true
 [node name="Menu File" type="MenuButton" parent="."]
 anchors_preset = -1
 anchor_left = 0.0215827
-anchor_top = 0.0246914
+anchor_top = 0.0617284
 anchor_right = 0.0614724
-anchor_bottom = 0.0725309
+anchor_bottom = 0.109568
 offset_right = -8.40001
 scale = Vector2(1.24, 1)
 text = "File"
 metadata/_edit_use_anchors_ = true
 
 [node name="TextEditor" type="TextEdit" parent="."]
-editor_description = ">> TERMINAL"
 anchors_preset = -1
 anchor_left = 0.0215827
 anchor_top = 0.0987654
@@ -48,145 +44,280 @@ anchor_bottom = 0.75329
 offset_right = 401.806
 offset_bottom = 24.8679
 scale = Vector2(0.556016, 0.944615)
+theme_override_constants/line_spacing = 2
 theme_override_font_sizes/font_size = 25
 placeholder_text = ">> Here u can write your code "
 highlight_current_line = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Instructions" type="Label" parent="."]
 anchors_preset = -1
-anchor_left = 0.870189
-anchor_top = 0.0493827
-anchor_right = 0.955564
-anchor_bottom = 0.0895062
+anchor_left = 0.517986
+anchor_top = 0.0617284
+anchor_right = 0.60336
+anchor_bottom = 0.101852
 text = "Instructions"
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = -1
-anchor_left = 0.868056
-anchor_top = 0.101852
-anchor_right = 0.953125
+anchor_left = 0.517986
+anchor_top = 0.111111
+anchor_right = 0.611511
 anchor_bottom = 0.728395
 offset_bottom = 3.05176e-05
 metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer"]
-offset_right = 94.5967
-offset_bottom = 406.0
+offset_right = 104.0
+offset_bottom = 400.0
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ScrollContainer"]
-offset_right = 68.0
-offset_bottom = 451.0
+offset_right = 99.0
+offset_bottom = 1186.0
 
-[node name="moveL" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
-offset_right = 68.0
+[node name="HLT" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_right = 99.0
 offset_bottom = 31.0
-text = "move_l
-"
+text = "HLT"
 
-[node name="moveR" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="Wait" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
 offset_top = 35.0
-offset_right = 68.0
+offset_right = 99.0
 offset_bottom = 66.0
-text = "move_r"
+text = "WAIT"
 
-[node name="moveU" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="Ret" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
 offset_top = 70.0
-offset_right = 68.0
+offset_right = 99.0
 offset_bottom = 101.0
-text = "move_u
-"
+text = "RET"
 
-[node name="moveD" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="Call" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
 offset_top = 105.0
-offset_right = 68.0
+offset_right = 99.0
 offset_bottom = 136.0
-text = "move_d
-"
+text = "CALL"
 
-[node name="x" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="Print" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
 offset_top = 140.0
-offset_right = 68.0
+offset_right = 99.0
 offset_bottom = 171.0
-text = "move
+text = "PRINT"
+
+[node name="Nop" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 175.0
+offset_right = 99.0
+offset_bottom = 206.0
+text = "NOP"
+
+[node name="Move" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 210.0
+offset_right = 99.0
+offset_bottom = 241.0
+text = "MOV"
+
+[node name="Add" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 245.0
+offset_right = 99.0
+offset_bottom = 276.0
+text = "ADD"
+
+[node name="Neg" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 280.0
+offset_right = 99.0
+offset_bottom = 311.0
+text = "NEG"
+
+[node name="Cmp" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 315.0
+offset_right = 99.0
+offset_bottom = 346.0
+text = "CMP"
+
+[node name="JMPF" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 350.0
+offset_right = 99.0
+offset_bottom = 381.0
+text = "JMPF
 "
 
-[node name="x2" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 175.0
-offset_right = 68.0
-offset_bottom = 206.0
-text = "move"
-
-[node name="coso1" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 210.0
-offset_right = 68.0
-offset_bottom = 241.0
-text = "coso"
-
-[node name="coso2" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 245.0
-offset_right = 68.0
-offset_bottom = 276.0
-text = "coso"
-
-[node name="coso3" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 280.0
-offset_right = 68.0
-offset_bottom = 311.0
-text = "coso"
-
-[node name="coso4" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 315.0
-offset_right = 68.0
-offset_bottom = 346.0
-text = "coso"
-
-[node name="coso5" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 350.0
-offset_right = 68.0
-offset_bottom = 381.0
-text = "coso"
-
-[node name="coso6" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="JMPNF" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
 offset_top = 385.0
-offset_right = 68.0
+offset_right = 99.0
 offset_bottom = 416.0
-text = "coso"
+text = "JMPNF
+"
 
-[node name="coso7" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="INC" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
 offset_top = 420.0
-offset_right = 68.0
+offset_right = 99.0
 offset_bottom = 451.0
-text = "coso"
+text = "INC
+"
+
+[node name="DEC" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 455.0
+offset_right = 99.0
+offset_bottom = 486.0
+text = "DEC
+"
+
+[node name="JMP" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 490.0
+offset_right = 99.0
+offset_bottom = 521.0
+text = "JMP"
+
+[node name="RotClock" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 525.0
+offset_right = 99.0
+offset_bottom = 556.0
+text = "ROT_CLOCK"
+
+[node name="RotAnti" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 560.0
+offset_right = 99.0
+offset_bottom = 591.0
+text = "ROT_CLOCK"
+
+[node name="Interact" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 595.0
+offset_right = 99.0
+offset_bottom = 626.0
+text = "INTERACT"
+
+[node name="MovR" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 630.0
+offset_right = 99.0
+offset_bottom = 661.0
+text = "MOVE_R
+"
+
+[node name="MovL" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 665.0
+offset_right = 99.0
+offset_bottom = 696.0
+text = "MOV_L
+"
+
+[node name="MovF" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 700.0
+offset_right = 99.0
+offset_bottom = 731.0
+text = "MOV_F
+"
+
+[node name="MovB" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 735.0
+offset_right = 99.0
+offset_bottom = 766.0
+text = "MOV_B
+"
+
+[node name="JumpUp" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 770.0
+offset_right = 99.0
+offset_bottom = 801.0
+text = "JUMP_UP
+"
+
+[node name="FlyUp" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 805.0
+offset_right = 99.0
+offset_bottom = 836.0
+text = "FLY_UP
+"
+
+[node name="FlyDown" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 840.0
+offset_right = 99.0
+offset_bottom = 871.0
+text = "FLY_DOWN"
+
+[node name="Fall" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 875.0
+offset_right = 99.0
+offset_bottom = 906.0
+text = "FALL"
+
+[node name="CMPKEY" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 910.0
+offset_right = 99.0
+offset_bottom = 941.0
+text = "CMPKEY"
+
+[node name="Shoot" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 945.0
+offset_right = 99.0
+offset_bottom = 976.0
+text = "SHOOT"
+
+[node name="Cool" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 980.0
+offset_right = 99.0
+offset_bottom = 1011.0
+text = "COOL"
+
+[node name="Push" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 1015.0
+offset_right = 99.0
+offset_bottom = 1046.0
+text = "PUSH"
+
+[node name="Pop" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 1050.0
+offset_right = 99.0
+offset_bottom = 1081.0
+text = "POP"
+
+[node name="CallF" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 1085.0
+offset_right = 99.0
+offset_bottom = 1116.0
+text = "CALLF"
+
+[node name="CallNF" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 1120.0
+offset_right = 99.0
+offset_bottom = 1151.0
+text = "CALLNF"
+
+[node name="Reload" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+offset_top = 1155.0
+offset_right = 99.0
+offset_bottom = 1186.0
+text = "RELOAD"
 
 [node name="RAM" type="Label" parent="."]
 anchors_preset = -1
-anchor_left = 0.510791
+anchor_left = 0.654676
 anchor_top = 0.0478395
-anchor_right = 0.546381
+anchor_right = 0.68705
 anchor_bottom = 0.087963
 text = "RAM"
 metadata/_edit_use_anchors_ = true
 
 [node name="Registers -Flags" type="Label" parent="."]
 anchors_preset = -1
-anchor_left = 0.517986
-anchor_top = 0.79784
-anchor_right = 0.632875
-anchor_bottom = 0.837963
+anchor_left = 0.654676
+anchor_top = 0.790123
+anchor_right = 0.769565
+anchor_bottom = 0.830247
 text = "Registers / Flags"
 metadata/_edit_use_anchors_ = true
 
 [node name="#Registers" type="GridContainer" parent="."]
 anchors_preset = -1
-anchor_left = 0.517986
-anchor_top = 0.864198
-anchor_right = 0.81964
-anchor_bottom = 0.950617
-offset_top = -3.05176e-05
-offset_right = -45.44
+anchor_left = 0.654676
+anchor_top = 0.839506
+anchor_right = 0.958129
+anchor_bottom = 0.925926
+offset_left = 0.00012207
+offset_top = 6.10352e-05
+offset_right = -45.4399
+offset_bottom = 0.00012207
 scale = Vector2(1.16, 1)
 columns = 9
 metadata/_edit_use_anchors_ = true
@@ -338,9 +469,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer3" type="PanelContainer" parent="."]
 anchors_preset = -1
-anchor_left = 0.510791
+anchor_left = 0.654676
 anchor_top = 0.0987654
-anchor_right = 0.841727
+anchor_right = 0.985612
 anchor_bottom = 0.755987
 offset_right = 32.0
 offset_bottom = 81.1205
@@ -3669,3 +3800,17 @@ text = "00"
 
 [node name="256" type="Label" parent="PanelContainer3/Memory/Method Area"]
 text = "00"
+
+[node name="Compile" type="Button" parent="."]
+offset_left = 576.0
+offset_top = 504.0
+offset_right = 680.0
+offset_bottom = 544.0
+text = "Compile"
+
+[node name="Run" type="Button" parent="."]
+offset_left = 576.0
+offset_top = 558.0
+offset_right = 680.0
+offset_bottom = 598.0
+text = "Run"
