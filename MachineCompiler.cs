@@ -36,12 +36,14 @@ public partial class Machine : Node
         availableInstructionSets.Add(set);
     }
 
+    public bool finishedCompile = true;
     public void compileProgram(string program)
     {
         if (program == lastReadProgram)
             return;
     
         lastReadProgram = program;
+        finishedCompile = false;
 
         codeRejected = false;
 
@@ -68,6 +70,7 @@ public partial class Machine : Node
         }
 
         currInstruction = code.GetEnumerator();
+        finishedCompile = true;
 
         codeLog("[COMPILE SUCCESSFUL]");
     }
