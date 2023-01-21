@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3t2m3jt1hk25"]
+[gd_scene load_steps=13 format=3 uid="uid://b3t2m3jt1hk25"]
 
 [ext_resource type="Material" uid="uid://cqjjvuoujlxsn" path="res://materials/test_material.tres" id="1_ppfqy"]
 [ext_resource type="Environment" uid="uid://beg8qhrkbmq7y" path="res://environment/test_environment.tres" id="2_rdwmb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://PlayerMovement.cs" id="5_bajyu"]
 [ext_resource type="Script" path="res://Machine.cs" id="5_pn7s0"]
 [ext_resource type="Script" path="res://Shoot.cs" id="7_5smuh"]
+[ext_resource type="Script" path="res://CameraMovement.cs" id="8_gy5yx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cg150"]
 
@@ -17,13 +18,17 @@ dof_blur_near_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aehs0"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_mho2e"]
+
 [node name="TestMovement" type="Node3D"]
 
 [node name="floor" type="CSGBox3D" parent="."]
 transform = Transform3D(13.4042, 0, 0, 0, 1, 0, 0, 0, 19.7289, 0, 0, 0)
+layers = 3
 material = ExtResource("1_ppfqy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="floor"]
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_cg150")
@@ -33,12 +38,10 @@ transform = Transform3D(13.4042, 0, 0, 0, -0.370136, -18.3277, 0, 0.928978, -7.3
 material = ExtResource("1_ppfqy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="floor2"]
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor2/StaticBody3D"]
 shape = SubResource("BoxShape3D_cg150")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.94959, 0.313495, 0, -0.313495, 0.94959, 0, 1.94794, 5.08045)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.967815, 0.0805078, -0.238439, 0.2093, 0.268612, 0.940235, 0.139744, -0.959878, 0.243117, 0, 5.10251, 0)
@@ -69,6 +72,7 @@ script = ExtResource("5_pn7s0")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="Machine"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05923, 0)
+collision_layer = 2
 script = ExtResource("5_bajyu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Machine/CharacterBody3D"]
@@ -83,3 +87,20 @@ transform = Transform3D(0.358276, 0, 0, 0, 0.386414, 0, 0, 0, 1.20067, -0.780786
 [node name="bullet_hole" type="Node3D" parent="Machine/CharacterBody3D/Shooter"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, -0.518463)
 script = ExtResource("7_5smuh")
+
+[node name="Camera3D" type="Camera3D" parent="Machine"]
+transform = Transform3D(1, 0, 0, 0, 0.94959, 0.313495, 0, -0.313495, 0.94959, 0, 1.94794, 5.08045)
+current = true
+script = ExtResource("8_gy5yx")
+sensitivity = Vector2(15, 15)
+maxZoom = 15.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Machine/Camera3D"]
+target_position = Vector3(0, 0, -10)
+hit_from_inside = true
+
+[node name="Area3D" type="Area3D" parent="Machine/Camera3D"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Machine/Camera3D/Area3D"]
+shape = SubResource("SphereShape3D_mho2e")

@@ -58,7 +58,7 @@ public partial class Shoot : Node3D
     float lastShot = 0.0f;
     public void ShootBullet()
     {
-        if (lastShot < shotTime ||  <= 0)
+        if (lastShot < shotTime || currAmmo <= 0)
             return;
 
         Node3D bullet = getBullet();

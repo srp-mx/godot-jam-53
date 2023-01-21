@@ -944,7 +944,7 @@ public partial class Machine : Node
             System.Threading.Thread.Sleep(1000);
         }
 
-        return moveOne(fmem, ref iptr, out err);
+        return moveOneExit(fmem, ref iptr, out err);
     }
 
     private bool PUSH(MethodBlock[] fmem, ref int iptr, out string err)
@@ -1089,3 +1089,4 @@ public partial class Machine : Node
 
         return true;
     }
+}
