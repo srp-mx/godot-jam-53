@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using NoiseTest;
 
 public partial class CameraMovement : Camera3D
 {
@@ -22,6 +23,16 @@ public partial class CameraMovement : Camera3D
     private Vector2 mouseacc = Vector2.Zero; // accumulated mouse
     private float lastPlayerZoom;
 
+    private OpenSimplexNoise noise = new OpenSimplexNoise(0);
+    private Vector2 zeroNoise;
+
+    private float trauma;
+    [Export]
+    public float traumaDamp = 0.5f;
+    [Export]
+    public float shakeStability = 5.0f;
+
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -36,6 +47,7 @@ public partial class CameraMovement : Camera3D
 
     public override void _Process(double delta)
     {
+        float shake = trauma * trauma * trauma;
         rot.y += sensitivity.x * mouseacc.x * (float)delta;
         rot.x += sensitivity.y * mouseacc.y * (float)delta * (invertY ? -1 : 1); 
         rot.x = Mathf.Clamp(rot.x, -89.9f, 0);
@@ -44,9 +56,23 @@ public partial class CameraMovement : Camera3D
 
         SetPosition(desired * 0.3f + Position * 0.7f);
 
-        Transform = Transform.LookingAt(player.Position, new(0,1,0));
+        Vector3 shakev = new Vector3(
+                    (float)(noise.Evaluate(shake, shake+500) - noise.Evaluate(0, 500)),
+                    shakeStability * (float)(1.0 - noise.Evaluate(shake+1000, shake+1500) - noise.Evaluate(1000, 1500)),
+                    (float)(noise.Evaluate(shake+2000, shake+2500) - noise.Evaluate(2000, 2500))
+                );
+
+        Vector3 target = player.Position + 5*(shakev.Normalized() - new Vector3(0.0f,1.0f,0.0f));
+
+        Transform = Transform.LookingAt(target, shakev.Normalized());
 
         mouseacc = Vector2.Zero;
+        trauma = Mathf.Clamp(trauma - traumaDamp * (float)delta, 0, 1);
+    }
+
+    public void AddTrauma(float percent)
+    {
+        trauma = Mathf.Clamp(percent, 0, 1);
     }
 
     public override void _PhysicsProcess(double delta)

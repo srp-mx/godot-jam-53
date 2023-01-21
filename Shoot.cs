@@ -16,6 +16,7 @@ public partial class Shoot : Node3D
     PackedScene bulletResource;
     List<Node3D> bulletPool = new();
     Machine machine;
+    CameraMovement cam;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -31,6 +32,7 @@ public partial class Shoot : Node3D
             GetTree().GetRoot().CallDeferred("add_child", bullet);
             bullet.Visible = false;
         }
+        cam = (CameraMovement)machine.FindChild("Camera3D");
 	}
 
     public override void _Process(double delta)
@@ -68,6 +70,7 @@ public partial class Shoot : Node3D
         lastShot = 0;
         currAmmo--;
         machine.SetAmmoReg(currAmmo);
+        cam.AddTrauma(0.5f);
     }
 
     public void Reload()
