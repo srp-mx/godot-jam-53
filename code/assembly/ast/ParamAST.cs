@@ -66,45 +66,62 @@ public class ParamAST : ASTNode
             Errable<int> regAddressQuery = parseReg(ref addressCandidate);
             // TODO(srp) if it fails, parse register as address dest
 
+            bool numba = false;
             string pos = LexStr.FormatPosition(srcColumn, srcLine);
-            return addressQuery.ErrableMap<ASTNode>(
+            var addrQ = addressQuery.ErrableMap<ASTNode>(
             mapping: addr =>
+            {
+                numba = true;
+                switch (content.ToUpper()[1]) // [x???]
+                {
+                    case 'F':
+                        paramInfo.SetMethodAddress(addr);
+                        break;
+                    case 'H':
+                        paramInfo.SetHeapAddress(addr);
+                        break;
+                    case 'S':
+                        paramInfo.SetStackAddress(addr);
+                        break;
+                    default:
+                            return Errable<ASTNode>.Err($"[ERROR] {pos}: Parameter looks like a memory address (surrounded by square brackets) but it's not.\n\tMemory addresses look like this: [F14], [H62], [S7], where:\n\t\tF goes to the instruction memory,\n\t\tH goes to the heap memory, and\n\t\tS goes to the stack memory.");
+                }
+                return next.Codegen(target);
+            }
+            );
+
+            var regQ = regAddressQuery.ErrableMap<ASTNode>(
+            mapping: regAddr =>
             {
                 switch (content.ToUpper()[1]) // [x???]
                 {
                 case 'F':
-                    paramInfo.SetMethodAddress(addr);
+                    paramInfo.SetRegMethodAddress(regAddr);
                     break;
                 case 'H':
-                    paramInfo.SetHeapAddress(addr);
+                    paramInfo.SetRegHeapAddress(regAddr);
                     break;
                 case 'S':
-                    paramInfo.SetStackAddress(addr);
+                    paramInfo.SetRegStackAddress(regAddr);
                     break;
-                default:
-                    return regAddressQuery.ErrableMap<ASTNode>(
-                    mapping: regAddr =>
-                    {
-                        switch (content.ToUpper()[1]) // [x???]
-                        {
-                        case 'F':
-                            paramInfo.SetRegMethodAddress(regAddr);
-                            break;
-                        case 'H':
-                            paramInfo.SetRegHeapAddress(regAddr);
-                            break;
-                        case 'S':
-                            paramInfo.SetRegStackAddress(regAddr);
-                            break;
-                        default:        
-                            return Errable<ASTNode>.Err($"[ERROR] {pos}: Parameter looks like a memory address (surrounded by square brackets) but it's not.\n\tMemory addresses look like this: [F14], [H62], [S7], where:\n\t\tF goes to the instruction memory,\n\t\tH goes to the heap memory, and\n\t\tS goes to the stack memory.");
-                        }
-                        return next.Codegen(target);
-                    }
-                    );
+                default:        
+                    return Errable<ASTNode>.Err($"[ERROR] {pos}: Parameter looks like a memory address (surrounded by square brackets) but it's not.\n\tMemory addresses look like this: [F14], [H62], [S7], [HA], where:\n\t\tF goes to the instruction memory,\n\t\tH goes to the heap memory, and\n\t\tS goes to the stack memory.\n\tAfter the S/H/F there must be a number or a register name without space in between.");
                 }
                 return next.Codegen(target);
-            });//, $"[ERROR] {pos}: Parameter looks like a memory address (surrounded by square brackets) but it's not.\n\tMemory addresses look like this: [F14], [H62], [S7], where:\n\t\tF goes to the instruction memory,\n\t\tH goes to the heap memory, and\n\t\tS goes to the stack memory.\n");
+            }
+            );
+
+            if (addrQ.GetErrLog() == "")
+            {
+                return next.Codegen(target);
+            }
+
+            if (regQ.GetErrLog() == "")
+            {       
+                return next.Codegen(target);
+            }   
+
+            return numba ? addrQ : regQ;
         }
 
         // Check registers
@@ -180,7 +197,7 @@ public class ParamAST : ASTNode
         int regAddr;
         for (int i = 0; i < (int)Register.None; i++)
         {
-            if (((Register)i).ToString() == regCandidate)
+            if (((Register)i).ToString().ToUpper() == regCandidate.ToUpper())
             {
                 return i;
             }
