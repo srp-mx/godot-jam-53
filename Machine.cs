@@ -69,7 +69,7 @@ public partial class Machine : Node
         clockTime++;
 	}
 
-    private void debugLog(string s){} //=> GD.Print(s);
+    private void debugLog(string s)=> GD.Print(s);
 
     private void stackPush(int x, out string err)
     {

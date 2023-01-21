@@ -71,6 +71,8 @@ public partial class Machine : Node
 
         currInstruction = code.GetEnumerator();
         finishedCompile = true;
+        ended = false;
+        task = null;
 
         codeLog("[COMPILE SUCCESSFUL]");
     }
