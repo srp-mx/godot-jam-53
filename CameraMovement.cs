@@ -17,6 +17,7 @@ public partial class CameraMovement : Camera3D
     CharacterBody3D player;
     CollisionShape3D playercol;
     RayCast3D ray;
+    RayCast3D backray;
     Area3D mycol;
     private Vector2 mouseacc = Vector2.Zero; // accumulated mouse
     private float lastPlayerZoom;
@@ -30,6 +31,7 @@ public partial class CameraMovement : Camera3D
         lastPlayerZoom = orbitRadius;
         playercol = (CollisionShape3D)player.FindChild("CollisionShape3D");
         ray = (RayCast3D)FindChild("RayCast3D");
+        backray = (RayCast3D)FindChild("BackRayCast3D");
 	}
 
     public override void _Process(double delta)
@@ -40,7 +42,7 @@ public partial class CameraMovement : Camera3D
 
         Vector3 desired = player.Position + deltaPosCam(orbitRadius);
 
-        SetPosition(desired * 0.8f + Position * 0.2f);
+        SetPosition(desired * 0.3f + Position * 0.7f);
 
         Transform = Transform.LookingAt(player.Position, new(0,1,0));
 
@@ -55,6 +57,13 @@ public partial class CameraMovement : Camera3D
             var cp = ray.GetCollisionPoint();
             var dist = (player.GlobalPosition - cp).Length();
             orbitRadius = Mathf.Clamp(dist*0.8f, minZoom, maxZoom);
+        }
+        else
+        {
+            if (!backray.IsColliding())
+            {
+                orbitRadius = orbitRadius * 0.9f + lastPlayerZoom * 0.1f;
+            }
         }
     }
 

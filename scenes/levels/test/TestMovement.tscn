@@ -99,6 +99,11 @@ maxZoom = 15.0
 target_position = Vector3(0, 0, -10)
 hit_from_inside = true
 
+[node name="BackRayCast3D" type="RayCast3D" parent="Machine/Camera3D"]
+target_position = Vector3(0, 0, 1)
+hit_from_inside = true
+debug_shape_thickness = 1
+
 [node name="Area3D" type="Area3D" parent="Machine/Camera3D"]
 collision_layer = 2
 
