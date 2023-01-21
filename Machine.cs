@@ -11,7 +11,7 @@ public partial class Machine : Node
     public int[] stack = new int[256];
     int stackPtr = 0;
     public int[] heap = new int[256];
-    public int[] registers;
+    public int[] registers = new int[(int)(Register.None)];
 
     private void initMem()
     {
@@ -20,7 +20,12 @@ public partial class Machine : Node
             stack[i] = 0;
             heap[i] = 0;
         }
-        registers = new int[(int)(Register.None)];
+
+        for (int i = 0; i < registers.Length; i++)
+        {
+            registers[i] = 0;
+        }
+
         stackPtr = 0;
     }
 

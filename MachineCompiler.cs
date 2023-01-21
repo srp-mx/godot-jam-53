@@ -39,10 +39,15 @@ public partial class Machine : Node
     public bool finishedCompile = true;
     public void compileProgram(string program)
     {
-        if (program == lastReadProgram)
-            return;
+        //if (program == lastReadProgram)
+            //return;
     
-        lastReadProgram = program;
+        //lastReadProgram = program;
+
+        code.Reset(); // cleanup before refill
+        initMem();
+        instructionPtr = 0;
+
         finishedCompile = false;
 
         codeRejected = false;

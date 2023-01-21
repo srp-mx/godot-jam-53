@@ -142,6 +142,10 @@ public partial class Terminal : Control
     }
 
 
+    int lastIP = 0;
+    int ip = 0;
+    int lastSP = 0;
+    int sp = 0;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
@@ -151,6 +155,20 @@ public partial class Terminal : Control
             heap[i].Text = machine.heap[i].ToString("X2");
             method[i].Text = machine.code.MethodArea[i].DisplayInt.ToString("X2");
         }
+
+        if (machine.registers[(int)Register.IP] != ip)
+            lastIP = ip;
+        ip = machine.registers[(int)Register.IP]; 
+
+        if (machine.registers[(int)Register.SP] != sp)
+            lastSP = sp;
+        sp = machine.registers[(int)Register.SP]; 
+
+        method[lastIP].RemoveThemeColorOverride("font_color");
+        method[ip].AddThemeColorOverride("font_color", new Color("#D5ECC2CC"));
+
+        stack[lastSP].RemoveThemeColorOverride("font_color");
+        stack[sp].AddThemeColorOverride("font_color", new Color("#FFD3B4CC"));
 
         for (int i = 0; i < (int)Register.None; i++)
         {

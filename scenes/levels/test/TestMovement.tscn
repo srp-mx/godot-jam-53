@@ -139,6 +139,7 @@ size = Vector2i(800, 500)
 unresizable = true
 
 [node name="Menu File" type="MenuButton" parent="TerminalLayer/Control"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0226449
 anchor_top = 0.0462963
@@ -150,6 +151,7 @@ text = "File"
 metadata/_edit_use_anchors_ = true
 
 [node name="TextEditor" type="TextEdit" parent="TerminalLayer/Control"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0215827
 anchor_top = 0.0987654
@@ -165,6 +167,7 @@ highlight_current_line = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Instructions" type="Label" parent="TerminalLayer/Control"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.517986
 anchor_top = 0.0617284
@@ -174,6 +177,7 @@ text = "Instructions"
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="TerminalLayer/Control"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.517986
 anchor_top = 0.111111
@@ -183,228 +187,160 @@ offset_bottom = 3.05176e-05
 metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TerminalLayer/Control/PanelContainer"]
-offset_right = 103.252
-offset_bottom = 400.0
+layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TerminalLayer/Control/PanelContainer/ScrollContainer"]
-offset_right = 99.0
-offset_bottom = 1186.0
+layout_mode = 2
 
 [node name="HLT" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_right = 99.0
-offset_bottom = 31.0
+layout_mode = 2
 text = "HLT"
 
 [node name="Wait" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 35.0
-offset_right = 99.0
-offset_bottom = 66.0
+layout_mode = 2
 text = "WAIT"
 
 [node name="Ret" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 70.0
-offset_right = 99.0
-offset_bottom = 101.0
+layout_mode = 2
 text = "RET"
 
 [node name="Call" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 105.0
-offset_right = 99.0
-offset_bottom = 136.0
+layout_mode = 2
 text = "CALL"
 
 [node name="Print" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 140.0
-offset_right = 99.0
-offset_bottom = 171.0
+layout_mode = 2
 text = "PRINT"
 
 [node name="Nop" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 175.0
-offset_right = 99.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "NOP"
 
 [node name="Move" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 210.0
-offset_right = 99.0
-offset_bottom = 241.0
+layout_mode = 2
 text = "MOV"
 
 [node name="Add" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 245.0
-offset_right = 99.0
-offset_bottom = 276.0
+layout_mode = 2
 text = "ADD"
 
 [node name="Neg" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 280.0
-offset_right = 99.0
-offset_bottom = 311.0
+layout_mode = 2
 text = "NEG"
 
 [node name="Cmp" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 315.0
-offset_right = 99.0
-offset_bottom = 346.0
+layout_mode = 2
 text = "CMP"
 
 [node name="JMPF" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 350.0
-offset_right = 99.0
-offset_bottom = 381.0
+layout_mode = 2
 text = "JMPF
 "
 
 [node name="JMPNF" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 385.0
-offset_right = 99.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "JMPNF
 "
 
 [node name="INC" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 420.0
-offset_right = 99.0
-offset_bottom = 451.0
+layout_mode = 2
 text = "INC
 "
 
 [node name="DEC" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 455.0
-offset_right = 99.0
-offset_bottom = 486.0
+layout_mode = 2
 text = "DEC
 "
 
 [node name="JMP" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 490.0
-offset_right = 99.0
-offset_bottom = 521.0
+layout_mode = 2
 text = "JMP"
 
 [node name="RotClock" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 525.0
-offset_right = 99.0
-offset_bottom = 556.0
+layout_mode = 2
 text = "ROT_CLOCK"
 
 [node name="RotAnti" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 560.0
-offset_right = 99.0
-offset_bottom = 591.0
+layout_mode = 2
 text = "ROT_CLOCK"
 
 [node name="Interact" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 595.0
-offset_right = 99.0
-offset_bottom = 626.0
+layout_mode = 2
 text = "INTERACT"
 
 [node name="MovR" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 630.0
-offset_right = 99.0
-offset_bottom = 661.0
+layout_mode = 2
 text = "MOVE_R
 "
 
 [node name="MovL" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 665.0
-offset_right = 99.0
-offset_bottom = 696.0
+layout_mode = 2
 text = "MOV_L
 "
 
 [node name="MovF" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 700.0
-offset_right = 99.0
-offset_bottom = 731.0
+layout_mode = 2
 text = "MOV_F
 "
 
 [node name="MovB" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 735.0
-offset_right = 99.0
-offset_bottom = 766.0
+layout_mode = 2
 text = "MOV_B
 "
 
 [node name="JumpUp" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 770.0
-offset_right = 99.0
-offset_bottom = 801.0
+layout_mode = 2
 text = "JUMP_UP
 "
 
 [node name="FlyUp" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 805.0
-offset_right = 99.0
-offset_bottom = 836.0
+layout_mode = 2
 text = "FLY_UP
 "
 
 [node name="FlyDown" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 840.0
-offset_right = 99.0
-offset_bottom = 871.0
+layout_mode = 2
 text = "FLY_DOWN"
 
 [node name="Fall" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 875.0
-offset_right = 99.0
-offset_bottom = 906.0
+layout_mode = 2
 text = "FALL"
 
 [node name="CMPKEY" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 910.0
-offset_right = 99.0
-offset_bottom = 941.0
+layout_mode = 2
 text = "CMPKEY"
 
 [node name="Shoot" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 945.0
-offset_right = 99.0
-offset_bottom = 976.0
+layout_mode = 2
 text = "SHOOT"
 
 [node name="Cool" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 980.0
-offset_right = 99.0
-offset_bottom = 1011.0
+layout_mode = 2
 text = "COOL"
 
 [node name="Push" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 1015.0
-offset_right = 99.0
-offset_bottom = 1046.0
+layout_mode = 2
 text = "PUSH"
 
 [node name="Pop" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 1050.0
-offset_right = 99.0
-offset_bottom = 1081.0
+layout_mode = 2
 text = "POP"
 
 [node name="CallF" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 1085.0
-offset_right = 99.0
-offset_bottom = 1116.0
+layout_mode = 2
 text = "CALLF"
 
 [node name="CallNF" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 1120.0
-offset_right = 99.0
-offset_bottom = 1151.0
+layout_mode = 2
 text = "CALLNF"
 
 [node name="Reload" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
-offset_top = 1155.0
-offset_right = 99.0
-offset_bottom = 1186.0
+layout_mode = 2
 text = "RELOAD"
 
 [node name="RAM" type="Label" parent="TerminalLayer/Control"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.654676
 anchor_top = 0.0478395
@@ -414,18 +350,21 @@ text = "RAM"
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="TerminalLayer/Control"]
+layout_mode = 0
 offset_left = 723.0
 offset_top = 499.0
 offset_right = 1086.0
 offset_bottom = 638.0
 
 [node name="Panel2" type="Panel" parent="TerminalLayer/Control"]
+layout_mode = 0
 offset_left = 22.0
 offset_top = 499.0
 offset_right = 533.0
 offset_bottom = 637.0
 
 [node name="Registers -Flags" type="Label" parent="TerminalLayer/Control"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.67029
 anchor_top = 0.816358
@@ -437,6 +376,7 @@ Flags"
 metadata/_edit_use_anchors_ = true
 
 [node name="#Registers" type="GridContainer" parent="TerminalLayer/Control"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.717391
 anchor_top = 0.782407
@@ -451,220 +391,148 @@ columns = 7
 metadata/_edit_use_anchors_ = true
 
 [node name="A" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_right = 19.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "A"
 horizontal_alignment = 1
 
 [node name="B" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 23.0
-offset_right = 42.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "B"
 horizontal_alignment = 1
 
 [node name="C" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 46.0
-offset_right = 85.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "C"
 horizontal_alignment = 1
 
 [node name="D" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 89.0
-offset_right = 116.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "D"
 horizontal_alignment = 1
 
 [node name="IP" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 120.0
-offset_right = 158.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "IP"
 horizontal_alignment = 1
 
 [node name="SP" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 162.0
-offset_right = 198.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "SP"
 horizontal_alignment = 1
 
 [node name="ZF" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 202.0
-offset_right = 243.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "ZF"
 horizontal_alignment = 1
 
 [node name="A2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_top = 30.0
-offset_right = 19.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="B2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 23.0
-offset_top = 30.0
-offset_right = 42.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="C2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 46.0
-offset_top = 30.0
-offset_right = 85.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="D2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 89.0
-offset_top = 30.0
-offset_right = 116.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="IP2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 120.0
-offset_top = 30.0
-offset_right = 158.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="SP2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 162.0
-offset_top = 30.0
-offset_right = 198.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="ZF2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 202.0
-offset_top = 30.0
-offset_right = 243.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="EF" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_top = 60.0
-offset_right = 19.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "EF"
 horizontal_alignment = 1
 
 [node name="CF" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 23.0
-offset_top = 60.0
-offset_right = 42.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "CF"
 horizontal_alignment = 1
 
 [node name="LEQF" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 46.0
-offset_top = 60.0
-offset_right = 85.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "LEQF"
 horizontal_alignment = 1
 
 [node name="LEF" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 89.0
-offset_top = 60.0
-offset_right = 116.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "LEF"
 horizontal_alignment = 1
 
 [node name="KEYF" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 120.0
-offset_top = 60.0
-offset_right = 158.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "KEYF"
 horizontal_alignment = 1
 
 [node name="HTM" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 162.0
-offset_top = 60.0
-offset_right = 198.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "HTM"
 horizontal_alignment = 1
 
 [node name="AMM" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 202.0
-offset_top = 60.0
-offset_right = 243.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "AMM
 "
 horizontal_alignment = 1
 
 [node name="EF2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_top = 90.0
-offset_right = 19.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="CF2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 23.0
-offset_top = 90.0
-offset_right = 42.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="LEQF2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 46.0
-offset_top = 90.0
-offset_right = 85.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="LEF2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 89.0
-offset_top = 90.0
-offset_right = 116.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="KEYF2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 120.0
-offset_top = 90.0
-offset_right = 158.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="HTM2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 162.0
-offset_top = 90.0
-offset_right = 198.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="AMM2" type="Label" parent="TerminalLayer/Control/#Registers"]
-offset_left = 202.0
-offset_top = 90.0
-offset_right = 243.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
 [node name="Error Panel" type="Label" parent="TerminalLayer/Control"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0215827
 anchor_top = 0.777778
@@ -674,6 +542,7 @@ text = "Error Panel"
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TerminalLayer/Control"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0215827
 anchor_top = 0.82716
@@ -683,6 +552,7 @@ text = "Your program's output will go here!"
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer3" type="PanelContainer" parent="TerminalLayer/Control"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.654676
 anchor_top = 0.0987654
@@ -694,3329 +564,3101 @@ scale = Vector2(0.92, 0.839999)
 metadata/_edit_use_anchors_ = true
 
 [node name="Memory" type="TabContainer" parent="TerminalLayer/Control/PanelContainer3"]
-offset_left = 16.0
-offset_right = 380.0
-offset_bottom = 507.0
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Stack" type="GridContainer" parent="TerminalLayer/Control/PanelContainer3/Memory"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 31.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 columns = 16
 metadata/_edit_use_anchors_ = true
 
 [node name="1" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_right = 19.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "0S"
 
 [node name="2" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_right = 42.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="3" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_right = 65.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="4" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_right = 88.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="5" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_right = 111.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="6" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_right = 134.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="7" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_right = 157.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="8" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_right = 180.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="9" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_right = 203.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="10" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_right = 226.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="11" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_right = 249.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="12" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_right = 272.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="13" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_right = 295.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="14" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_right = 318.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="15" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_right = 341.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="16" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_right = 364.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "00"
 
 [node name="17" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 30.0
-offset_right = 19.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="18" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 30.0
-offset_right = 42.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="19" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 30.0
-offset_right = 65.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="20" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 30.0
-offset_right = 88.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="21" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 30.0
-offset_right = 111.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="22" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 30.0
-offset_right = 134.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="23" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 30.0
-offset_right = 157.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="24" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 30.0
-offset_right = 180.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="25" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 30.0
-offset_right = 203.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="26" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 30.0
-offset_right = 226.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="27" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 30.0
-offset_right = 249.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="28" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 30.0
-offset_right = 272.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="29" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 30.0
-offset_right = 295.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="30" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 30.0
-offset_right = 318.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="31" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 30.0
-offset_right = 341.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="32" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 30.0
-offset_right = 364.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "00"
 
 [node name="33" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 60.0
-offset_right = 19.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="34" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 60.0
-offset_right = 42.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="35" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 60.0
-offset_right = 65.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="36" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 60.0
-offset_right = 88.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="37" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 60.0
-offset_right = 111.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="38" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 60.0
-offset_right = 134.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="39" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 60.0
-offset_right = 157.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="40" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 60.0
-offset_right = 180.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="41" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 60.0
-offset_right = 203.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="42" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 60.0
-offset_right = 226.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="43" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 60.0
-offset_right = 249.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="44" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 60.0
-offset_right = 272.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="45" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 60.0
-offset_right = 295.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="46" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 60.0
-offset_right = 318.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="47" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 60.0
-offset_right = 341.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="48" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 60.0
-offset_right = 364.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "00"
 
 [node name="49" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 90.0
-offset_right = 19.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="50" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 90.0
-offset_right = 42.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="51" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 90.0
-offset_right = 65.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="52" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 90.0
-offset_right = 88.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="53" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 90.0
-offset_right = 111.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="54" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 90.0
-offset_right = 134.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="55" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 90.0
-offset_right = 157.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="56" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 90.0
-offset_right = 180.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="57" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 90.0
-offset_right = 203.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="58" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 90.0
-offset_right = 226.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="59" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 90.0
-offset_right = 249.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="60" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 90.0
-offset_right = 272.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="61" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 90.0
-offset_right = 295.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="62" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 90.0
-offset_right = 318.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="63" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 90.0
-offset_right = 341.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="64" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 90.0
-offset_right = 364.0
-offset_bottom = 116.0
+layout_mode = 2
 text = "00"
 
 [node name="65" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 120.0
-offset_right = 19.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="66" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 120.0
-offset_right = 42.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="67" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 120.0
-offset_right = 65.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="68" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 120.0
-offset_right = 88.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="69" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 120.0
-offset_right = 111.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="70" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 120.0
-offset_right = 134.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="71" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 120.0
-offset_right = 157.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="72" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 120.0
-offset_right = 180.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="73" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 120.0
-offset_right = 203.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="74" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 120.0
-offset_right = 226.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="75" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 120.0
-offset_right = 249.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="76" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 120.0
-offset_right = 272.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="77" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 120.0
-offset_right = 295.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="78" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 120.0
-offset_right = 318.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="79" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 120.0
-offset_right = 341.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="80" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 120.0
-offset_right = 364.0
-offset_bottom = 146.0
+layout_mode = 2
 text = "00"
 
 [node name="81" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 150.0
-offset_right = 19.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="82" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 150.0
-offset_right = 42.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="83" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 150.0
-offset_right = 65.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="84" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 150.0
-offset_right = 88.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="85" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 150.0
-offset_right = 111.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="86" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 150.0
-offset_right = 134.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="87" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 150.0
-offset_right = 157.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="88" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 150.0
-offset_right = 180.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="89" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 150.0
-offset_right = 203.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="90" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 150.0
-offset_right = 226.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="91" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 150.0
-offset_right = 249.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="92" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 150.0
-offset_right = 272.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="93" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 150.0
-offset_right = 295.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="94" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 150.0
-offset_right = 318.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="95" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 150.0
-offset_right = 341.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="96" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 150.0
-offset_right = 364.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "00"
 
 [node name="97" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 180.0
-offset_right = 19.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="98" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 180.0
-offset_right = 42.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="99" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 180.0
-offset_right = 65.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="100" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 180.0
-offset_right = 88.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="101" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 180.0
-offset_right = 111.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="102" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 180.0
-offset_right = 134.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="103" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 180.0
-offset_right = 157.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="104" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 180.0
-offset_right = 180.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="105" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 180.0
-offset_right = 203.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="106" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 180.0
-offset_right = 226.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="107" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 180.0
-offset_right = 249.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="108" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 180.0
-offset_right = 272.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="109" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 180.0
-offset_right = 295.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="110" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 180.0
-offset_right = 318.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="111" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 180.0
-offset_right = 341.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="112" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 180.0
-offset_right = 364.0
-offset_bottom = 206.0
+layout_mode = 2
 text = "00"
 
 [node name="113" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 210.0
-offset_right = 19.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="114" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 210.0
-offset_right = 42.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="115" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 210.0
-offset_right = 65.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="116" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 210.0
-offset_right = 88.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="117" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 210.0
-offset_right = 111.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="118" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 210.0
-offset_right = 134.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="119" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 210.0
-offset_right = 157.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="120" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 210.0
-offset_right = 180.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="121" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 210.0
-offset_right = 203.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="122" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 210.0
-offset_right = 226.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="123" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 210.0
-offset_right = 249.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="124" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 210.0
-offset_right = 272.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="125" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 210.0
-offset_right = 295.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="126" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 210.0
-offset_right = 318.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="127" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 210.0
-offset_right = 341.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="128" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 210.0
-offset_right = 364.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "00"
 
 [node name="129" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 240.0
-offset_right = 19.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="130" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 240.0
-offset_right = 42.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="131" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 240.0
-offset_right = 65.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="132" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 240.0
-offset_right = 88.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="133" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 240.0
-offset_right = 111.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="134" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 240.0
-offset_right = 134.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="135" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 240.0
-offset_right = 157.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="136" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 240.0
-offset_right = 180.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="137" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 240.0
-offset_right = 203.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="138" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 240.0
-offset_right = 226.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="139" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 240.0
-offset_right = 249.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="140" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 240.0
-offset_right = 272.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="141" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 240.0
-offset_right = 295.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="142" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 240.0
-offset_right = 318.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="143" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 240.0
-offset_right = 341.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="144" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 240.0
-offset_right = 364.0
-offset_bottom = 266.0
+layout_mode = 2
 text = "00"
 
 [node name="145" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 270.0
-offset_right = 19.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="146" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 270.0
-offset_right = 42.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="147" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 270.0
-offset_right = 65.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="148" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 270.0
-offset_right = 88.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="149" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 270.0
-offset_right = 111.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="150" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 270.0
-offset_right = 134.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="151" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 270.0
-offset_right = 157.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="152" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 270.0
-offset_right = 180.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="153" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 270.0
-offset_right = 203.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="154" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 270.0
-offset_right = 226.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="155" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 270.0
-offset_right = 249.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="156" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 270.0
-offset_right = 272.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="157" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 270.0
-offset_right = 295.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="158" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 270.0
-offset_right = 318.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="159" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 270.0
-offset_right = 341.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="160" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 270.0
-offset_right = 364.0
-offset_bottom = 296.0
+layout_mode = 2
 text = "00"
 
 [node name="161" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 300.0
-offset_right = 19.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="162" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 300.0
-offset_right = 42.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="163" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 300.0
-offset_right = 65.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="164" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 300.0
-offset_right = 88.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="165" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 300.0
-offset_right = 111.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="166" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 300.0
-offset_right = 134.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="167" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 300.0
-offset_right = 157.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="168" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 300.0
-offset_right = 180.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="169" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 300.0
-offset_right = 203.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="170" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 300.0
-offset_right = 226.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="171" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 300.0
-offset_right = 249.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="172" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 300.0
-offset_right = 272.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="173" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 300.0
-offset_right = 295.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="174" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 300.0
-offset_right = 318.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="175" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 300.0
-offset_right = 341.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="176" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 300.0
-offset_right = 364.0
-offset_bottom = 326.0
+layout_mode = 2
 text = "00"
 
 [node name="177" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 330.0
-offset_right = 19.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="178" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 330.0
-offset_right = 42.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="179" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 330.0
-offset_right = 65.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="180" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 330.0
-offset_right = 88.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="181" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 330.0
-offset_right = 111.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="182" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 330.0
-offset_right = 134.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="183" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 330.0
-offset_right = 157.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="184" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 330.0
-offset_right = 180.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="185" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 330.0
-offset_right = 203.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="186" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 330.0
-offset_right = 226.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="187" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 330.0
-offset_right = 249.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="188" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 330.0
-offset_right = 272.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="189" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 330.0
-offset_right = 295.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="190" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 330.0
-offset_right = 318.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="191" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 330.0
-offset_right = 341.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="192" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 330.0
-offset_right = 364.0
-offset_bottom = 356.0
+layout_mode = 2
 text = "00"
 
 [node name="193" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 360.0
-offset_right = 19.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="194" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 360.0
-offset_right = 42.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="195" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 360.0
-offset_right = 65.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="196" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 360.0
-offset_right = 88.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="197" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 360.0
-offset_right = 111.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="198" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 360.0
-offset_right = 134.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="199" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 360.0
-offset_right = 157.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="200" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 360.0
-offset_right = 180.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="201" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 360.0
-offset_right = 203.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="202" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 360.0
-offset_right = 226.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="203" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 360.0
-offset_right = 249.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="204" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 360.0
-offset_right = 272.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="205" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 360.0
-offset_right = 295.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="206" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 360.0
-offset_right = 318.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="207" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 360.0
-offset_right = 341.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="208" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 360.0
-offset_right = 364.0
-offset_bottom = 386.0
+layout_mode = 2
 text = "00"
 
 [node name="209" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 390.0
-offset_right = 19.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="210" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 390.0
-offset_right = 42.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="211" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 390.0
-offset_right = 65.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="212" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 390.0
-offset_right = 88.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="213" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 390.0
-offset_right = 111.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="214" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 390.0
-offset_right = 134.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="215" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 390.0
-offset_right = 157.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="216" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 390.0
-offset_right = 180.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="217" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 390.0
-offset_right = 203.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="218" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 390.0
-offset_right = 226.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="219" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 390.0
-offset_right = 249.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="220" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 390.0
-offset_right = 272.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="221" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 390.0
-offset_right = 295.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="222" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 390.0
-offset_right = 318.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="223" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 390.0
-offset_right = 341.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="224" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 390.0
-offset_right = 364.0
-offset_bottom = 416.0
+layout_mode = 2
 text = "00"
 
 [node name="225" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 420.0
-offset_right = 19.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="226" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 420.0
-offset_right = 42.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="227" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 420.0
-offset_right = 65.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="228" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 420.0
-offset_right = 88.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="229" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 420.0
-offset_right = 111.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="230" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 420.0
-offset_right = 134.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="231" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 420.0
-offset_right = 157.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="232" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 420.0
-offset_right = 180.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="233" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 420.0
-offset_right = 203.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="234" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 420.0
-offset_right = 226.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="235" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 420.0
-offset_right = 249.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="236" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 420.0
-offset_right = 272.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="237" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 420.0
-offset_right = 295.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="238" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 420.0
-offset_right = 318.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="239" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 420.0
-offset_right = 341.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="240" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 420.0
-offset_right = 364.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "00"
 
 [node name="241" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_top = 450.0
-offset_right = 19.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="242" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 23.0
-offset_top = 450.0
-offset_right = 42.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="243" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 46.0
-offset_top = 450.0
-offset_right = 65.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="244" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 69.0
-offset_top = 450.0
-offset_right = 88.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="245" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 92.0
-offset_top = 450.0
-offset_right = 111.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="246" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 115.0
-offset_top = 450.0
-offset_right = 134.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="247" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 138.0
-offset_top = 450.0
-offset_right = 157.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="248" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 161.0
-offset_top = 450.0
-offset_right = 180.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="249" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 184.0
-offset_top = 450.0
-offset_right = 203.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="250" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 207.0
-offset_top = 450.0
-offset_right = 226.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="251" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 230.0
-offset_top = 450.0
-offset_right = 249.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="252" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 253.0
-offset_top = 450.0
-offset_right = 272.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="253" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 276.0
-offset_top = 450.0
-offset_right = 295.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="254" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 299.0
-offset_top = 450.0
-offset_right = 318.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="255" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 322.0
-offset_top = 450.0
-offset_right = 341.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="256" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Stack"]
-offset_left = 345.0
-offset_top = 450.0
-offset_right = 364.0
-offset_bottom = 476.0
+layout_mode = 2
 text = "00"
 
 [node name="Heap" type="GridContainer" parent="TerminalLayer/Control/PanelContainer3/Memory"]
 visible = false
+layout_mode = 2
 columns = 16
 metadata/_edit_use_anchors_ = true
 
 [node name="1" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "0H"
 
 [node name="2" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="3" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="4" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="5" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="6" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="7" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="8" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="9" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="10" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="11" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="12" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="13" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="14" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="15" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="16" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="17" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="18" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="19" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="20" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="21" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="22" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="23" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="24" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="25" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="26" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="27" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="28" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="29" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="30" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="31" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="32" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="33" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="34" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="35" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="36" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="37" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="38" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="39" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="40" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="41" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="42" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="43" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="44" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="45" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="46" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="47" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="48" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="49" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="50" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="51" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="52" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="53" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="54" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="55" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="56" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="57" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="58" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="59" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="60" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="61" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="62" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="63" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="64" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="65" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="66" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="67" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="68" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="69" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="70" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="71" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="72" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="73" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="74" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="75" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="76" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="77" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="78" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="79" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="80" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="81" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="82" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="83" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="84" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="85" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="86" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="87" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="88" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="89" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="90" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="91" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="92" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="93" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="94" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="95" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="96" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="97" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="98" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="99" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="100" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="101" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="102" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="103" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="104" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="105" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="106" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="107" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="108" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="109" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="110" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="111" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="112" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="113" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="114" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="115" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="116" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="117" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="118" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="119" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="120" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="121" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="122" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="123" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="124" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="125" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="126" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="127" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="128" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="129" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="130" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="131" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="132" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="133" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="134" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="135" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="136" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="137" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="138" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="139" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="140" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="141" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="142" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="143" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="144" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="145" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="146" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="147" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="148" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="149" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="150" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="151" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="152" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="153" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="154" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="155" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="156" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="157" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="158" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="159" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="160" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="161" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="162" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="163" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="164" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="165" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="166" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="167" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="168" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="169" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="170" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="171" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="172" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="173" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="174" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="175" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="176" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="177" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="178" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="179" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="180" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="181" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="182" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="183" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="184" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="185" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="186" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="187" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="188" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="189" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="190" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="191" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="192" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="193" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="194" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="195" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="196" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="197" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="198" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="199" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="200" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="201" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="202" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="203" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="204" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="205" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="206" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="207" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="208" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="209" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="210" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="211" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="212" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="213" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="214" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="215" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="216" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="217" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="218" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="219" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="220" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="221" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="222" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="223" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="224" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="225" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="226" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="227" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="228" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="229" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="230" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="231" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="232" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="233" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="234" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="235" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="236" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="237" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="238" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="239" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="240" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="241" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="242" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="243" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="244" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="245" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="246" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="247" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="248" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="249" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="250" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="251" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="252" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="253" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="254" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="255" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="256" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Heap"]
+layout_mode = 2
 text = "00"
 
 [node name="Program" type="GridContainer" parent="TerminalLayer/Control/PanelContainer3/Memory"]
 visible = false
+layout_mode = 2
 columns = 16
 metadata/_edit_use_anchors_ = true
 
 [node name="1" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "0M"
 
 [node name="2" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="3" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="4" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="5" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="6" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="7" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="8" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="9" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="10" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="11" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="12" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="13" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="14" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="15" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="16" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="17" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="18" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="19" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="20" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="21" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="22" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="23" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="24" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="25" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="26" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="27" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="28" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="29" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="30" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="31" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="32" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="33" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="34" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="35" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="36" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="37" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="38" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="39" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="40" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="41" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="42" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="43" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="44" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="45" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="46" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="47" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="48" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="49" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="50" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="51" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="52" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="53" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="54" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="55" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="56" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="57" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="58" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="59" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="60" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="61" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="62" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="63" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="64" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="65" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="66" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="67" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="68" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="69" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="70" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="71" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="72" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="73" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="74" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="75" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="76" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="77" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="78" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="79" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="80" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="81" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="82" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="83" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="84" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="85" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="86" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="87" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="88" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="89" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="90" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="91" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="92" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="93" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="94" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="95" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="96" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="97" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="98" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="99" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="100" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="101" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="102" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="103" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="104" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="105" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="106" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="107" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="108" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="109" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="110" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="111" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="112" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="113" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="114" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="115" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="116" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="117" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="118" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="119" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="120" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="121" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="122" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="123" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="124" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="125" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="126" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="127" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="128" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="129" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="130" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="131" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="132" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="133" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="134" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="135" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="136" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="137" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="138" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="139" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="140" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="141" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="142" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="143" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="144" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="145" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="146" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="147" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="148" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="149" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="150" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="151" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="152" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="153" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="154" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="155" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="156" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="157" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="158" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="159" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="160" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="161" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="162" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="163" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="164" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="165" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="166" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="167" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="168" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="169" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="170" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="171" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="172" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="173" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="174" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="175" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="176" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="177" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="178" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="179" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="180" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="181" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="182" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="183" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="184" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="185" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="186" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="187" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="188" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="189" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="190" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="191" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="192" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="193" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="194" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="195" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="196" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="197" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="198" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="199" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="200" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="201" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="202" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="203" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="204" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="205" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="206" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="207" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="208" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="209" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="210" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="211" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="212" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="213" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="214" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="215" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="216" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="217" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="218" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="219" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="220" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="221" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="222" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="223" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="224" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="225" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="226" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="227" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="228" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="229" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="230" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="231" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="232" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="233" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="234" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="235" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="236" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="237" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="238" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="239" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="240" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="241" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="242" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="243" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="244" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="245" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="246" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="247" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="248" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="249" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="250" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="251" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="252" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="253" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="254" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="255" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="256" type="Label" parent="TerminalLayer/Control/PanelContainer3/Memory/Program"]
+layout_mode = 2
 text = "00"
 
 [node name="Compile" type="Button" parent="TerminalLayer/Control"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.518116
 anchor_top = 0.766975
@@ -4026,6 +3668,7 @@ text = "Compile"
 metadata/_edit_use_anchors_ = true
 
 [node name="Run" type="Button" parent="TerminalLayer/Control"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.51721
 anchor_top = 0.83642
@@ -4035,12 +3678,14 @@ text = "Run"
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel3" type="Panel" parent="TerminalLayer/Control"]
+layout_mode = 0
 offset_left = 569.0
 offset_top = 587.0
 offset_right = 677.0
 offset_bottom = 636.0
 
 [node name="SpeedSlider" type="HSlider" parent="TerminalLayer/Control"]
+layout_mode = 0
 offset_left = 575.0
 offset_top = 612.0
 offset_right = 674.0
@@ -4052,6 +3697,7 @@ tick_count = 6
 ticks_on_borders = true
 
 [node name="Label" type="Label" parent="TerminalLayer/Control/SpeedSlider"]
+layout_mode = 0
 offset_left = 9.0
 offset_top = -24.0
 offset_right = 93.0
@@ -4073,6 +3719,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Terminal" type="Button" parent="SectionsLayer/Control"]
 process_mode = 3
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.166667
 anchor_top = 0.00771643
@@ -4092,6 +3739,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Menu" type="Button" parent="SectionsLayer/Control"]
 process_mode = 3
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.166667
 anchor_top = 0.171876
@@ -4119,6 +3767,7 @@ script = ExtResource("9_v1kiy")
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="MenuLayer/Control"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -4128,6 +3777,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/Control"]
 process_mode = 3
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -4145,20 +3795,14 @@ alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Resume" type="Button" parent="MenuLayer/Control/VBoxContainer"]
-offset_top = 1.0
-offset_right = 113.0
-offset_bottom = 32.0
+layout_mode = 2
 text = "Resume"
 
 [node name="Retry" type="Button" parent="MenuLayer/Control/VBoxContainer"]
-offset_top = 36.0
-offset_right = 113.0
-offset_bottom = 67.0
+layout_mode = 2
 text = "Retry
 "
 
 [node name="Main_Menu" type="Button" parent="MenuLayer/Control/VBoxContainer"]
-offset_top = 71.0
-offset_right = 113.0
-offset_bottom = 102.0
+layout_mode = 2
 text = "Main Menu"
