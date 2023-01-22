@@ -267,7 +267,8 @@ void fragment() {
     vec3 c4lch = rgb2lch(my_color4);
 
     c = rgb2lch(c);
-    c = vec3(c.x, c.y, nearestHue(c, c1lch, c2lch, c3lch, c4lch).z);
+    vec3 nH = nearestHue(c, c1lch, c2lch, c3lch, c4lch);
+    c = vec3(c.x, c.y, nH.z);
 
     COLOR.rgb = lch2rgb(c);
 

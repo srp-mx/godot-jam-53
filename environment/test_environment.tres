@@ -12,4 +12,5 @@ ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
 fog_light_color = Color(0.517647, 0.552941, 0.607843, 1)
+fog_density = 0.026
 adjustment_enabled = true
