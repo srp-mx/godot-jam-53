@@ -33,7 +33,8 @@ public partial class Machine : Node
     {
         initMem();
         initInstructions();
-        initParser(); // Must happen after initInstruction()
+        initParser(); // Must happen after initInstructions()
+        initDocs(); // Must happen after initInstructions()
     }
 
     [Signal]

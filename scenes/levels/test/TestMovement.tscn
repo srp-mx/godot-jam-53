@@ -197,39 +197,39 @@ layout_mode = 2
 layout_mode = 2
 text = "HLT"
 
-[node name="Wait" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="WAIT" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "WAIT"
 
-[node name="Ret" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="RET" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "RET"
 
-[node name="Call" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="CALL" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "CALL"
 
-[node name="Print" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="PRINT" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "PRINT"
 
-[node name="Nop" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="NOP" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "NOP"
 
-[node name="Move" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="MOV" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "MOV"
 
-[node name="Add" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="ADD" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "ADD"
 
-[node name="Neg" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="NEG" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "NEG"
 
-[node name="Cmp" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="CMP" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "CMP"
 
@@ -257,53 +257,52 @@ text = "DEC
 layout_mode = 2
 text = "JMP"
 
-[node name="RotClock" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="ROT_CLOCK" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "ROT_CLOCK"
 
-[node name="RotAnti" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="ROT_ANTI" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "ROT_CLOCK"
+text = "ROT_ANTI"
 
-[node name="Interact" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="INTERACT" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "INTERACT"
 
-[node name="MovR" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="MOV_R" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "MOVE_R
-"
+text = "MOV_R"
 
-[node name="MovL" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="MOV_L" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "MOV_L
 "
 
-[node name="MovF" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="MOV_F" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "MOV_F
 "
 
-[node name="MovB" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="MOV_B" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "MOV_B
 "
 
-[node name="JumpUp" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="JUMP_UP" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "JUMP_UP
 "
 
-[node name="FlyUp" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="FLY_UP" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "FLY_UP
 "
 
-[node name="FlyDown" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="FLY_DOWN" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "FLY_DOWN"
 
-[node name="Fall" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="FALL" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "FALL"
 
@@ -311,31 +310,31 @@ text = "FALL"
 layout_mode = 2
 text = "CMPKEY"
 
-[node name="Shoot" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="SHOOT" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "SHOOT"
 
-[node name="Cool" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="COOL" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "COOL"
 
-[node name="Push" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="PUSH" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "PUSH"
 
-[node name="Pop" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="POP" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "POP"
 
-[node name="CallF" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="CALLF" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "CALLF"
 
-[node name="CallNF" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="CALLNF" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "CALLNF"
 
-[node name="Reload" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="RELOAD" type="Button" parent="TerminalLayer/Control/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "RELOAD"
 
@@ -538,7 +537,7 @@ anchor_left = 0.0215827
 anchor_top = 0.777778
 anchor_right = 0.130089
 anchor_bottom = 0.817902
-text = "Error Panel"
+text = "Output Panel"
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TerminalLayer/Control"]
@@ -549,6 +548,7 @@ anchor_top = 0.82716
 anchor_right = 0.459083
 anchor_bottom = 0.972222
 text = "Your program's output will go here!"
+scroll_following = true
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer3" type="PanelContainer" parent="TerminalLayer/Control"]
