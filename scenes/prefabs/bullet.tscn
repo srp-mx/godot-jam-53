@@ -1,13 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgegj0xs2ojgm"]
+[gd_scene load_steps=6 format=3 uid="uid://cgegj0xs2ojgm"]
 
 [ext_resource type="Script" path="res://Bullet.cs" id="1_krud3"]
+[ext_resource type="ArrayMesh" uid="uid://dh7w1ukiea8sa" path="res://models/weapons/ammo_rocket.obj" id="2_74fn6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nfgj7"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_506rj"]
+radius = 0.2
+height = 0.4
+radial_segments = 4
+rings = 4
+
+[sub_resource type="Gradient" id="Gradient_ackbm"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.0432692, 0.110577, 0.379808, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1, 1, 0.416667, 0, 1, 0.37, 0.37, 0.37, 1, 0.61, 0.61, 0.61, 1)
 
 [node name="bul" type="Area3D"]
 script = ExtResource("1_krud3")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_nfgj7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-20, 0, -1.74846e-06, 0, 20, 0, 1.74846e-06, 0, -20, 0, 0, 0)
+mesh = ExtResource("2_74fn6")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.657937)
+amount = 32
+mesh = SubResource("SphereMesh_506rj")
+direction = Vector3(0, 0, 1)
+spread = 10.0
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+color = Color(0.458824, 0.458824, 0.458824, 1)
+color_ramp = SubResource("Gradient_ackbm")

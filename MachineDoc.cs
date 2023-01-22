@@ -29,13 +29,13 @@ public partial class Machine : Node
 
     void initDocs()
     {
-        docs["HLT"] = "HLT\nStops and finishes the program.";
-        docs["WAIT"] = "WAIT <VALUE>\nWaits for a specified amount of tenths of a second.";
+        docs["HLT"] = "HLT\nStops and finishes the program.\nYour program should end with this.";
+        docs["WAIT"] = "WAIT <VALUE>\nWaits for a specified amount of tenths of a second.\nA value is just a number, this assembler can interpret base 10, base 16 (if prefixed with 0x) and base 8 (if prefixed with 0o).";
         docs["RET"] = "RET\nGoes to the instruction in the (program) memory address specified at the top of the stack.\nSee also: CALL.";
-        docs["CALL"] = "CALL <LABEL>\nPushes the address of the next instruction to the stack and jumps to a specified label.\nIntended to be used alongside RET, where we jump to a label which ends in RET.";
+        docs["CALL"] = "CALL <LABEL>\nPushes the address of the next instruction to the stack and jumps to a specified label.\nIntended to be used alongside RET, where we jump to a label which ends in RET.\nA label is just a word that marks a location in the program so that we can move around more easily.\nThey're written like this \"label:\" where they can have any name you wish, so instead it might be \"my_function:\".\nTake note of the colon (:) at the end, and don't include the quotation marks.";
         docs["PRINT"] = "PRINT <VALUE>\nPrints the value to the output.";
         docs["NOP"] = "NOP\nDoes nothing lmao.\nIts intended use is for waiting an amount of instructions, since it does take a clock cycle to execute.";
-        docs["MOV"] = "MOV <ADDRESS> <VALUE>\nStores a value in a memory address.";
+        docs["MOV"] = "MOV <ADDRESS> <VALUE>\nStores a value in a memory address.\nA memory address may be in the registers, the stack, the heap or the program memory.\nTo refer to memory in the stack in this machine, you write [S#] where # is the address, which you can check on the panel to the right.\nFor the heap you use [H#] and for the program memory [F#].\nYou refer to registers by their names, but note that only A-D are modifiable.\nAdditionally you can store an address as a value in the A-D registers and access it by surrounding the register's name with square brackets (i.e. [A]).";
         docs["ADD"] = "ADD <ADDRESS> <VALUE>\nAdds the value specified and the value at the address specified, replacing its value with the result.";
         docs["NEG"] = "NEG <ADDRESS>\nChanges the value at the address specified with its two's complement (negative value).\nIt will not show as a negative number, but it will work as such when adding because maths.";
         docs["CMP"] = "CMP <VALUE> <VALUE>\nWill compare two values.\nThe result of the comparison will be found on flags/registers.\n\tEF: 1 if equal, 0 if not.\n\tLEQF: 1 if the first value is less than or equal to the second, otherwise 0.\n\tLEF: 1 if the first value is less than the second, otherwise 0.";

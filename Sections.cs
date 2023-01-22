@@ -16,6 +16,8 @@ public partial class Sections : Control
 	private CanvasLayer terminal_layer;
 	private CanvasLayer sections_layer;
 	private CanvasLayer menu_layer;
+	
+	private TextEdit editor;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -34,6 +36,7 @@ public partial class Sections : Control
 		Callable self2 = new Callable(this, "Show_Menu");
 		menu.Connect("toggled", self2, 0);
 		
+		editor = GetNode<TextEdit>("/root/Main_M Node/TestMovement/TerminalLayer/Control/TextEditor");
 	}
 	
 	// Shows the Terminal
@@ -42,6 +45,7 @@ public partial class Sections : Control
 		if (condition)
 		{
 			terminal_layer.Visible = true;
+			editor.GrabFocus();
 		}
 		else
 		{
@@ -62,13 +66,15 @@ public partial class Sections : Control
 		{
 			//GetTree().Paused = false;
 			//terminal.Disabled = false;
-            menu_layer.Visible = false;
+			menu_layer.Visible = false;
 		}
 	}
 	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		terminal.FocusMode = FocusModeEnum.None;
+		menu.FocusMode = FocusModeEnum.None;
 	}
 
 }

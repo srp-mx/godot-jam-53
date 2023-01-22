@@ -13,6 +13,8 @@ public partial class Machine : Node
     public int[] heap = new int[256];
     public int[] registers = new int[(int)(Register.None)];
 
+    public bool gotGun = false;
+
     private void initMem()
     {
         for (int i = 0; i < 256; i++)
@@ -71,6 +73,9 @@ public partial class Machine : Node
                 StepCode();
             }
         }
+
+        if (availableInstructionSets.Contains(InstructionSets.Available.Final))
+            gotGun = true;
 
         clockTime++;
 	}

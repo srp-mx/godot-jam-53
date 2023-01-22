@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cav1rxjfwhcef"
+uid="uid://8d8nluul7oh1"
 path="res://.godot/imported/bedSingle.glb-4802aec26f66de94a74e92f70f9adc0b.scn"
 
 [deps]
@@ -35,11 +35,11 @@ _subresources={
 },
 "PATH:bedSingle(Clone)/cover": {
 "generate/physics": true,
-"physics/shape_type": 1
+"physics/shape_type": 2
 },
 "PATH:bedSingle(Clone)/pillow": {
 "generate/physics": true,
-"physics/shape_type": 1
+"physics/shape_type": 2
 }
 }
 }

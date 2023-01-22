@@ -8,10 +8,32 @@ public class InstructionSets
 {
     public enum Available
     {
-        Basic
+        Basic,
+        BasicMovement,
+        Control,
+        Decision,
+        Math,
+        AdvancedDecision,
+        Debug,
+        Memory,
+        MidMovement,
+        AdvancedMovement,
+        Input,
+        Final
     }
 
     private Dictionary<string, InstructionSpec> Basic = new();
+    private Dictionary<string, InstructionSpec> BasicMovement = new();
+    private Dictionary<string, InstructionSpec> Control = new();
+    private Dictionary<string, InstructionSpec> Decision = new();
+    private Dictionary<string, InstructionSpec> Math = new();
+    private Dictionary<string, InstructionSpec> AdvancedDecision = new();
+    private Dictionary<string, InstructionSpec> Debug = new();
+    private Dictionary<string, InstructionSpec> Memory = new();
+    private Dictionary<string, InstructionSpec> MidMovement = new();
+    private Dictionary<string, InstructionSpec> AdvancedMovement = new();
+    private Dictionary<string, InstructionSpec> Input = new();
+    private Dictionary<string, InstructionSpec> Final = new();
     private InstructionSpec[] instructionsByIndex = new InstructionSpec[256];
 
     private Available[] allSets;
@@ -19,7 +41,18 @@ public class InstructionSets
     public InstructionSets()
     {
         allSets = new[]{
-            Available.Basic
+            Available.Basic,
+            Available.BasicMovement,
+            Available.Control,
+            Available.Decision,
+            Available.Math,
+            Available.AdvancedDecision,
+            Available.Debug,
+            Available.Memory,
+            Available.MidMovement,
+            Available.AdvancedMovement,
+            Available.Input,
+            Available.Final
         };
     }
 
@@ -30,6 +63,39 @@ public class InstructionSets
         {
             case Available.Basic:
                 Basic.Add(instruction.Name.ToUpper(), instruction);
+                break;
+            case Available.BasicMovement:
+                BasicMovement.Add(instruction.Name.ToUpper(), instruction);
+                break;
+            case Available.Control:
+                Control.Add(instruction.Name.ToUpper(), instruction);
+                break;
+            case Available.Decision:
+                Decision.Add(instruction.Name.ToUpper(), instruction);
+                break;
+            case Available.Math:
+                Math.Add(instruction.Name.ToUpper(), instruction);
+                break;
+            case Available.AdvancedDecision:
+                AdvancedDecision.Add(instruction.Name.ToUpper(), instruction);
+                break;
+            case Available.Debug:
+                Debug.Add(instruction.Name.ToUpper(), instruction);
+                break;
+            case Available.Memory:
+                Memory.Add(instruction.Name.ToUpper(), instruction);
+                break;
+            case Available.MidMovement:
+                MidMovement.Add(instruction.Name.ToUpper(), instruction);
+                break;
+            case Available.AdvancedMovement:
+                AdvancedMovement.Add(instruction.Name.ToUpper(), instruction);
+                break;
+            case Available.Input:
+                Input.Add(instruction.Name.ToUpper(), instruction);
+                break;
+            case Available.Final:
+                Final.Add(instruction.Name.ToUpper(), instruction);
                 break;
             default:
                 throw new Exception("Instruction set missing, check InstructionSets.cs to check how to add it properly.");
