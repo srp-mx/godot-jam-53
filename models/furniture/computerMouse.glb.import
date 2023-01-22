@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b2cfrlt3v75yt"
+uid="uid://rmrru8ciui6d"
 path="res://.godot/imported/computerMouse.glb-3998f3d419b1e7c930a1df9a4a5b4119.scn"
 
 [deps]
@@ -31,7 +31,7 @@ _subresources={
 "nodes": {
 "PATH:computerMouse(Clone)": {
 "generate/physics": true,
-"physics/shape_type": 1
+"physics/shape_type": 2
 }
 }
 }

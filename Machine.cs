@@ -55,11 +55,53 @@ public partial class Machine : Node
 
     public bool paused = false;
     public bool runnable = false;
+    int lastScore = 0;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
         if (availableInstructionSets.Contains(InstructionSets.Available.Final))
             gotGun = true;
+
+        if (lastScore != ScoreThing.collected)
+        {
+            switch (ScoreThing.collected)
+            {
+                case 1:
+                    AddInstructionSet(InstructionSets.Available.BasicMovement);
+                    break;
+                case 2:
+                    AddInstructionSet(InstructionSets.Available.Control);
+                    break;
+                case 3:
+                    AddInstructionSet(InstructionSets.Available.Decision);
+                    break;
+                case 4:
+                    AddInstructionSet(InstructionSets.Available.Math);
+                    break;
+                case 5:
+                    AddInstructionSet(InstructionSets.Available.AdvancedDecision);
+                    break;
+                case 6:
+                    AddInstructionSet(InstructionSets.Available.Debug);
+                    break;
+                case 7:
+                    AddInstructionSet(InstructionSets.Available.Memory);
+                    break;
+                case 8:
+                    AddInstructionSet(InstructionSets.Available.MidMovement);
+                    break;
+                case 9:
+                    AddInstructionSet(InstructionSets.Available.AdvancedMovement);
+                    break;
+                case 10:
+                    AddInstructionSet(InstructionSets.Available.Input);
+                    break;
+                case 11:
+                    AddInstructionSet(InstructionSets.Available.Final);
+                    break;
+            }
+        }
+        lastScore = ScoreThing.collected;
 
         if (!runnable)
             return;

@@ -192,6 +192,13 @@ public partial class Terminal : Control
 		}
 
 		machine.clockPeriod = (5L - ((long)speed.Value)) * 2L;
+
+		string instrBasePath = "PanelContainer/ScrollContainer/VBoxContainer/";
+		foreach (string ins in instructionNames)
+		{
+			Button b = GetNode<Button>(instrBasePath+ins);
+			b.Text = machine.GetDisplayName(ins);
+		}
 	}
 
 	public void on_HLT_pressed() => on_instr_pressed("HLT");

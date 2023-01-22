@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://b3t2m3jt1hk25"]
+[gd_scene load_steps=73 format=3 uid="uid://b3t2m3jt1hk25"]
 
 [ext_resource type="Material" uid="uid://cqjjvuoujlxsn" path="res://materials/test_material.tres" id="1_ppfqy"]
 [ext_resource type="PackedScene" uid="uid://v08ydanuwdek" path="res://models/furniture/cabinetBedDrawerTable.glb" id="2_k7ie3"]
@@ -26,8 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://etctedrske0v" path="res://models/furniture/wallWindowSlide.glb" id="12_c08ga"]
 [ext_resource type="PackedScene" uid="uid://g7t2vh6704a4" path="res://models/furniture/plantSmall1.glb" id="13_onlxx"]
 [ext_resource type="PackedScene" uid="uid://3eiwsq8tl12b" path="res://models/furniture/plantSmall2.glb" id="14_6kxkw"]
-[ext_resource type="PackedScene" uid="uid://du1nyucc1mm3s" path="res://models/furniture/computerKeyboard.glb" id="15_yi6n5"]
-[ext_resource type="PackedScene" uid="uid://b2cfrlt3v75yt" path="res://models/furniture/computerMouse.glb" id="16_hnywn"]
+[ext_resource type="PackedScene" uid="uid://ypkajj6p56aw" path="res://models/furniture/computerKeyboard.glb" id="15_yi6n5"]
+[ext_resource type="PackedScene" uid="uid://rmrru8ciui6d" path="res://models/furniture/computerMouse.glb" id="16_hnywn"]
 [ext_resource type="PackedScene" uid="uid://dj447pe67af5p" path="res://models/furniture/computerScreen.glb" id="17_4wg83"]
 [ext_resource type="PackedScene" uid="uid://cip2ufo2a80kp" path="res://models/furniture/books.glb" id="18_bchoh"]
 [ext_resource type="PackedScene" uid="uid://23afr8hfp5p7" path="res://models/furniture/wallDoorway.glb" id="19_o25or"]
@@ -63,11 +63,20 @@
 [ext_resource type="PackedScene" uid="uid://c1ji4w8gvqu2l" path="res://models/furniture/toaster.glb" id="59_qs4nw"]
 [ext_resource type="PackedScene" uid="uid://b54rlf2ymqxxq" path="res://models/furniture/sideTable.glb" id="60_56cun"]
 [ext_resource type="PackedScene" uid="uid://cayvq6ubysdvi" path="res://models/furniture/rugSquare.glb" id="61_gj1p2"]
+[ext_resource type="AudioStream" uid="uid://bdh63ilv57e7" path="res://audio/S31-Robotic City V2.ogg" id="62_0inr8"]
 [ext_resource type="PackedScene" uid="uid://bfgdkggb3xi4v" path="res://models/furniture/coatRackStanding.glb" id="62_g0xgp"]
 [ext_resource type="Script" path="res://ScoreThing.cs" id="65_dhm04"]
 [ext_resource type="PackedScene" uid="uid://bjhoiio53f0e0" path="res://models/furniture/lampSquareTable.glb" id="66_pjcma"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cg150"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r64jr"]
+albedo_color = Color(1, 0.65098, 0.498039, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.41
+emission_enabled = true
+emission = Color(0.819608, 0.360784, 0, 1)
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nj0tc"]
 auto_exposure_enabled = true
@@ -78,14 +87,6 @@ dof_blur_near_enabled = true
 size = Vector3(0.8, 0.92, 0.9)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mho2e"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r64jr"]
-albedo_color = Color(1, 0.65098, 0.498039, 1)
-metallic = 1.0
-metallic_specular = 1.0
-roughness = 0.41
-emission_enabled = true
-emission = Color(0.819608, 0.360784, 0, 1)
 
 [node name="TestMovement" type="Node3D"]
 
@@ -311,10 +312,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.26968, 5.60734, -2.1338)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38631, 5.6129, -2.76333)
 
 [node name="computerKeyboard" parent="room1" instance=ExtResource("15_yi6n5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.62306, 5.6129, 0.65026)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.22171, 5.6129, 1.32956)
 
 [node name="computerMouse" parent="room1" instance=ExtResource("16_hnywn")]
-transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -2.43996, 5.6129, -0.413898)
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -2.26409, 5.6129, 0.0613799)
 
 [node name="computerScreen" parent="room1" instance=ExtResource("17_4wg83")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1066, 5.6129, -1.51641)
@@ -541,6 +542,12 @@ transform = Transform3D(0.957466, 0, -0.288547, 0, 1, 0, 0.288547, 0, 0.957466, 
 [node name="radio" parent="room1" instance=ExtResource("32_qwesf")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.20319, 11.2077, 35.5304)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="room1/radio"]
+stream = ExtResource("62_0inr8")
+attenuation_model = 1
+autoplay = true
+max_distance = 100.0
+
 [node name="speakerSmall" parent="room1" instance=ExtResource("33_w2pc0")]
 transform = Transform3D(-0.946632, 0, 0.322315, 0, 1, 0, -0.322315, 0, -0.946632, -1.58039, 1.00444, 35.5866)
 
@@ -628,6 +635,329 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.55, 1.00774, -7.16289)
 [node name="coatRackStanding" parent="room1" instance=ExtResource("62_g0xgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1647, 1.00774, -19.981)
 
+[node name="lampSquareFloor3" parent="room1" instance=ExtResource("57_immd7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8804, 1.00773, 0.265215)
+
+[node name="lampSquareTable" parent="room1" instance=ExtResource("66_pjcma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.03871, 5.6129, 1.00952)
+
+[node name="collects" type="Node" parent="."]
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.8324, 5.93473, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.8324, 1.28135, -1.82567)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D4" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.113492, 12.7498, 3.85894)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D5" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 11.6199, 11.6345, -0.559785)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D6" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 11.6199, 1.26755, 1.806)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D7" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.28004, 1.26755, 11.0678)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D37" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.08169, 1.26755, 6.51821)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D38" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.53441, 1.16155, 13.9992)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D39" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.06676, 1.16155, 23.6416)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D8" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 10.0497, 5.88543, 17.3621)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D30" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 10.0497, 1.3374, 17.3621)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D34" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.79364, 1.3374, 20.4642)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D9" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5.62063, 5.65756, 35.9873)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D32" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 6.43483, 2.60946, 36.4073)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D12" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 6.72766, 8.53704, 35.9873)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D13" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5.30791, 13.5901, 35.5843)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D23" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.31794, 1.43716, 35.5843)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D26" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 9.7157, 1.20303, 33.7227)
+polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D27" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 9.79237, 1.20303, 23.0557)
+polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D24" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.31794, 1.43716, 29.819)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D14" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.74469, 5.79977, 36.8691)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D10" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -17.9239, 1.22741, 18.0891)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D35" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -15.4457, 6.12478, 12.2688)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D36" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -12.351, 7.61225, -5.71912)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D11" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -20.3007, 11.6976, 17.2954)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D15" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -19.8765, 5.9547, 4.52773)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D16" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -19.3839, 3.94614, -4.94615)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D17" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -19.3839, 3.94614, -10.3695)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D22" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -6.03534, 1.31195, -5.21891)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D33" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -6.03534, 1.31195, -20.2353)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D31" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -19.9686, 1.31195, -16.7319)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D21" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -3.8724, 13.3171, -17.3955)
+polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D18" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 8.7987, 6.5483, -6.2953)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D25" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.69035, 1.10423, -4.7843)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D28" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.0804, 1.10423, -4.7843)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D19" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 8.28125, 4.92505, -17.001)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D20" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.794377, 6.10118, -20.8958)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.39408, 5.75636, -1.34249)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
+[node name="CSGPolygon3D29" type="CSGPolygon3D" parent="collects"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 7.23821, 3.86022, 5.07597)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_rdwmb")
 camera_attributes = SubResource("CameraAttributesPractical_nj0tc")
@@ -649,7 +979,7 @@ visible = false
 material_override = ExtResource("1_ppfqy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Machine/CharacterBody3D"]
-transform = Transform3D(-1, 0, -8.75443e-08, 0, 1, 0, 8.75443e-08, 0, -1, 0.323633, 0, -0.0308089)
+transform = Transform3D(-1, 0, -8.6613e-08, 0, 1, 0, 8.6613e-08, 0, -1, 0.0430188, 0, -0.0320331)
 mesh = ExtResource("6_16dqu")
 surface_material_override/0 = ExtResource("7_hv57r")
 script = ExtResource("58_1adla")
@@ -4398,17 +4728,3 @@ text = "Retry
 [node name="Main_Menu" type="Button" parent="MenuLayer/Control/VBoxContainer"]
 layout_mode = 2
 text = "Main Menu"
-
-[node name="lampSquareFloor" parent="." instance=ExtResource("57_immd7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8804, 1.00773, 0.265215)
-
-[node name="lampSquareTable" parent="." instance=ExtResource("66_pjcma")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.03871, 5.6129, 1.00952)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.8324, 5.93473, 0)
-mode = 1
-spin_degrees = 360.0
-spin_sides = 5
-material = SubResource("StandardMaterial3D_r64jr")
-script = ExtResource("65_dhm04")

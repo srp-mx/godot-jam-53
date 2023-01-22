@@ -34,6 +34,7 @@ public partial class Machine : Node
     public void AddInstructionSet(InstructionSets.Available set)
     {
         availableInstructionSets.Add(set);
+        code.SetAvailableSets(availableInstructionSets);
     }
 
     public bool finishedCompile = true;

@@ -187,9 +187,19 @@ public class InstructionSets
             switch (set)
             {
                 case Available.Basic: sets.Add(Basic); continue;
+                case Available.BasicMovement: sets.Add(BasicMovement); continue;
+                case Available.Control: sets.Add(Control); continue;
+                case Available.Decision: sets.Add(Decision); continue;
+                case Available.Math: sets.Add(Math); continue;
+                case Available.AdvancedDecision: sets.Add(AdvancedDecision); continue;
+                case Available.Debug: sets.Add(Debug); continue;
+                case Available.Memory: sets.Add(Memory); continue;
+                case Available.MidMovement: sets.Add(MidMovement); continue;
+                case Available.AdvancedMovement: sets.Add(AdvancedMovement); continue;
+                case Available.Input: sets.Add(Input); continue;
+                case Available.Final: sets.Add(Final); continue;
             }
         }
         return sets;
     }
-
 }

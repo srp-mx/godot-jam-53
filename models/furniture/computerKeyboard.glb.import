@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://du1nyucc1mm3s"
+uid="uid://ypkajj6p56aw"
 path="res://.godot/imported/computerKeyboard.glb-8bb3101b8c977d1a6f1fefe131ebed15.scn"
 
 [deps]
@@ -31,7 +31,7 @@ _subresources={
 "nodes": {
 "PATH:computerKeyboard(Clone)": {
 "generate/physics": true,
-"physics/shape_type": 1
+"physics/shape_type": 2
 }
 }
 }
