@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c10ims3mrun17"
+uid="uid://b1n770sxtheyl"
 path="res://.godot/imported/doorwayFront.glb-cdd8b84330ff13d54e6e5b4a9697f68e.scn"
 
 [deps]
@@ -27,4 +27,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:doorwayFront(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:doorwayFront(Clone)/door": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

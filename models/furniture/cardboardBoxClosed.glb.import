@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cjahlt57yy2mu"
+uid="uid://b12p35e1rk8hw"
 path="res://.godot/imported/cardboardBoxClosed.glb-5173560911e65b0eaaf00f6ea28d3f87.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:cardboardBoxClosed(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://qr1safx5aqxg"
+uid="uid://d4axned0jloms"
 path="res://.godot/imported/stairs.glb-dbdd0e9872ef2210f280e346c58366ca.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:stairs(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

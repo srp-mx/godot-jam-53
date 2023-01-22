@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://clxv6bb83hf8s"
+uid="uid://bt4f5vnmrf4v3"
 path="res://.godot/imported/washerDryerStacked.glb-2384422b83c38e9b5448a9e2657a28f2.scn"
 
 [deps]
@@ -27,4 +27,19 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:washerDryerStacked(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:washerDryerStacked(Clone)/dryerDoor": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:washerDryerStacked(Clone)/washerDoor": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

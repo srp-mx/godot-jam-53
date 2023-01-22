@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cv21g2nxmtrgk"
+uid="uid://caq6b1nijars8"
 path="res://.godot/imported/doorwayOpen.glb-26f9233e8d746cb0e7c8ea17db3c7108.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:doorwayOpen(Clone)": {
+"decomposition/precision": 10,
+"generate/physics": true
+}
+}
+}

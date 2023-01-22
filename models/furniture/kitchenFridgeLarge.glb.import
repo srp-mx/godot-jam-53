@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d4cebbkkc2gni"
+uid="uid://blu0xfph5c4hu"
 path="res://.godot/imported/kitchenFridgeLarge.glb-abbf41c68a24bc8aae4e44d438b8626e.scn"
 
 [deps]
@@ -27,4 +27,19 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:kitchenFridgeLarge(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:kitchenFridgeLarge(Clone)/doorLeft": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:kitchenFridgeLarge(Clone)/doorRight": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

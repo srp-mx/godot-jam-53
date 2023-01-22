@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d4b5i78sqd7sw"
+uid="uid://g7t2vh6704a4"
 path="res://.godot/imported/plantSmall1.glb-2abe36f6a87e4677ef2a5a45f1ff1abb.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:plantSmall1(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bb7tqia0p0jaq"
+uid="uid://dw7c5o006wx40"
 path="res://.godot/imported/wallHalf.glb-c504ce3786fbc6c6754741ae78b059db.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:wallHalf(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

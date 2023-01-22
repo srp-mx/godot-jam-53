@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cbmdlpurrfomo"
+uid="uid://gevcf2wr6rii"
 path="res://.godot/imported/pillow.glb-a1425aba63a174b2b570e23f5635c4c1.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:pillow(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkc5ob73a4w22"
+uid="uid://v08ydanuwdek"
 path="res://.godot/imported/cabinetBedDrawerTable.glb-f867a39c1a213630eebb4a3045b78812.scn"
 
 [deps]
@@ -27,4 +27,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:cabinetBedDrawerTable(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:cabinetBedDrawerTable(Clone)/drawer": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

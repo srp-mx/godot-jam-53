@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://rgt24ib2oom4"
+uid="uid://bfgdkggb3xi4v"
 path="res://.godot/imported/coatRackStanding.glb-d4cf000db022286b6710955854111ff9.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:coatRackStanding(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

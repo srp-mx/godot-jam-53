@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b1iru3avl1p3i"
+uid="uid://kki4xffaarik"
 path="res://.godot/imported/kitchenFridgeBuiltIn.glb-cbf11fef51c6d9cb57424e50967b7fc6.scn"
 
 [deps]
@@ -27,4 +27,19 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:kitchenFridgeBuiltIn(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:kitchenFridgeBuiltIn(Clone)/doorFreezer": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:kitchenFridgeBuiltIn(Clone)/doorFridge": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

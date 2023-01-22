@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cceuo21djb8wr"
+uid="uid://drlnytho3e7a2"
 path="res://.godot/imported/toilet.glb-49910fad73d405a3077a07851087286a.scn"
 
 [deps]
@@ -27,4 +27,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:toilet(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:toilet(Clone)/cover": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

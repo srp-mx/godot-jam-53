@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dmttj3nttr7qd"
+uid="uid://bg743urlvxdwn"
 path="res://.godot/imported/stairsCorner.glb-e7a47be0eeaf0589487341c5525d6efd.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:stairsCorner(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

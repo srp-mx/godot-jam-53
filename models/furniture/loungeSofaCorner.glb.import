@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cmesajy8f27lo"
+uid="uid://hpnmeo2oyrr5"
 path="res://.godot/imported/loungeSofaCorner.glb-16b0f728e3615ca79207ab1333eeba0b.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:loungeSofaCorner(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

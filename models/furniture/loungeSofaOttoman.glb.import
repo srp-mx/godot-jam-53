@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://kxadnpybiimd"
+uid="uid://xlkqrd8ed55h"
 path="res://.godot/imported/loungeSofaOttoman.glb-c4165f3b8ef2cce0a1f8ee3eec3cefe6.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:loungeSofaOttoman(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

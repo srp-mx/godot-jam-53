@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://qvwlxsw5gy52"
+uid="uid://weo7riuv3exh"
 path="res://.godot/imported/speakerSmall.glb-410a61a8eeab01d286969f5d50769e23.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:speakerSmall(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

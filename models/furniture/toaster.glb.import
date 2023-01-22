@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cxhqsaiki3i2u"
+uid="uid://c1ji4w8gvqu2l"
 path="res://.godot/imported/toaster.glb-036abc7cd1112c3d830070d21d34ff67.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:toaster(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

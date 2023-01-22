@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://brlueys6bfb6t"
+uid="uid://cip2ufo2a80kp"
 path="res://.godot/imported/books.glb-f75aac325ae0416f3817769b1f52c734.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:books(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

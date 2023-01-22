@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dnqcwadswpdfb"
+uid="uid://cq1ix6np0vs64"
 path="res://.godot/imported/deskCorner.glb-30edee96c3a6a2bad0a26001a0b1abb2.scn"
 
 [deps]
@@ -27,4 +27,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:deskCorner(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:deskCorner(Clone)/drawer": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

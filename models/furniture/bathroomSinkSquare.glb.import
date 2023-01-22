@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://duph7t8yam5be"
+uid="uid://br2nyix4xhweo"
 path="res://.godot/imported/bathroomSinkSquare.glb-114e640c545e2ac49e6306ba3809ab22.scn"
 
 [deps]
@@ -27,4 +27,12 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:bathroomSinkSquare(Clone)": {
+"decomposition/precision": 10,
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

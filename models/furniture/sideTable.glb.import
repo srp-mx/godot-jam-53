@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c0brkk67m8btj"
+uid="uid://b54rlf2ymqxxq"
 path="res://.godot/imported/sideTable.glb-115f624eabb4377792b62d38905ca5c7.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:sideTable(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c8sjka8wl5f3e"
+uid="uid://dbu3wuvhfcp0m"
 path="res://.godot/imported/kitchenBarEnd.glb-38834fa7ab81e8745121c97f1cdd2837.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:kitchenBarEnd(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

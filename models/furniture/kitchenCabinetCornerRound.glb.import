@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://sail4aatx747"
+uid="uid://yu12js4at32a"
 path="res://.godot/imported/kitchenCabinetCornerRound.glb-cc3717f49c6c25ecb65a7c809d456258.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:kitchenCabinetCornerRound(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

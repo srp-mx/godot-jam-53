@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ctxr5c5gj6l7r"
+uid="uid://cy71yf7e2gg0"
 path="res://.godot/imported/stoolBar.glb-79969617ce48147fa4d496d66c42cf81.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:stoolBar(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

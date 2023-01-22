@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://7j1j24hh5k3c"
+uid="uid://csys46r1s0bg7"
 path="res://.godot/imported/desk.glb-26c6cac9842f95bf0477caba3a4e21d7.scn"
 
 [deps]
@@ -27,4 +27,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:desk(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:desk(Clone)/drawer": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

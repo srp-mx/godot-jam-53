@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cbr8e70yk5klv"
+uid="uid://dj447pe67af5p"
 path="res://.godot/imported/computerScreen.glb-c086598cd9b5f23cce3d67b88a6b7d4d.scn"
 
 [deps]
@@ -27,4 +27,10 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:computerScreen(Clone)": {
+"generate/physics": true
+}
+}
+}

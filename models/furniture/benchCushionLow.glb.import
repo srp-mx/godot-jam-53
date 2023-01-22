@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bqb2bdsigai53"
+uid="uid://bkt0bs6g0bj4q"
 path="res://.godot/imported/benchCushionLow.glb-abaacef473a81297b74316bf478d21f8.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:benchCushionLow(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

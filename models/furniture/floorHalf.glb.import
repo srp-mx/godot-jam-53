@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://djtloxyk5aad8"
+uid="uid://goviqi1w8eg7"
 path="res://.godot/imported/floorHalf.glb-d7949b2346fcbf7180419e31a7327a04.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:floorHalf(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://6b007saug8ga"
+uid="uid://c38t3n2oa7g6t"
 path="res://.godot/imported/kitchenCoffeeMachine.glb-4f25f6ea4f0d010438664f4c5e34ccea.scn"
 
 [deps]
@@ -27,4 +27,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:kitchenCoffeeMachine(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:kitchenCoffeeMachine(Clone)/mug": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

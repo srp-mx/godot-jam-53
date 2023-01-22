@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://doa7i7uwvsnog"
+uid="uid://rgl845ob3b0x"
 path="res://.godot/imported/tableCloth.glb-61ee222966959b9143c0c05744e7ff6c.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:tableCloth(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

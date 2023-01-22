@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cjuhrcbew1ydp"
+uid="uid://48ma6v1krvtw"
 path="res://.godot/imported/hoodModern.glb-56fe357c0d0bb649437d800654f5b76d.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:hoodModern(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

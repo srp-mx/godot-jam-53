@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cbgjcetae3rrv"
+uid="uid://hxaoalhjfcwg"
 path="res://.godot/imported/laptop.glb-44bc2cd95776b4c558b2d2af2633672c.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:laptop(Clone)": {
+"decomposition/precision": 4,
+"generate/physics": true
+}
+}
+}

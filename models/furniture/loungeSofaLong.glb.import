@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://q6xk8bloliyc"
+uid="uid://dnle22yafyoav"
 path="res://.godot/imported/loungeSofaLong.glb-6d2ddd42f775fe56bd7e3b7167c8e0d1.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:loungeSofaLong(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://creo5nhhyripb"
+uid="uid://d0vm123d1fygk"
 path="res://.godot/imported/televisionModern.glb-6760f6d354b4fa81f3e47168d5340e03.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:televisionModern(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ucq4syoj3uix"
+uid="uid://di17y3a5dgdxg"
 path="res://.godot/imported/tableCrossCloth.glb-7ce541f3fb2fb9343fbaf9635859fa89.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:tableCrossCloth(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

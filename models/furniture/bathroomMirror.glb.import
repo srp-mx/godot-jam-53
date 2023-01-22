@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cxok0otjchy4"
+uid="uid://b83mxv0ksvln4"
 path="res://.godot/imported/bathroomMirror.glb-46eaea6fee7198a0de3f4a884fa038c4.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:bathroomMirror(Clone)": {
+"decomposition/precision": 7,
+"generate/physics": true
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cwro2gyvcovpf"
+uid="uid://ddqht4587belg"
 path="res://.godot/imported/kitchenCabinetUpper.glb-25304a9c98d5486be9600aefd5008487.scn"
 
 [deps]
@@ -27,4 +27,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:kitchenCabinetUpper(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:kitchenCabinetUpper(Clone)/door": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

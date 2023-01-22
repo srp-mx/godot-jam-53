@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://btx1yiurveoil"
+uid="uid://cayvq6ubysdvi"
 path="res://.godot/imported/rugSquare.glb-c99570f7a67c53b3cdd49ef3813ec053.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:rugSquare(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

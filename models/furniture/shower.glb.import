@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://4h4ne54xgo23"
+uid="uid://o0fxy4fxgwxh"
 path="res://.godot/imported/shower.glb-3d5f20db0d54da8b8688b226eab47438.scn"
 
 [deps]
@@ -27,4 +27,19 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:shower(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:shower(Clone)/doorLeft": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:shower(Clone)/doorRight": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

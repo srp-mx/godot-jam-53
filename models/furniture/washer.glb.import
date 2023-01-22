@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://4xs220ysoh8r"
+uid="uid://dg6b7aonb4ha0"
 path="res://.godot/imported/washer.glb-8d27012a2d96732070410df3d5fb0880.scn"
 
 [deps]
@@ -27,4 +27,14 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:washer(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:washer(Clone)/washerDoor": {
+"generate/physics": true
+}
+}
+}

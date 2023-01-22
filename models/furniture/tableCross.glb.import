@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ua6cfrmqug5c"
+uid="uid://c176g4epsppit"
 path="res://.godot/imported/tableCross.glb-2628f805dff571fe3df8fb6bf162ac00.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:tableCross(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

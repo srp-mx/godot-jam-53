@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bqnbow7byix0o"
+uid="uid://bce71g8ujsv5d"
 path="res://.godot/imported/kitchenStove.glb-801278791fdced61e19def640f6acc7c.scn"
 
 [deps]
@@ -27,4 +27,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:kitchenStove(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:kitchenStove(Clone)/door": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

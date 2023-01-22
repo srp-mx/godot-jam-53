@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://xfqniwayf056"
+uid="uid://bw8vwf2f20b3j"
 path="res://.godot/imported/radio.glb-61bdc38516b7152a6570c75a6474b2c4.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:radio(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

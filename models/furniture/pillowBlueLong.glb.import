@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dl75ywn8jflq"
+uid="uid://nly46edoe561"
 path="res://.godot/imported/pillowBlueLong.glb-99d509e6732fa96f046b45c450428d13.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:pillowBlueLong(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

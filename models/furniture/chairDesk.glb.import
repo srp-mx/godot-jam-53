@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dtoqv36sx3ept"
+uid="uid://umj8voijtxyf"
 path="res://.godot/imported/chairDesk.glb-9cc3512dc2358030bc4321d9636b91b5.scn"
 
 [deps]
@@ -27,4 +27,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:chairDesk(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:chairDesk(Clone)/chair": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

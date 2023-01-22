@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dbxdtjkk0y8ll"
+uid="uid://o35qoojw0qvy"
 path="res://.godot/imported/rugRound.glb-c0d02b7c69b2b66fcd7382664cf0deab.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:rugRound(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b2satip2xm6uq"
+uid="uid://cjbpkjhqsiyto"
 path="res://.godot/imported/kitchenStoveElectric.glb-7814b52aeb4ded15b949225ec0e32aab.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:kitchenStoveElectric(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

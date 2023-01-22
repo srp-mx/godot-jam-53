@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://didmurwye8rg5"
+uid="uid://cn2xtvq42kors"
 path="res://.godot/imported/tableRound.glb-a6546d3edb29fcf2a5561fe35e5c1d98.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:tableRound(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

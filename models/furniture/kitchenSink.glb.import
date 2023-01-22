@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cj3y5ukthq6k5"
+uid="uid://cyaxxo6rky3r6"
 path="res://.godot/imported/kitchenSink.glb-0065d08fee3e342cd36fa9521b7b335b.scn"
 
 [deps]
@@ -27,4 +27,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:kitchenSink(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:kitchenSink(Clone)/door": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cy1xvs86jku66"
+uid="uid://ddwsagvp045fk"
 path="res://.godot/imported/wallDoorwayWide.glb-4cec2ba4a7ec93c5a4ea098cfb237403.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:wallDoorwayWide(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

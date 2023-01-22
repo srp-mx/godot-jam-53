@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d1ko8ko4742x"
+uid="uid://ckswxpuugnn7r"
 path="res://.godot/imported/bedDouble.glb-c8fb722a9ac726e871fe6aba2a293d5e.scn"
 
 [deps]
@@ -27,4 +27,24 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:bedDouble(Clone)": {
+"decomposition/precision": 10,
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:bedDouble(Clone)/cover": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:bedDouble(Clone)/pillowLeft": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:bedDouble(Clone)/pillowRight": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bgddpnludhiqy"
+uid="uid://cluygvhe2edip"
 path="res://.godot/imported/chairModernFrameCushion.glb-2f4972d7955d8523227e431ebc82ecc6.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:chairModernFrameCushion(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

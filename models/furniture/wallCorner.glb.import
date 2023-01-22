@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c47ylyityx4ck"
+uid="uid://o7thtkf08q3u"
 path="res://.godot/imported/wallCorner.glb-0762fb7c1e96ccadf6f1436d1aa43b51.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:wallCorner(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

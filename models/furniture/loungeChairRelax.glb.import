@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bkbxqurlbnqoc"
+uid="uid://daq7u4awevy0k"
 path="res://.godot/imported/loungeChairRelax.glb-2734d9f8a009b3dd46161ae0ab908643.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:loungeChairRelax(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

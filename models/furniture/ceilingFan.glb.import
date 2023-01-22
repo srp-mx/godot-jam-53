@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://prrs5a0rikgt"
+uid="uid://c0x7oahbagv7c"
 path="res://.godot/imported/ceilingFan.glb-9d3afe82b08282b8840db906d8fb7acf.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:ceilingFan(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

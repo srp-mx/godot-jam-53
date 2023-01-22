@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://55y6bn35kmkq"
+uid="uid://bwttnrcnqauld"
 path="res://.godot/imported/kitchenBlender.glb-d97ade749857281ae9b685eba9777200.scn"
 
 [deps]
@@ -27,4 +27,19 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:kitchenBlender(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:kitchenBlender(Clone)/blenderCup": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:kitchenBlender(Clone)/blenderTop": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

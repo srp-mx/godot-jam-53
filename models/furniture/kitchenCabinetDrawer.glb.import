@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bk60ii0otrwxg"
+uid="uid://bsvbiapyvff4t"
 path="res://.godot/imported/kitchenCabinetDrawer.glb-37753aa0a151113e98bbb8c0c1cadd71.scn"
 
 [deps]
@@ -27,4 +27,19 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:kitchenCabinetDrawer(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:kitchenCabinetDrawer(Clone)/door": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:kitchenCabinetDrawer(Clone)/drawer": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

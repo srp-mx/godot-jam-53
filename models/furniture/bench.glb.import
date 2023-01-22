@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d2hmrofr36bso"
+uid="uid://dyefmdbseqxp7"
 path="res://.godot/imported/bench.glb-0476d793bba23b3d73a48abe04a0edb8.scn"
 
 [deps]
@@ -27,4 +27,12 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:bench(Clone)": {
+"decomposition/precision": 6,
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

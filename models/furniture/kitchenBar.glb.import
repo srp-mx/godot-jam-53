@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkxn8jpdobs06"
+uid="uid://3km4qe5504b6"
 path="res://.godot/imported/kitchenBar.glb-3ac2792ff8deb6775467f3e7334d6182.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:kitchenBar(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

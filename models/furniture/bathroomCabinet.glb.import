@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bitnvvxo23h3s"
+uid="uid://betedj00v752q"
 path="res://.godot/imported/bathroomCabinet.glb-5e8d2318d3d14a64564638356d5fde46.scn"
 
 [deps]
@@ -27,4 +27,13 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:bathroomCabinet(Clone)": {
+"generate/physics": true
+},
+"PATH:bathroomCabinet(Clone)/door": {
+"generate/physics": true
+}
+}
+}

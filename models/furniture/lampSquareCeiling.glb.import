@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b32jlyqfi4ad0"
+uid="uid://b08ael4dfppop"
 path="res://.godot/imported/lampSquareCeiling.glb-23667abe5519a5166771755da80e5dd6.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:lampSquareCeiling(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

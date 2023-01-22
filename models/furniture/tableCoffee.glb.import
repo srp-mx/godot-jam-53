@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cxaq1m8mmhh6"
+uid="uid://dwkeov34pmlhh"
 path="res://.godot/imported/tableCoffee.glb-ee5904d17f648f75ee043a6a53c47c41.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:tableCoffee(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

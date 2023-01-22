@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cwjc4y7g82o0p"
+uid="uid://0q1hte1yib24"
 path="res://.godot/imported/dryer.glb-79b9230a36237bdd1cfc6dcc68073d22.scn"
 
 [deps]
@@ -27,4 +27,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:dryer(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:dryer(Clone)/dryerDoor": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dqwgm1s8fe2aj"
+uid="uid://ds5t03kdvj00n"
 path="res://.godot/imported/televisionAntenna.glb-c82f7fb7f165f1a83a5df42374e1d0d2.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:televisionAntenna(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://lmsa0iskv06w"
+uid="uid://dl084gjlijms7"
 path="res://.godot/imported/bedBunk.glb-d1da84f9b4614ca77519d6a5d97505f1.scn"
 
 [deps]
@@ -27,4 +27,28 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:bedBunk(Clone)": {
+"decomposition/precision": 7,
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:bedBunk(Clone)/coverBottom": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:bedBunk(Clone)/coverTop": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:bedBunk(Clone)/pillowBottom": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:bedBunk(Clone)/pillowTop": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

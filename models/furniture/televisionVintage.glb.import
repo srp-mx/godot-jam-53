@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d03yahqwc2dyj"
+uid="uid://dcbil7uanw8wb"
 path="res://.godot/imported/televisionVintage.glb-fefdad67c625a3dbe293b321eb257cd9.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:televisionVintage(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

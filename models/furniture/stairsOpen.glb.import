@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c4kn0p5ljfgxc"
+uid="uid://dyg4vm8jv2etn"
 path="res://.godot/imported/stairsOpen.glb-5b5463d15ddd987167da2e9f25708946.scn"
 
 [deps]
@@ -27,4 +27,19 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:stairsOpen(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:stairsOpen(Clone)/Group": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:stairsOpen(Clone)/Group2": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

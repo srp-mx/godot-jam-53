@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cp28a72f4bf7c"
+uid="uid://bakkvvmfiqay7"
 path="res://.godot/imported/showerRound.glb-1efe4dae9c7807b2d60d59935a0f95fb.scn"
 
 [deps]
@@ -27,4 +27,23 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:showerRound(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:showerRound(Clone)/doorLeft": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:showerRound(Clone)/doorRight": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:showerRound(Clone)/faucet": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

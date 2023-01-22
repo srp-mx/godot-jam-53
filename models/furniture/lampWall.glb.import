@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dt7tvg72regaj"
+uid="uid://3rwda5e5x8yb"
 path="res://.godot/imported/lampWall.glb-9768dd54cbe8e9a73563a5558977a5a3.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:lampWall(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

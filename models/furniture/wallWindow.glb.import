@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://xju78as2dkn7"
+uid="uid://dh5hpxdbc6354"
 path="res://.godot/imported/wallWindow.glb-2eaf760fc3ddc5be7b41c6c831f3dba0.scn"
 
 [deps]
@@ -27,4 +27,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:wallWindow(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:wallWindow(Clone)/window": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

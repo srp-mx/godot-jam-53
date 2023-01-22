@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bp77b0d3mchca"
+uid="uid://bwx0ukl7cxnxp"
 path="res://.godot/imported/hoodLarge.glb-1428118d381cee0f246e0f7dca743884.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:hoodLarge(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

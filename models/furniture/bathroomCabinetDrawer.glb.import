@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b2cjtdcfkgqa4"
+uid="uid://4u2mqre87dd2"
 path="res://.godot/imported/bathroomCabinetDrawer.glb-ee396370c9f0d45e7887a8efd26f2235.scn"
 
 [deps]
@@ -27,4 +27,19 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:bathroomCabinetDrawer(Clone)": {
+"decomposition/precision": 7,
+"generate/physics": true
+},
+"PATH:bathroomCabinetDrawer(Clone)/drawerBottom": {
+"decomposition/precision": 7,
+"generate/physics": true
+},
+"PATH:bathroomCabinetDrawer(Clone)/drawerTop": {
+"decomposition/precision": 7,
+"generate/physics": true
+}
+}
+}

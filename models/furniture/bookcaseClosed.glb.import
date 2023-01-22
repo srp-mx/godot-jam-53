@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bn7br6eh4v5ii"
+uid="uid://c4p4ero5ricbp"
 path="res://.godot/imported/bookcaseClosed.glb-ff8d3da935c045778589e6e6dc919c40.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:bookcaseClosed(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

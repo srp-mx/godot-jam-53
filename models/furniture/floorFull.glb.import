@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c1ssnb6iv678c"
+uid="uid://dudqs8tod3f2u"
 path="res://.godot/imported/floorFull.glb-cf153efd09f7dd19e60f8eb09a7c068f.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:floorFull(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

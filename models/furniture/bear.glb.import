@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://de65mklrma1it"
+uid="uid://dgeafnxrl7ql"
 path="res://.godot/imported/bear.glb-1c206d061d80db9b0b77ef08513e6d63.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:bear(Clone)": {
+"decomposition/precision": 7,
+"generate/physics": true
+}
+}
+}

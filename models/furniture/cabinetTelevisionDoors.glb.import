@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://vg7y545hu15c"
+uid="uid://djtffqhxd30sb"
 path="res://.godot/imported/cabinetTelevisionDoors.glb-486729a7be7c293bed0687fe1c3eaa18.scn"
 
 [deps]
@@ -27,4 +27,19 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:cabinetTelevisionDoors(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:cabinetTelevisionDoors(Clone)/doorLeft": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:cabinetTelevisionDoors(Clone)/doorRight": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

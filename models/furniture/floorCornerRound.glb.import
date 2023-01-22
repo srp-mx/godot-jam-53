@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://jnwxlqsa1h8i"
+uid="uid://b7v8imuagcmjw"
 path="res://.godot/imported/floorCornerRound.glb-05917e6e4037279ac1d1347663d3c542.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:floorCornerRound(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}

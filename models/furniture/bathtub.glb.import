@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dnxnfxy5gnlqi"
+uid="uid://vd2s5e0t85ij"
 path="res://.godot/imported/bathtub.glb-863a1dc4c214c233db7b01ceb8869fa9.scn"
 
 [deps]
@@ -27,4 +27,12 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:bathtub(Clone)": {
+"decomposition/precision": 10,
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

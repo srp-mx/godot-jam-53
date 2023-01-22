@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://el2aw8f066je"
+uid="uid://b7pyu3b8f0t6n"
 path="res://.godot/imported/lampSquareFloor.glb-cba22ca4e1dd5b418c72b55095e9b111.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:lampSquareFloor(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

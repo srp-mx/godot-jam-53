@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://7e4g7honcdsy"
+uid="uid://bik18wh8f1ek5"
 path="res://.godot/imported/lampRoundFloor.glb-e0b02cc6ad919416aaafc478ac402514.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:lampRoundFloor(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://2cg04s8yn732"
+uid="uid://rbcdomet8iwy"
 path="res://.godot/imported/pottedPlant.glb-b5fcfecfd8feefcaf6b0dfe37894b0b3.scn"
 
 [deps]
@@ -27,4 +27,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:pottedPlant(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:pottedPlant(Clone)/plant": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}

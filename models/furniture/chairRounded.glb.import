@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d16ujqi5lu4rh"
+uid="uid://hv1wtkqh54a5"
 path="res://.godot/imported/chairRounded.glb-4080c96a20ec5e672b99280d1ea0a986.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:chairRounded(Clone)": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}
