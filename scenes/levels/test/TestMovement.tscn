@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b3t2m3jt1hk25"]
+[gd_scene load_steps=16 format=3 uid="uid://b3t2m3jt1hk25"]
 
 [ext_resource type="Material" uid="uid://cqjjvuoujlxsn" path="res://materials/test_material.tres" id="1_ppfqy"]
 [ext_resource type="Environment" uid="uid://beg8qhrkbmq7y" path="res://environment/test_environment.tres" id="2_rdwmb"]
@@ -8,12 +8,9 @@
 [ext_resource type="Script" path="res://Machine.cs" id="5_pn7s0"]
 [ext_resource type="Script" path="res://Shoot.cs" id="7_5smuh"]
 [ext_resource type="Script" path="res://Terminal.cs" id="7_ef6eb"]
-[ext_resource type="ArrayMesh" uid="uid://bm5qd5bhxe6gf" path="res://models/prueba_robosito_tex.obj" id="8_6wo1i"]
 [ext_resource type="Script" path="res://CameraMovement.cs" id="8_gy5yx"]
 [ext_resource type="Script" path="res://Sections.cs" id="8_se86d"]
-[ext_resource type="Texture2D" uid="uid://cuarcj1bsawql" path="res://models/uv.png" id="9_301jh"]
 [ext_resource type="Script" path="res://Menu.cs" id="9_v1kiy"]
-[ext_resource type="PackedScene" uid="uid://cxaq1m8mmhh6" path="res://models/furniture/tableCoffee.glb" id="14_lok8v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cg150"]
 
@@ -23,20 +20,6 @@ dof_blur_far_enabled = true
 dof_blur_near_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aehs0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twxwg"]
-diffuse_mode = 3
-albedo_texture = ExtResource("9_301jh")
-metallic = 1.0
-metallic_specular = 0.4
-roughness = 0.59
-rim_enabled = true
-clearcoat_enabled = true
-anisotropy_enabled = true
-anisotropy = 0.28
-ao_enabled = true
-backlight_enabled = true
-backlight = Color(0.835294, 0.92549, 0.760784, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mho2e"]
 
@@ -68,9 +51,6 @@ transform = Transform3D(0.967815, 0.0805078, -0.238439, 0.2093, 0.268612, 0.9402
 light_color = Color(1, 1, 0.85098, 1)
 light_energy = 0.5
 
-[node name="tableCoffee" parent="." instance=ExtResource("14_lok8v")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.26262, 0.5, -1.42531)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_rdwmb")
 camera_attributes = SubResource("CameraAttributesPractical_nj0tc")
@@ -87,7 +67,6 @@ script = ExtResource("5_bajyu")
 shape = SubResource("BoxShape3D_aehs0")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Machine/CharacterBody3D"]
-visible = false
 material_override = ExtResource("1_ppfqy")
 
 [node name="Shooter" type="CSGBox3D" parent="Machine/CharacterBody3D"]
@@ -99,8 +78,6 @@ script = ExtResource("7_5smuh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Machine/CharacterBody3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-mesh = ExtResource("8_6wo1i")
-surface_material_override/0 = SubResource("StandardMaterial3D_twxwg")
 
 [node name="Camera3D" type="Camera3D" parent="Machine"]
 transform = Transform3D(1, 0, 0, 0, 0.94959, 0.313495, 0, -0.313495, 0.94959, 0, 1.94794, 5.08045)
