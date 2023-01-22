@@ -9,10 +9,10 @@ Some useful predefined stuff:
 
 shader_type canvas_item;
 
-uniform vec3 my_color1 = vec3(1,0,0);
-uniform vec3 my_color2 = vec3(0,1,0);
-uniform vec3 my_color3 = vec3(0,0,0);
-uniform vec3 my_color4 = vec3(0,0,0);
+uniform vec3 my_color1 = vec3(0.6,0.87,0.79);
+uniform vec3 my_color2 = vec3(0.84,0.93,0.76);
+uniform vec3 my_color3 = vec3(1.0,0.83,0.71);
+uniform vec3 my_color4 = vec3(1.0,0.67,0.65);
 
 uniform float brightness = 1.0;
 uniform float contrast = 1.0;
@@ -24,6 +24,46 @@ vec3 nearestHue(vec3 color, vec3 opt1, vec3 opt2, vec3 opt3, vec3 opt4)
     float dh2 = abs(color.z - opt2.z);
     float dh3 = abs(color.z - opt3.z);
     float dh4 = abs(color.z - opt4.z);
+	
+	if (dh1 < abs(360.0 + color.z - opt1.z))
+	{
+		dh1 = abs(360.0 + color.z - opt1.z);
+	}
+	
+	if (dh2 < abs(360.0 + color.z - opt2.z))
+	{
+		dh2 = abs(360.0 + color.z - opt2.z);
+	}
+	
+	if (dh3 < abs(360.0 + color.z - opt3.z))
+	{
+		dh3 = abs(360.0 + color.z - opt3.z);
+	}
+	
+	if (dh4 < abs(360.0 + color.z - opt4.z))
+	{
+		dh4 = abs(360.0 + color.z - opt4.z);
+	}
+	
+	if (dh1 < abs(-360.0 + color.z - opt1.z))
+	{
+		dh1 = abs(-360.0 + color.z - opt1.z);
+	}
+	
+	if (dh2 < abs(-360.0 + color.z - opt2.z))
+	{
+		dh2 = abs(-360.0 + color.z - opt2.z);
+	}
+	
+	if (dh3 < abs(-360.0 + color.z - opt3.z))
+	{
+		dh3 = abs(-360.0 + color.z - opt3.z);
+	}
+	
+	if (dh4 < abs(-360.0 + color.z - opt4.z))
+	{
+		dh4 = abs(-360.0 + color.z - opt4.z);
+	}
 
     if (dh1 < dh2)
     {
@@ -164,14 +204,46 @@ vec3 rgb2lab(vec3 c)
     return xyz2lab(rgb2xyz(c));
 }
 
+float atan2(float y,float x)
+{
+	if (x > 0.0)
+	{
+		return atan(y/x);
+	}
+	
+	if (x < 0.0)
+	{
+		if (y >= 0.0)
+		{
+			return atan(y/x) + PI;
+		}
+		else
+		{
+			return atan(y/x) - PI;
+		}
+	}
+	
+	if (y > 0.0)
+	{
+		return PI/2.0;
+	}
+	return -PI/2.0;
+}
+
 vec3 lab2lch(vec3 c)
 {
-    return vec3(c.x, sqrt(c.y*c.y + c.z*c.z), atan(c.y, c.z));
+	float L = c.x;
+	float A = c.y;
+	float B = c.z;
+    return vec3(L, sqrt((A*A) + (B*B)), degrees(atan2(B,A)));
 }
 
 vec3 lch2lab(vec3 c)
 {
-    return vec3(c.x, c.y*cos(c.z), c.y*sin(c.z));
+	float L = c.x;
+	float C = c.y;
+	float H = c.z;
+    return vec3(L, C*cos(radians(H)), C*sin(radians(H)));
 }
 
 vec3 rgb2lch(vec3 c)
@@ -198,6 +270,8 @@ void fragment() {
     c = vec3(c.x, c.y, nearestHue(c, c1lch, c2lch, c3lch, c4lch).z);
 
     COLOR.rgb = lch2rgb(c);
+
+	//COLOR.rgb =  lch2rgb(lab2lch(xyz2lab(rgb2xyz(c))));
 }
 
 

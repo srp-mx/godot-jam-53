@@ -4,4 +4,10 @@
 
 [resource]
 shader = ExtResource("1_yg11s")
-shader_parameter/size = null
+shader_parameter/my_color1 = Vector3(0.6, 0.87, 0.79)
+shader_parameter/my_color2 = Vector3(0.84, 0.93, 0.76)
+shader_parameter/my_color3 = Vector3(1, 0.83, 0.71)
+shader_parameter/my_color4 = Vector3(1, 0.67, 0.65)
+shader_parameter/brightness = null
+shader_parameter/contrast = null
+shader_parameter/saturation = null
