@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b3t2m3jt1hk25"]
+[gd_scene load_steps=18 format=3 uid="uid://b3t2m3jt1hk25"]
 
 [ext_resource type="Material" uid="uid://cqjjvuoujlxsn" path="res://materials/test_material.tres" id="1_ppfqy"]
 [ext_resource type="Environment" uid="uid://beg8qhrkbmq7y" path="res://environment/test_environment.tres" id="2_rdwmb"]
@@ -6,8 +6,10 @@
 [ext_resource type="Script" path="res://PostProcessColors.cs" id="4_ubypy"]
 [ext_resource type="Script" path="res://PlayerMovement.cs" id="5_bajyu"]
 [ext_resource type="Script" path="res://Machine.cs" id="5_pn7s0"]
+[ext_resource type="ArrayMesh" uid="uid://bm5qd5bhxe6gf" path="res://models/prueba_robosito_tex.obj" id="6_16dqu"]
 [ext_resource type="Script" path="res://Shoot.cs" id="7_5smuh"]
 [ext_resource type="Script" path="res://Terminal.cs" id="7_ef6eb"]
+[ext_resource type="Material" uid="uid://d1fsjh3mx5ut5" path="res://materials/monito_mat.tres" id="7_hv57r"]
 [ext_resource type="Script" path="res://CameraMovement.cs" id="8_gy5yx"]
 [ext_resource type="Script" path="res://Sections.cs" id="8_se86d"]
 [ext_resource type="Script" path="res://Menu.cs" id="9_v1kiy"]
@@ -67,6 +69,7 @@ script = ExtResource("5_bajyu")
 shape = SubResource("BoxShape3D_aehs0")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Machine/CharacterBody3D"]
+visible = false
 material_override = ExtResource("1_ppfqy")
 
 [node name="Shooter" type="CSGBox3D" parent="Machine/CharacterBody3D"]
@@ -78,6 +81,8 @@ script = ExtResource("7_5smuh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Machine/CharacterBody3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("6_16dqu")
+surface_material_override/0 = ExtResource("7_hv57r")
 
 [node name="Camera3D" type="Camera3D" parent="Machine"]
 transform = Transform3D(1, 0, 0, 0, 0.94959, 0.313495, 0, -0.313495, 0.94959, 0, 1.94794, 5.08045)
