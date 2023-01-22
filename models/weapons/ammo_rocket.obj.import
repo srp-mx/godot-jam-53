@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dh7w1ukiea8sa"
+path="res://.godot/imported/ammo_rocket.obj-8ab60ec1ce39838835eeebb05a10c189.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ammo_rocket.obj-8ab60ec1ce39838835eeebb05a10c189.mesh"]
+
+source_file="res://models/weapons/ammo_rocket.obj"
+dest_files=["res://.godot/imported/ammo_rocket.obj-8ab60ec1ce39838835eeebb05a10c189.mesh", "res://.godot/imported/ammo_rocket.obj-8ab60ec1ce39838835eeebb05a10c189.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dbripb35w7fw8"
+path="res://.godot/imported/ammo_machinegun.obj-e30d42f3d0af99d194a3c0e6c9525888.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ammo_machinegun.obj-e30d42f3d0af99d194a3c0e6c9525888.mesh"]
+
+source_file="res://models/weapons/ammo_machinegun.obj"
+dest_files=["res://.godot/imported/ammo_machinegun.obj-e30d42f3d0af99d194a3c0e6c9525888.mesh", "res://.godot/imported/ammo_machinegun.obj-e30d42f3d0af99d194a3c0e6c9525888.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
