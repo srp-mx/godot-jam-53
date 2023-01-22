@@ -23,5 +23,7 @@ project/assembly_name="Godot-jam-53"
 
 renderer/rendering_method="gl_compatibility"
 global_illumination/sdfgi/probe_ray_count=2
+limits/opengl/max_renderable_lights=64
+limits/opengl/max_lights_per_object=16
 anti_aliasing/quality/msaa_3d=1
 anti_aliasing/quality/use_debanding=true

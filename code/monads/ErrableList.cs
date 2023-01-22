@@ -48,7 +48,6 @@ public class ErrableList<T>
                                         // but with  Count == 1:
                                         // node.next.next would throw a
                                         // NullReferenceException
-        ExternDebug.DBPrint($"param head and next:\n\t{head is null} -> {head.next is null}");
         return ForAllWithNext_It(Do, head);
     }
 

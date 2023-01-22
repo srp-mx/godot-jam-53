@@ -170,7 +170,6 @@ public partial class Machine : Node
 
     private int getValue(ParamInfo param, out string err)
     {
-        debugLog("getvalue internal " + param.Get());
         if (param.GetParamType() == ParamInfo.ParamType.Value)
         {
             err = "";
@@ -211,7 +210,6 @@ public partial class Machine : Node
     // on exit is checked by the IEnumerator.
     private bool HLT(MethodBlock[] fmem, ref int iptr, out string err)
     {
-        debugLog("EXEC HLT");
         err = "";
         return false;
     }
@@ -224,16 +222,10 @@ public partial class Machine : Node
                 return false;
 
         ParamInfo param1 = fmem[++iptr].GetParamInfo();
-        debugLog("Got param at " + iptr);
-        debugLog("Got param type " + param1.GetParamType().ToString());
-        debugLog("Got param int of " + param1.Get());
         int time = getValue(param1, out err) * timeMultiplier;
-        debugLog("Got time value of " + time);
         if (err == "")
         {
-            debugLog("EXEC WAIT, waiting " + time + "ms");
             System.Threading.Thread.Sleep(time);
-            debugLog("EXEC WAIT, finished");
             return moveOneExit(fmem, ref iptr, out err);
         }
 
@@ -265,7 +257,6 @@ public partial class Machine : Node
 
         iptr = param1.Get();
 
-        debugLog("Called instruction at " + iptr);
 
         if (iptr > 255)
         {
@@ -284,8 +275,6 @@ public partial class Machine : Node
             err = $"[ERROR] {fmem[iptr].GetSourcePos()}: Return failed.\n{err}";
             return false;
         }
-
-        debugLog("Popped " + retAddr + " from the stack");
 
         string retPos = fmem[iptr].GetSourcePos();
         iptr = retAddr;
@@ -369,7 +358,6 @@ public partial class Machine : Node
             return false;
         }
 
-        debugLog($"moving {assignValue} into {memVal.Get()}");
         userSetValueAtAddr(memVal, assignValue, out err);
 
         if (err != "")

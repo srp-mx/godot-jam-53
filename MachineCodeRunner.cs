@@ -24,10 +24,8 @@ public partial class Machine : Node
 			bool wouldContinue = currInstruction.MoveNext();
 			instructionPtr = (int)currInstruction.Current;
 			registers[(int)Register.IP] = instructionPtr;
-			debugLog("Moved iptr to " + instructionPtr);
 			if (!wouldContinue)
 			{
-				debugLogMem();
 				codeLog(code.GetExitStatus().ToString());   
 			}
 			return wouldContinue;

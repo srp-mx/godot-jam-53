@@ -28,7 +28,6 @@ public partial class PlayerMovement : CharacterBody3D
 	{
 		machine = this.GetParent<Machine>();
 		machine.Connect("doROT", new Callable(this, "doROT"));
-		machine.Connect("doINTERACT", new Callable(this, "doInteract"));
 		machine.Connect("doMOV_", new Callable(this, "doMov_"));
 		machine.Connect("doJUMP_UP", new Callable(this, "doJump_up"));
 		machine.Connect("doFLY_", new Callable(this, "doFly_"));
@@ -57,13 +56,6 @@ public partial class PlayerMovement : CharacterBody3D
 		p1 = Mathf.DegToRad((float)amount);
 	}
 
-	// signal TODO
-	[Signal]
-	public delegate void Interact_EventHandler();
-	public void doInteract()
-	{
-		EmitSignal("interact");
-	}
 
 	private void mov(double delta)
 	{

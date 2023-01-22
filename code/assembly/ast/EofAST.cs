@@ -13,7 +13,6 @@ public class EofAST : ASTNode
 
 	public override Errable<ASTNode> Codegen(CompiledCode target)
 	{
-        ExternDebug.DBPrint("Generated EOF");
         return this;
 	}
 }

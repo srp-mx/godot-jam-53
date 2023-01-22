@@ -45,8 +45,6 @@ public struct MethodBlock
     {
         bool isNotParam = paramInfo is null || paramInfo.GetParamType() == ParamInfo.ParamType.None;
         bool isNotInstr = instruction is null || instruction == VOID;
-        ExternDebug.DBPrint("paramtype " + ((paramInfo is null) ? "null" : paramInfo.GetParamType().ToString()) );
-        ExternDebug.DBPrint("instr " + ((isNotInstr) ? "not" : "yes"));
         return isNotParam && isNotInstr;
     }
 

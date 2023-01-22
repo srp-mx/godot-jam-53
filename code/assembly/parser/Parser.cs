@@ -129,14 +129,11 @@ public class Parser
         while (NextPos.Line == CurrPos.Line && nextToken.Value != TokenValue.EOF)
         {
             var param = parseParam();
-            ExternDebug.DBPrint("curpos " + CurrPos.AsStr());
-            ExternDebug.DBPrint("append param " + param.ToString());
             parameters.Append(param); // NOTE(srp): Not recursive, handle with care
 
             // Eat optional ',' after parameters
             if (nextToken.Character == ',')
             {
-                ExternDebug.DBPrint("skip comma");
                 advanceToken();
             }
         }
@@ -220,9 +217,7 @@ public class Parser
         NextPos.CopyTo(CurrPos);
 
         nextToken = lexer.GetToken();
-        ExternDebug.DBPrint("Token: " + nextToken.Value.ToString());
         lexer.Text.CopyTo(NextPos);
-        ExternDebug.DBPrint("Txt: " +  NextPos.AsStr());
 
         if (lastToken == null) return advanceToken();
         return lastToken;

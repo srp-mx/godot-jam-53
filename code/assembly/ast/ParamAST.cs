@@ -30,7 +30,6 @@ public class ParamAST : ASTNode
         if (myBlock.GetParamInfo().GetParamType() != ParamInfo.ParamType.Label)
             return 0; // Fine, just skip since it's not promised to be a label
 
-        ExternDebug.DBPrint("Label pass: " + content);
 
         var paramInfo = myBlock.GetParamInfo();
 
@@ -41,7 +40,6 @@ public class ParamAST : ASTNode
         mapping: labelDir =>
         {
             paramInfo.SetLabelAddr(labelDir);
-            ExternDebug.DBPrint("labelDir: " + labelDir);
             return labelDir;
         }, $"[ERROR][DEV]: The label '{content}' was accepted earlier, but it was invalid at LabelPass.\n"
         );
@@ -50,7 +48,6 @@ public class ParamAST : ASTNode
     // TODO(srp): check thoroughly
     public override Errable<ASTNode> Codegen(CompiledCode target)
     {
-        ExternDebug.DBPrint("Generating param " + content);
         myBlockIdx = target.codegenPtr;
 
         ref MethodBlock myBlock = ref target.MethodArea[target.codegenPtr++];
@@ -61,7 +58,6 @@ public class ParamAST : ASTNode
         if (BracketRegex.IsMatch(content))
         {
             ReadOnlySpan<char> addressCandidate = content.AsSpan(2, content.Length - 3);
-            ExternDebug.DBPrint("addr candidate: " + addressCandidate.ToString());
             Errable<int> addressQuery = parseNum(ref addressCandidate);
             Errable<int> regAddressQuery = parseReg(ref addressCandidate);
             // TODO(srp) if it fails, parse register as address dest

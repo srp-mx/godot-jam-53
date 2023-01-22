@@ -49,10 +49,8 @@ public partial class Machine : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-        Game.ExternDebug.printer = str => debugLog(str);
         machineCtor();
         // TODO(srp): this has to get fed
-        debugLogCode();
 	}
 
     public bool paused = false;
@@ -60,6 +58,9 @@ public partial class Machine : Node
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+        if (availableInstructionSets.Contains(InstructionSets.Available.Final))
+            gotGun = true;
+
         if (!runnable)
             return;
 
@@ -74,13 +75,9 @@ public partial class Machine : Node
             }
         }
 
-        if (availableInstructionSets.Contains(InstructionSets.Available.Final))
-            gotGun = true;
-
         clockTime++;
 	}
 
-    private void debugLog(string s)=> GD.Print(s);
 
     private void stackPush(int x, out string err)
     {
@@ -93,7 +90,6 @@ public partial class Machine : Node
         err = "";
         stack[stackPtr] = x;
         registers[(int)Register.SP] = stackPtr;
-        debugLog("stackptr is " + stackPtr);
         stackPtr++;
     }
 
@@ -107,76 +103,8 @@ public partial class Machine : Node
 
         err = "";
         registers[(int)Register.SP] = --stackPtr;
-        debugLog("stackptr is " + stackPtr);
         return stack[stackPtr];
     }
 
-    private void debugLogCode()
-    {
-        debugLog("");
-        debugLog("=== DEBUGGING COMPILED CODE ===");
-        debugLog("");
-        debugLog($"Is code null? {(code is null).ToString()}");
-        debugLog("");
-        debugLog("Display ints");
-        for (int y = 0; y < 16; y++)
-        {
-            string line = "";
-            for (int x = 0; x < 16; x++)
-            {
-                line +=  (code.MethodArea[16*y + x].DisplayInt).ToString("X2") + " ";
-            }
-            debugLog(line);
-        }
-    }
-
-    private void debugLogMem()
-    {
-        debugLog("");
-        debugLog("REGS");
-        string regstr = "";
-        for (int i = 0; i < (int)Register.None; i++)
-        {
-            regstr += $"[{((Register)i).ToString()}: {registers[i].ToString("X2")}] ";
-        }
-        debugLog(regstr);
-
-        debugLog("");
-        debugLog("INSTR");
-        debugLog("----");
-        for (int y = 0; y < 16; y++)
-        {
-            string line = "";
-            for (int x = 0; x < 16; x++)
-            {
-                line +=  (code.MethodArea[16*y + x].DisplayInt).ToString("X2") + " ";
-            }
-            debugLog(line);
-        }
-        debugLog("");
-        debugLog("STACK");
-        debugLog("----");
-        for (int y = 0; y < 16; y++)
-        {
-            string line = "";
-            for (int x = 0; x < 16; x++)
-            {
-                line +=  (stack[16*y + x]).ToString("X2") + " ";
-            }
-            debugLog(line);
-        }
-        debugLog("");
-        debugLog("HEAP");
-        debugLog("----");
-        for (int y = 0; y < 16; y++)
-        {
-            string line = "";
-            for (int x = 0; x < 16; x++)
-            {
-                line +=  (heap[16*y + x]).ToString("X2") + " ";
-            }
-            debugLog(line);
-        }
-        debugLog("");
-    }
+    
 }

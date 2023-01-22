@@ -22,7 +22,7 @@ public partial class Shoot : Node3D
 	public override void _Ready()
 	{
         bulletResource = GD.Load<PackedScene>("res://scenes/prefabs/bullet.tscn");
-        machine = (Machine) this.FindParent("Machine");
+        machine = GetNode<Machine>("/root/Main_M Node/TestMovement/Machine");
         machine.Connect("doSHOOT", new(this, "ShootBullet"));
         machine.Connect("doRELOAD", new(this, "Reload"));
         for(int i = 0; i < 16; i++)

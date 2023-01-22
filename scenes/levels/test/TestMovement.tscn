@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://b3t2m3jt1hk25"]
+[gd_scene load_steps=72 format=3 uid="uid://b3t2m3jt1hk25"]
 
 [ext_resource type="Material" uid="uid://cqjjvuoujlxsn" path="res://materials/test_material.tres" id="1_ppfqy"]
 [ext_resource type="PackedScene" uid="uid://v08ydanuwdek" path="res://models/furniture/cabinetBedDrawerTable.glb" id="2_k7ie3"]
@@ -58,11 +58,14 @@
 [ext_resource type="PackedScene" uid="uid://y3fp25xb1uv" path="res://models/furniture/loungeDesignSofa.glb" id="55_kf4yv"]
 [ext_resource type="PackedScene" uid="uid://yaiua8equpa8" path="res://models/furniture/pillowBlue.glb" id="56_bojhv"]
 [ext_resource type="PackedScene" uid="uid://b7pyu3b8f0t6n" path="res://models/furniture/lampSquareFloor.glb" id="57_immd7"]
+[ext_resource type="Script" path="res://PlayerGraphics.cs" id="58_1adla"]
 [ext_resource type="PackedScene" uid="uid://bik18wh8f1ek5" path="res://models/furniture/lampRoundFloor.glb" id="58_j2des"]
 [ext_resource type="PackedScene" uid="uid://c1ji4w8gvqu2l" path="res://models/furniture/toaster.glb" id="59_qs4nw"]
 [ext_resource type="PackedScene" uid="uid://b54rlf2ymqxxq" path="res://models/furniture/sideTable.glb" id="60_56cun"]
 [ext_resource type="PackedScene" uid="uid://cayvq6ubysdvi" path="res://models/furniture/rugSquare.glb" id="61_gj1p2"]
 [ext_resource type="PackedScene" uid="uid://bfgdkggb3xi4v" path="res://models/furniture/coatRackStanding.glb" id="62_g0xgp"]
+[ext_resource type="Script" path="res://ScoreThing.cs" id="65_dhm04"]
+[ext_resource type="PackedScene" uid="uid://bjhoiio53f0e0" path="res://models/furniture/lampSquareTable.glb" id="66_pjcma"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cg150"]
 
@@ -75,6 +78,14 @@ dof_blur_near_enabled = true
 size = Vector3(0.8, 0.92, 0.9)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mho2e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r64jr"]
+albedo_color = Color(1, 0.65098, 0.498039, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.41
+emission_enabled = true
+emission = Color(0.819608, 0.360784, 0, 1)
 
 [node name="TestMovement" type="Node3D"]
 
@@ -625,7 +636,7 @@ camera_attributes = SubResource("CameraAttributesPractical_nj0tc")
 script = ExtResource("5_pn7s0")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="Machine"]
-transform = Transform3D(-0.99999, 0, -0.0043632, 0, 1, 0, 0.0043632, 0, -0.99999, -7.93243, 6.05876, -0.289561)
+transform = Transform3D(-0.99999, 0, -0.0043632, 0, 1, 0, 0.0043632, 0, -0.99999, -6.8952, 6.05876, -0.592164)
 collision_layer = 2
 script = ExtResource("5_bajyu")
 
@@ -637,20 +648,24 @@ shape = SubResource("BoxShape3D_aehs0")
 visible = false
 material_override = ExtResource("1_ppfqy")
 
-[node name="Shooter" type="MeshInstance3D" parent="Machine/CharacterBody3D"]
-transform = Transform3D(-20, 0, -3.03239e-06, 0, 20, 0, 3.03239e-06, 0, -20, 0.506353, 0, -0.621094)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Machine/CharacterBody3D"]
+transform = Transform3D(-1, 0, -8.75443e-08, 0, 1, 0, 8.75443e-08, 0, -1, 0.323633, 0, -0.0308089)
+mesh = ExtResource("6_16dqu")
+surface_material_override/0 = ExtResource("7_hv57r")
+script = ExtResource("58_1adla")
+amplitude = 0.1
+freq = 1.5
+
+[node name="Shooter" type="MeshInstance3D" parent="Machine/CharacterBody3D/MeshInstance3D"]
+transform = Transform3D(20, 0, 1.2815e-06, 0, 20, 0, -1.2815e-06, 0, 20, -0.506354, 0, 0.621094)
+visible = false
 mesh = ExtResource("23_jxnx1")
 skeleton = NodePath("")
 script = ExtResource("38_oxgq2")
 
-[node name="bullet_hole" type="Node3D" parent="Machine/CharacterBody3D/Shooter"]
+[node name="bullet_hole" type="Node3D" parent="Machine/CharacterBody3D/MeshInstance3D/Shooter"]
 transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 0.999999, 0, 8.74227e-08, 0, -0.999999, 2.34842e-05, 0.00677705, 0.0415421)
 script = ExtResource("7_5smuh")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Machine/CharacterBody3D"]
-transform = Transform3D(-1, 0, -8.75443e-08, 0, 1, 0, 8.75443e-08, 0, -1, 0, 0, 0)
-mesh = ExtResource("6_16dqu")
-surface_material_override/0 = ExtResource("7_hv57r")
 
 [node name="Camera3D" type="Camera3D" parent="Machine"]
 transform = Transform3D(1, 0, 0, 0, 0.94959, 0.313495, 0, -0.313495, 0.94959, -7.93243, 7.00535, 4.79089)
@@ -4383,3 +4398,17 @@ text = "Retry
 [node name="Main_Menu" type="Button" parent="MenuLayer/Control/VBoxContainer"]
 layout_mode = 2
 text = "Main Menu"
+
+[node name="lampSquareFloor" parent="." instance=ExtResource("57_immd7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8804, 1.00773, 0.265215)
+
+[node name="lampSquareTable" parent="." instance=ExtResource("66_pjcma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.03871, 5.6129, 1.00952)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.8324, 5.93473, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_r64jr")
+script = ExtResource("65_dhm04")
