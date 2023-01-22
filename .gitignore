@@ -1,5 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
-srcgen/bin
-srcgen/obj
-.vs
+/srcgen/bin/
+/srcgen/obj/
+.vs/
+!prueba_robosito_tex.obj
